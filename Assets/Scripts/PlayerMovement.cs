@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Video;
@@ -11,11 +13,23 @@ public class NewBehaviourScript : MonoBehaviour
     public float speed;
     public float moveDirection;
     private bool facingRight = true;
+    Animator animator;
     // Update is called once per frame
+    private void Start()
+    {
+        playerRb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        
+    }
+
+    void Animate()
+    {
+        animator.SetFloat("horizontalValue", Mathf.Abs(moveDirection));
+    }
     void Update()
     {
         moveDirection = Input.GetAxisRaw("Horizontal");
-
+        Animate();
         if(moveDirection > 0 && !facingRight)
         {
             FlipCharacter();
@@ -36,4 +50,5 @@ public class NewBehaviourScript : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
+
 }
