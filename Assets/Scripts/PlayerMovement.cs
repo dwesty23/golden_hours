@@ -1,48 +1,71 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.Video;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Rigidbody2D playerRb;
     public float speed;
+    public float jumpPower;
     public float moveDirection;
     private bool facingRight = true;
-    Animator animator;
-    // Update is called once per frame
-    private void Start()
+    private bool isJumping = false;
+    private bool hasJumped = false;
+    private Animator animator;
+    public LayerMask groundLayer;
+
+    void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        
     }
 
-    void Animate()
-    {
-        animator.SetFloat("horizontalValue", Mathf.Abs(moveDirection));
-    }
     void Update()
     {
-        moveDirection = Input.GetAxisRaw("Horizontal");
+        ProcessInputs();
         Animate();
-        if(moveDirection > 0 && !facingRight)
+    }
+
+    void FixedUpdate()
+    {
+        Move();
+    }
+
+    private void ProcessInputs()
+    {
+        moveDirection = Input.GetAxis("Horizontal");
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping && !hasJumped)
         {
-            FlipCharacter();
-        }
-        else if(moveDirection < 0 && facingRight)
-        {
-            FlipCharacter();
+            isJumping = true;
+            playerRb.velocity = new Vector2(playerRb.velocity.x, jumpPower);
+            hasJumped = true;
         }
     }
 
-    void FixedUpdate() 
+    private void Move()
     {
-        playerRb.velocity = new Vector2(moveDirection * speed, playerRb.velocity.y);    
+        playerRb.velocity = new Vector2(moveDirection * speed, playerRb.velocity.y);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (((1 << collision.gameObject.layer) & groundLayer) != 0 && isJumping) // Check if collided object is on the ground layer and the player is jumping
+        {
+            hasJumped = false;
+            isJumping = false;
+        }
+    }
+
+    private void Animate()
+    {
+        if (moveDirection > 0 && !facingRight)
+        {
+            FlipCharacter();
+        }
+        else if (moveDirection < 0 && facingRight)
+        {
+            FlipCharacter();
+        }
+        animator.SetFloat("horizontalValue", Mathf.Abs(moveDirection));
+        //animator.SetBool("isJumping", isJumping);
     }
 
     private void FlipCharacter()
@@ -50,5 +73,4 @@ public class NewBehaviourScript : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
-
 }
