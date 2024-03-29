@@ -81,6 +81,6 @@ public class SpriteDisplayController : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         // Load the next scene
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }
