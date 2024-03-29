@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -22,12 +24,44 @@ public class NewBehaviourScript : MonoBehaviour
     {
         ProcessInputs();
         Animate();
+        TryChangeScene();
     }
 
     void FixedUpdate()
     {
         Move();
     }
+
+    public Transform boxCheck; // Assign this to a point near the player in the Inspector
+    public float boxCheckRadius = 1.0f; // Adjust the radius as needed for your game
+    public LayerMask boxLayer; // Assign a layer to your box and set it here in the Inspector
+
+    private bool IsPlayerNearBox()
+    {
+
+        Debug.Log(boxCheck.position);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(boxCheck.position, boxCheckRadius, boxLayer);
+        Debug.Log(colliders);
+        if (colliders.Length > 0)
+        {
+            Debug.Log("tes11");
+            return true; // Player is near the box
+        }
+        Debug.Log("tesr");
+        return false; // Player is not near the box
+    }
+
+
+    private void TryChangeScene()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && IsPlayerNearBox())
+        {
+            Debug.Log("Changing Scene");
+            SceneManager.LoadScene("SlidingTilePuzzle");
+        }
+    }
+
+
 
     private void ProcessInputs()
     {
