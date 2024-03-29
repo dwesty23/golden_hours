@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class ST_PuzzleDisplay : MonoBehaviour 
 {
@@ -233,6 +234,8 @@ public class ST_PuzzleDisplay : MonoBehaviour
 		if(Complete)
 		{
 			Debug.Log("Puzzle Complete!");
+			 SceneManager.LoadScene("memory1");
+
 		}
 
 		yield return null;

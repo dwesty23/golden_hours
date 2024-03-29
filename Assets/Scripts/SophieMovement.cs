@@ -61,14 +61,6 @@ public class NewBehaviourScript : MonoBehaviour
         }
     }
 
-    void OnDrawGizmosSelected()
-    {
-        if (boxCheck == null)
-            return;
-
-        Gizmos.DrawWireSphere(boxCheck.position, boxCheckRadius);
-    }
-
 
 
     private void ProcessInputs()
