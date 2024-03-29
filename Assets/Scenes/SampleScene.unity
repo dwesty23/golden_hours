@@ -563,9 +563,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
---- !u!68 &214185488
-=======
 --- !u!1 &472317943
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,7 +649,6 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &472317946
->>>>>>> 40b0a6dd0fa91b2879ecee539a7c928894351189
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -785,8 +781,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &708180293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1100,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
->>>>>>> 40b0a6dd0fa91b2879ecee539a7c928894351189
 --- !u!1 &1091760532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,8 +1202,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &1197967120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,7 +1264,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1058818795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 40b0a6dd0fa91b2879ecee539a7c928894351189
 --- !u!1 &1653871116
 GameObject:
   m_ObjectHideFlags: 0
