@@ -39,7 +39,7 @@ public class NewBehaviourScript : MonoBehaviour
     private bool IsPlayerNearBox()
     {
 
-        Debug.Log(boxCheck.position);
+        // Debug.Log(boxCheck.position);
         Collider2D[] colliders = Physics2D.OverlapCircleAll(boxCheck.position, boxCheckRadius, boxLayer);
         Debug.Log(colliders);
         if (colliders.Length > 0)
