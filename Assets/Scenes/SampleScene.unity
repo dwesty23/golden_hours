@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 114504298}
   - component: {fileID: 114504297}
   m_Layer: 0
-  m_Name: Sophie Standing Left_ver1
+  m_Name: Sophie
   m_TagString: Sophie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1195,7 +1195,7 @@ GameObject:
   - component: {fileID: 1949251592}
   - component: {fileID: 1949251594}
   m_Layer: 0
-  m_Name: Maya_left_v4
+  m_Name: Maya
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
