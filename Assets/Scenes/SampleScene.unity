@@ -221,7 +221,6 @@ GameObject:
   - component: {fileID: 114504299}
   - component: {fileID: 114504298}
   - component: {fileID: 114504297}
-  - component: {fileID: 114504301}
   m_Layer: 0
   m_Name: Sophie Standing Left_ver1
   m_TagString: Sophie
@@ -403,18 +402,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &114504301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114504294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68874a48b762c4e5fa06bc8f0b93fa04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &160923623
 GameObject:
   m_ObjectHideFlags: 0
