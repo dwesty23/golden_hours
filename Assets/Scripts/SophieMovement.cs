@@ -8,7 +8,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float speed;
     public float jumpPower;
     public float moveDirection;
-    private bool facingRight = true;
+    private bool facingRight = false;
     private bool isJumping = false;
     private bool hasJumped = false;
     private Animator animator;
