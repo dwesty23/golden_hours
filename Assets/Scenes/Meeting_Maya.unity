@@ -949,7 +949,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 0
   m_HDR: 1
-  m_AllowMSAA: 0
+  m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 0
@@ -1660,6 +1660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51d1957f65384e56a72c426582c300b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  outlineMaterial: {fileID: 2100000, guid: 07c0af5911c91446e888a5871ec80cd7, type: 2}
   SophieTransform: {fileID: 114504296}
   mayaCries: {fileID: 1949251595}
   maxCryVolume: 1
