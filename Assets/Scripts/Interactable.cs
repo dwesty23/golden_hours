@@ -18,7 +18,7 @@ public abstract class Interactable : MonoBehaviour
         // Get the Outline component
         outline = GetComponent<Outline>();
     }
-    private void onTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
@@ -29,7 +29,7 @@ public abstract class Interactable : MonoBehaviour
         }
     }
     
-    private void onTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
