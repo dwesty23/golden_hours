@@ -8,16 +8,15 @@ using System;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText; // TextMeshProUGUI to display dialogues
-
-    private Queue<string> dialogues; // Queue to store dialogues
+    private Queue<string> dialogues = new Queue<string>(); // Queue to store dialogues
+    private bool isCurrentlyTyping = false; // Flag to check if currently typing
+    private string currentDialogue = ""; // Store the current dialogue
+    private string currentSpeaker = ""; // Store the current speaker's name
 
     public float typingSpeed = 0.05f; // Speed of typing effect
-    public float pauseAfterDialogue = 1f; // Pause after each dialogue
 
     void Start()
     {
-        dialogues = new Queue<string>();
-
         // Enqueue the dialogues
         dialogues.Enqueue("Sophie: Excuse me? Excuse me!");
         dialogues.Enqueue("Officer: Hm?");
@@ -35,6 +34,27 @@ public class DialogueManager : MonoBehaviour
         DisplayNextDialogue();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (isCurrentlyTyping)
+            {
+                StopAllCoroutines(); // Stop the typing coroutine
+                dialogueText.text = currentSpeaker + currentDialogue; // Display the full dialogue instantly
+                isCurrentlyTyping = false; // Update flag
+            }
+            else if (!isCurrentlyTyping && dialogues.Count > 0)
+            {
+                DisplayNextDialogue(); // Display next dialogue
+            }
+            else
+            {
+                EndDialogue();
+            }
+        }
+    }
+
     public void DisplayNextDialogue()
     {
         if (dialogues.Count == 0)
@@ -43,28 +63,44 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string dialogue = dialogues.Dequeue();
+        currentDialogue = dialogues.Dequeue();
+        SeparateDialogue(currentDialogue);
         StopAllCoroutines(); // Stop current coroutine to ensure no overlap
-        StartCoroutine(TypeDialogue(dialogue));
+        StartCoroutine(TypeDialogue(currentDialogue));
     }
 
     IEnumerator TypeDialogue(string dialogue)
     {
-        dialogueText.text = ""; // Clear text at the start
+        isCurrentlyTyping = true; // Update flag
+        dialogueText.text = currentSpeaker; // Start with the speaker's name
         foreach (char letter in dialogue.ToCharArray())
         {
             dialogueText.text += letter; // Add each letter one by one
             yield return new WaitForSeconds(typingSpeed); // Wait between each letter
         }
         
-        yield return new WaitForSeconds(pauseAfterDialogue); // Wait after the dialogue is complete before proceeding
-
-        DisplayNextDialogue(); // Automatically proceed to next dialogue
+        isCurrentlyTyping = false; // Update flag
     }
 
     void EndDialogue()
     {
         SceneManager.LoadScene(2); // Load next scene after dialogue ends
     }
+
+    private void SeparateDialogue(string fullDialogue)
+    {
+        int colonIndex = fullDialogue.IndexOf(':');
+        if (colonIndex != -1)
+        {
+            currentSpeaker = fullDialogue.Substring(0, colonIndex + 1) + " "; // Include the colon and space
+            currentDialogue = fullDialogue.Substring(colonIndex + 2); // Skip the ": " to get the dialogue
+        }
+        else // If no colon found, treat the whole string as dialogue
+        {
+            currentSpeaker = "";
+            currentDialogue = fullDialogue;
+        }
+    }
 }
+
 
