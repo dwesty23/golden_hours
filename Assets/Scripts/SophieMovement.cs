@@ -42,7 +42,6 @@ public class SophieMovement : MonoBehaviour
 
         // Debug.Log(boxCheck.position);
         Collider2D[] colliders = Physics2D.OverlapCircleAll(boxCheck.position, boxCheckRadius, boxLayer);
-        Debug.Log(colliders);
         if (colliders.Length > 0)
         {
             return true; // Player is near the box
