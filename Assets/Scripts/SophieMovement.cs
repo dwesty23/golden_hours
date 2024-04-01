@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class NewBehaviourScript : MonoBehaviour
+public class SophieMovement : MonoBehaviour
 {
     public Rigidbody2D playerRb;
     public float speed;
@@ -13,6 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
     private bool hasJumped = false;
     private Animator animator;
     public LayerMask groundLayer;
+    private Vector2 boxSize = new Vector2(0.1f, 1f);
 
     void Start()
     {
@@ -44,10 +45,8 @@ public class NewBehaviourScript : MonoBehaviour
         Debug.Log(colliders);
         if (colliders.Length > 0)
         {
-            Debug.Log("tes11");
             return true; // Player is near the box
         }
-        Debug.Log("tesr");
         return false; // Player is not near the box
     }
 
@@ -71,6 +70,12 @@ public class NewBehaviourScript : MonoBehaviour
             isJumping = true;
             playerRb.velocity = new Vector2(playerRb.velocity.x, jumpPower);
             hasJumped = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            CheckInteraction();
+            Debug.Log("E key pressed");
         }
     }
 
@@ -106,5 +111,22 @@ public class NewBehaviourScript : MonoBehaviour
     {
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    private void CheckInteraction()
+    {
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
+
+        if (hits.Length > 0)
+        {
+            foreach (RaycastHit2D rc in hits)
+            {
+                if (rc.transform.GetComponent<Interactable>())
+                {
+                    rc.transform.GetComponent<Interactable>().Interact();
+                    return;
+                }
+            }
+        }
     }
 }
