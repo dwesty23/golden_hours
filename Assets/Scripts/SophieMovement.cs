@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 
 public class SophieMovement : MonoBehaviour
 {
@@ -25,41 +23,12 @@ public class SophieMovement : MonoBehaviour
     {
         ProcessInputs();
         Animate();
-        TryChangeScene();
     }
 
     void FixedUpdate()
     {
         Move();
     }
-
-    public Transform boxCheck; // Assign this to a point near the player in the Inspector
-    public float boxCheckRadius = 1.0f; // Adjust the radius as needed for your game
-    public LayerMask boxLayer; // Assign a layer to your box and set it here in the Inspector
-
-    private bool IsPlayerNearBox()
-    {
-
-        // Debug.Log(boxCheck.position);
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(boxCheck.position, boxCheckRadius, boxLayer);
-        if (colliders.Length > 0)
-        {
-            return true; // Player is near the box
-        }
-        return false; // Player is not near the box
-    }
-
-
-    private void TryChangeScene()
-    {
-        if (Input.GetKeyDown(KeyCode.E) && IsPlayerNearBox())
-        {
-            Debug.Log("Changing Scene");
-            SceneManager.LoadScene("SlidingTilePuzzle");
-        }
-    }
-
-
 
     private void ProcessInputs()
     {
