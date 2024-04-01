@@ -9,33 +9,38 @@ public abstract class Interactable : MonoBehaviour
         GetComponent<BoxCollider2D>().isTrigger = true;
     }
 
-    private Outline outline;
+    private OutlineEffect outlineEffect;
 
     public abstract void Interact();
 
-    private void Start()
+    private void Awake()
     {
-        // Get the Outline component
-        outline = GetComponent<Outline>();
+        // Get the OutlineEffect component
+        outlineEffect = GetComponent<OutlineEffect>();
+        Debug.Log(outlineEffect);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Sophie"))
         {
-            if (outline != null)
+            Debug.Log("Sophie is near the object. Press E to interact.");
+            Debug.Log(outlineEffect);
+            if (outlineEffect != null)
             {
-                outline.enabled = true;
+                outlineEffect.enabled = true;
             }
         }
     }
     
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Sophie")
         {
-            if (outline != null)
+            Debug.Log("Sophie is no longer near the object.");
+            Debug.Log(outlineEffect);
+            if (outlineEffect != null)
             {
-                outline.enabled = false;
+                outlineEffect.enabled = false;
             }
         }
     }
