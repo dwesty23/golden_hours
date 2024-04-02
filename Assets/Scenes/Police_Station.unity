@@ -330,8 +330,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f2c3be8ba8d404d9f845d45d592a6ecc, type: 2}
-  m_sharedMaterial: {fileID: -1703435673750708970, guid: f2c3be8ba8d404d9f845d45d592a6ecc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 56
   m_fontSizeMax: 56
-  m_fontStyle: 8
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -604,8 +604,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 994648288}
-  typingSpeed: 0.1
-  pauseAfterDialogue: 1
+  sophieFont: {fileID: 11400000, guid: f2c3be8ba8d404d9f845d45d592a6ecc, type: 2}
+  officerFont: {fileID: 11400000, guid: 8f1d367c7200394449de0259a51b01d4, type: 2}
+  typingSpeed: 0.12
 --- !u!4 &1739839241
 Transform:
   m_ObjectHideFlags: 0

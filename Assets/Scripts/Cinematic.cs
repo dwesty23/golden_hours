@@ -8,12 +8,16 @@ using System;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText; // TextMeshProUGUI to display dialogues
+
+    public TMP_FontAsset sophieFont; // Font for Sophie's dialogues
+    public TMP_FontAsset officerFont; // Font for Officer's dialogues
+
     private Queue<string> dialogues = new Queue<string>(); // Queue to store dialogues
     private bool isCurrentlyTyping = false; // Flag to check if currently typing
     private string currentDialogue = ""; // Store the current dialogue
     private string currentSpeaker = ""; // Store the current speaker's name
 
-    public float typingSpeed = 0.05f; // Speed of typing effect
+    public float typingSpeed = 0.12f; // Speed of typing effect
 
     void Start()
     {
@@ -41,16 +45,17 @@ public class DialogueManager : MonoBehaviour
             if (isCurrentlyTyping)
             {
                 StopAllCoroutines(); // Stop the typing coroutine
-                dialogueText.text = currentSpeaker + currentDialogue; // Display the full dialogue instantly
+                // Ensure the full dialogue is displayed with the proper spacing after the colon
+                dialogueText.text = currentSpeaker + " " + currentDialogue; // Append the space correctly
                 isCurrentlyTyping = false; // Update flag
             }
             else if (!isCurrentlyTyping && dialogues.Count > 0)
             {
-                DisplayNextDialogue(); // Display next dialogue
+                DisplayNextDialogue(); // Proceed to display the next dialogue
             }
             else
             {
-                EndDialogue();
+                EndDialogue(); // Or handle the end of dialogues appropriately
             }
         }
     }
@@ -71,15 +76,16 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeDialogue(string dialogue)
     {
-        isCurrentlyTyping = true; // Update flag
-        dialogueText.text = currentSpeaker; // Start with the speaker's name
-        foreach (char letter in dialogue.ToCharArray())
+        isCurrentlyTyping = true;
+        dialogueText.text = currentSpeaker + " "; // Set the speaker's name and colon here, adding space after colon
+
+        foreach (char letter in dialogue.ToCharArray()) // Use the dialogue part without the speaker's name
         {
             dialogueText.text += letter; // Add each letter one by one
-            yield return new WaitForSeconds(typingSpeed); // Wait between each letter
+            yield return new WaitForSeconds(typingSpeed);
         }
-        
-        isCurrentlyTyping = false; // Update flag
+
+        isCurrentlyTyping = false;
     }
 
     void EndDialogue()
@@ -92,13 +98,33 @@ public class DialogueManager : MonoBehaviour
         int colonIndex = fullDialogue.IndexOf(':');
         if (colonIndex != -1)
         {
-            currentSpeaker = fullDialogue.Substring(0, colonIndex + 1) + " "; // Include the colon and space
-            currentDialogue = fullDialogue.Substring(colonIndex + 2); // Skip the ": " to get the dialogue
+            // Extract the speaker's name from the dialogue string
+            currentSpeaker = fullDialogue.Substring(0, colonIndex + 1); // Include the colon
+
+            // Extract the dialogue part, keeping the name and colon for display
+            currentDialogue = fullDialogue.Substring(colonIndex + 2); // Start after the colon and space
+
+            // Change the font based on the speaker
+            switch (currentSpeaker.ToLower().Trim(':'))
+            {
+                case "sophie":
+                    dialogueText.font = sophieFont;
+                    Console.WriteLine("Sophie's font");
+                    break;
+                case "officer":
+                    dialogueText.font = officerFont;
+                    Console.WriteLine("Officer's font");
+                    break;
+                default:
+                    dialogueText.font = sophieFont; // Use a default font if no specific character is matched
+                    break;
+            }
         }
-        else // If no colon found, treat the whole string as dialogue
+        else // No colon found, treat the whole string as dialogue
         {
-            currentSpeaker = "";
-            currentDialogue = fullDialogue;
+            currentSpeaker = ""; // Clear the speaker
+            currentDialogue = fullDialogue; // Use the original string
+            dialogueText.font = sophieFont; // Use a default font
         }
     }
 }
