@@ -444,11 +444,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  boxCheck: {fileID: 77626924}
-  boxCheckRadius: 1
-  boxLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!70 &114504299
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1661,7 +1656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  outlineMaterial: {fileID: 2100000, guid: 07c0af5911c91446e888a5871ec80cd7, type: 2}
+  outlineMaterial: {fileID: 2100000, guid: aae990fd25fb849e4ac3c47eb085d2de, type: 2}
   SophieTransform: {fileID: 114504296}
   mayaCries: {fileID: 1949251595}
   maxCryVolume: 1
