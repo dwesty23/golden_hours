@@ -77,12 +77,29 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeDialogue(string dialogue)
     {
         isCurrentlyTyping = true;
-        dialogueText.text = currentSpeaker + " "; // Set the speaker's name and colon here, adding space after colon
+        dialogueText.text = currentSpeaker + " "; // Append a space after the speaker's name for readability
 
-        foreach (char letter in dialogue.ToCharArray()) // Use the dialogue part without the speaker's name
+        int i = 0;
+        // Start iterating from the point after the speaker's name to skip typing it out again
+        while (i < dialogue.Length)
         {
-            dialogueText.text += letter; // Add each letter one by one
-            yield return new WaitForSeconds(typingSpeed);
+            if (dialogue[i] == '<')
+            {
+                int tagClose = dialogue.IndexOf('>', i);
+                if (tagClose != -1)
+                {
+                    // Instantly append the entire tag to the text
+                    dialogueText.text += dialogue.Substring(i, tagClose - i + 1);
+                    i = tagClose; // Skip ahead to the end of the tag
+                }
+            }
+            else
+            {
+                // Type out the dialogue character by character
+                dialogueText.text += dialogue[i];
+                yield return new WaitForSeconds(typingSpeed);
+            }
+            i++;
         }
 
         isCurrentlyTyping = false;
@@ -98,35 +115,35 @@ public class DialogueManager : MonoBehaviour
         int colonIndex = fullDialogue.IndexOf(':');
         if (colonIndex != -1)
         {
-            // Extract the speaker's name from the dialogue string
-            currentSpeaker = fullDialogue.Substring(0, colonIndex + 1); // Include the colon
+            string speaker = fullDialogue.Substring(0, colonIndex).ToLower(); // Get the speaker in lowercase
+            currentDialogue = fullDialogue.Substring(colonIndex + 2); // Extract dialogue part
 
-            // Extract the dialogue part, keeping the name and colon for display
-            currentDialogue = fullDialogue.Substring(colonIndex + 2); // Start after the colon and space
-
-            // Change the font based on the speaker
-            switch (currentSpeaker.ToLower().Trim(':'))
+            switch (speaker)
             {
                 case "sophie":
-                    dialogueText.font = sophieFont;
-                    Console.WriteLine("Sophie's font");
+                    // For Sophie: everything in lowercase, no extra styling
+                    currentSpeaker = "Sophie:"; // Keeping the initial capital for names for readability
+                    currentDialogue = currentDialogue.ToLower(); // Convert dialogue to lowercase
+                    dialogueText.font = sophieFont; // Assuming you have a specific font for Sophie
                     break;
                 case "officer":
-                    dialogueText.font = officerFont;
-                    Console.WriteLine("Officer's font");
+                    // For the Officer: bold and uppercase
+                    currentSpeaker = "<b>OFFICER:</b>"; // Make name bold and uppercase
+                    currentDialogue = $"<b>{currentDialogue.ToUpper()}</b>"; // Convert dialogue to uppercase and make bold
+                    dialogueText.font = officerFont; // Assuming you have a specific font for the Officer
                     break;
                 default:
-                    dialogueText.font = sophieFont; // Use a default font if no specific character is matched
+                    // Default case if needed
                     break;
             }
         }
-        else // No colon found, treat the whole string as dialogue
+        else // If no colon is found, treat the whole string as dialogue
         {
-            currentSpeaker = ""; // Clear the speaker
-            currentDialogue = fullDialogue; // Use the original string
-            dialogueText.font = sophieFont; // Use a default font
+            currentSpeaker = ""; // No speaker name
+            currentDialogue = fullDialogue; // Use the original string as is
         }
     }
 }
+
 
 
