@@ -4,83 +4,94 @@ using System.Collections;
 
 public class SpriteDisplayController : MonoBehaviour
 {
-    public GameObject firstSprite;   // Assign your first sprite in the Inspector
-    public GameObject secondSprite;  // Assign your second sprite in the Inspector
-    public GameObject thirdSprite;   // Assign your third sprite in the Inspector
-    public GameObject fourthSprite;  // Assign your fourth sprite in the Inspector
-    public GameObject fifthSprite;   // Assign your fifth sprite in the Inspector
+    public GameObject[] sprites;
+    private int currentSprite = 0;
+    private Coroutine spriteCoroutine;
 
     void Start()
     {
         // Start with only the first sprite active
-        firstSprite.SetActive(true);
-        secondSprite.SetActive(false);
-        thirdSprite.SetActive(false);
-        fourthSprite.SetActive(false);
-        fifthSprite.SetActive(false);
+        StartCoroutine(ShowSprite(0));
 
-        // Start the coroutine to show the second sprite
-        StartCoroutine(ShowSecondSpriteAfterDelay(5f));
-        StartCoroutine(ShowThirdSpriteAfterDelay(10f));
-        StartCoroutine(ShowFourthSpriteAfterDelay(15f));
-        StartCoroutine(ShowFifthSpriteAfterDelay(20f));
+        // Start the coroutine to show the next sprite
+        spriteCoroutine = StartCoroutine(ShowNextSpriteAfterDelay(5f));
     }
 
-    IEnumerator ShowSecondSpriteAfterDelay(float delay)
+    void Update()
     {
-        // Wait for the specified delay (5 seconds)
-        yield return new WaitForSeconds(delay);
-
-        // Render the second sprite
-        firstSprite.SetActive(false);
-        secondSprite.SetActive(true);
-
-        // Wait for the second sprite to become active
-        yield return new WaitUntil(() => secondSprite.activeInHierarchy);
+        // If the space key is pressed, stop the current coroutine and show the next sprite
+        if (Input.GetKeyDown(KeyCode.Space))
+        {   
+            if (currentSprite < sprites.Length - 1 && spriteCoroutine != null)
+            {
+                StopCoroutine(spriteCoroutine);
+                ShowNextSprite();
+            }
+            if (currentSprite == sprites.Length - 1)
+            {
+                StopCoroutine(spriteCoroutine);
+                SceneManager.LoadScene(2);
+            }
+        }
     }
 
-    IEnumerator ShowThirdSpriteAfterDelay(float delay)
+    private IEnumerator ShowSprite(int index)
     {
-        // Wait for the specified delay (10 seconds)
-        yield return new WaitForSeconds(delay);
+        // Deactivate all sprites
+        foreach (GameObject sprite in sprites)
+        {
+            sprite.SetActive(false);
+        }
+        if (index == sprites.Length - 1)
+        {
+            SceneManager.LoadScene(2);
+        }
+         // Activate the selected sprite
+        GameObject selectedSprite = sprites[index];
+        selectedSprite.SetActive(true);
 
-        // Render the third sprite
-        secondSprite.SetActive(false);
-        thirdSprite.SetActive(true);
+        // Get the sprite renderer
+        SpriteRenderer spriteRenderer = selectedSprite.GetComponent<SpriteRenderer>();
 
-        // Wait for the third sprite to become active
-        yield return new WaitUntil(() => thirdSprite.activeInHierarchy);
+        // Set the initial color with 0 alpha
+        Color color = spriteRenderer.color;
+        color.a = 0f;
+        spriteRenderer.color = color;
+
+        // Fade in over 1 second
+        float duration = 1f;
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            color.a = Mathf.Clamp01(elapsed / duration);
+            spriteRenderer.color = color;
+            yield return null;
+        }
+        // Activate the sprite at the specified index
+        if (index < 0 || index >= sprites.Length)
+        {
+            Debug.LogWarning("Invalid sprite index: " + index);
+            yield break;
+        }
+        currentSprite = index;
     }
 
-    IEnumerator ShowFourthSpriteAfterDelay(float delay)
+    private void ShowNextSprite()
     {
-        // Wait for the specified delay (15 seconds)
-        yield return new WaitForSeconds(delay);
+        // Show the next sprite
+        StartCoroutine(ShowSprite(currentSprite + 1));
 
-        // Render the fourth sprite
-        thirdSprite.SetActive(false);
-        fourthSprite.SetActive(true);
-
-        // Wait for the fourth sprite to become active
-        yield return new WaitUntil(() => fourthSprite.activeInHierarchy);
+        // Start the coroutine to show the next sprite after a delay
+        spriteCoroutine = StartCoroutine(ShowNextSpriteAfterDelay(5f));
     }
 
-    IEnumerator ShowFifthSpriteAfterDelay(float delay)
+    private IEnumerator ShowNextSpriteAfterDelay(float delay)
     {
-        // Wait for the specified delay (20 seconds)
+        // Wait for the specified delay
         yield return new WaitForSeconds(delay);
 
-        // Render the fifth sprite
-        fourthSprite.SetActive(false);
-        fifthSprite.SetActive(true);
-
-        // Wait for the fifth sprite to become active
-        yield return new WaitUntil(() => fifthSprite.activeInHierarchy);
-
-        // Wait for another 5 seconds
-        yield return new WaitForSeconds(5f);
-
-        // Load the next scene
-        SceneManager.LoadScene(2);
+        // Show the next sprite
+        ShowNextSprite();
     }
 }
