@@ -320,7 +320,7 @@ Transform:
   m_GameObject: {fileID: 114504294}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: -2, z: 0}
+  m_LocalPosition: {x: 4, y: -1.868, z: 0}
   m_LocalScale: {x: 0.35539213, y: 0.30333364, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -401,7 +401,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.18, y: -0.27}
-  m_Size: {x: 2.12, y: 7.7}
+  m_Size: {x: 1.73, y: 7.7}
   m_Direction: 0
 --- !u!50 &114504300
 Rigidbody2D:
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 214185487}
   - component: {fileID: 214185486}
   - component: {fileID: 472317946}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Street_v1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

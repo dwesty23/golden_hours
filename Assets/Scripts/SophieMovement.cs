@@ -33,7 +33,7 @@ public class SophieMovement : MonoBehaviour
     private void ProcessInputs()
     {
         moveDirection = Input.GetAxis("Horizontal");
-        if (Input.GetKeyDown(KeyCode.Space) && !isJumping && !hasJumped)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && !isJumping && !hasJumped)
         {
             isJumping = true;
             playerRb.velocity = new Vector2(playerRb.velocity.x, jumpPower);
