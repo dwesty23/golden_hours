@@ -60,7 +60,7 @@ public class DialogueManagerMM : MonoBehaviour
 
     void EndDialogue()
     {
-        SceneManager.LoadScene(2); // Load next scene after dialogue ends
+        SceneManager.LoadScene(3); // Load next scene after dialogue ends
     }
 }
 
