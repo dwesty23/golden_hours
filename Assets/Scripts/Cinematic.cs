@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System;
@@ -8,15 +9,15 @@ using System;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText; // TextMeshProUGUI to display dialogues
-
+    public Image characterImage; // Image to display character portraits of whose speaking
+    public Sprite sophieSpeakingSprite, sophieNotSpeakingSprite; // Sprites for Sophie
+    public Sprite officerSpeakingSprite, officerNotSpeakingSprite; // Sprites for Officer
     public TMP_FontAsset sophieFont; // Font for Sophie's dialogues
     public TMP_FontAsset officerFont; // Font for Officer's dialogues
-
     private Queue<string> dialogues = new Queue<string>(); // Queue to store dialogues
     private bool isCurrentlyTyping = false; // Flag to check if currently typing
     private string currentDialogue = ""; // Store the current dialogue
     private string currentSpeaker = ""; // Store the current speaker's name
-
     public float typingSpeed = 0.12f; // Speed of typing effect
 
     void Start()
@@ -45,15 +46,15 @@ public class DialogueManager : MonoBehaviour
             if (isCurrentlyTyping)
             {
                 StopAllCoroutines(); // Stop the typing coroutine
-                // Ensure the full dialogue is displayed with the proper spacing after the colon
-                dialogueText.text = currentSpeaker + " " + currentDialogue; // Append the space correctly
+                dialogueText.text = currentSpeaker + " " + currentDialogue; // Display the full dialogue instantly
                 isCurrentlyTyping = false; // Update flag
+                UpdateCharacterImage(false); // Ensure the character image updates to not speaking
             }
             else if (!isCurrentlyTyping && dialogues.Count > 0)
             {
                 DisplayNextDialogue(); // Proceed to display the next dialogue
             }
-            else
+            else if (!isCurrentlyTyping && dialogues.Count == 0)
             {
                 EndDialogue(); // Or handle the end of dialogues appropriately
             }
@@ -68,14 +69,14 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        currentDialogue = dialogues.Dequeue();
-        SeparateDialogue(currentDialogue);
-        StopAllCoroutines(); // Stop current coroutine to ensure no overlap
+        string fullDialogue = dialogues.Dequeue();
+        SeparateDialogue(fullDialogue);
         StartCoroutine(TypeDialogue(currentDialogue));
     }
 
     IEnumerator TypeDialogue(string dialogue)
     {
+        UpdateCharacterImage(true); // Set to speaking state
         isCurrentlyTyping = true;
         dialogueText.text = currentSpeaker + " "; // Append a space after the speaker's name for readability
 
@@ -102,7 +103,25 @@ public class DialogueManager : MonoBehaviour
             i++;
         }
 
+        UpdateCharacterImage(false); // Set to not speaking state once done
         isCurrentlyTyping = false;
+    }
+
+    private void UpdateCharacterImage(bool isSpeaking)
+    {
+        // Default to not speaking sprites initially
+        Sprite newSprite = sophieNotSpeakingSprite; // Default sprite
+
+        if (currentSpeaker.ToLower().Contains("sophie"))
+        {
+            newSprite = isSpeaking ? sophieSpeakingSprite : sophieNotSpeakingSprite;
+        }
+        else if (currentSpeaker.ToLower().Contains("officer"))
+        {
+            newSprite = isSpeaking ? officerSpeakingSprite : officerNotSpeakingSprite;
+        }
+
+        characterImage.sprite = newSprite; // Update the sprite
     }
 
     void EndDialogue()
