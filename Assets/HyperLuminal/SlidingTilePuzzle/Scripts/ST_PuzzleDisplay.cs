@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class ST_PuzzleDisplay : MonoBehaviour 
 {
+	public ImageSlider imageSlider;
 	// this puzzle texture.
 	public Texture PuzzleImage;
+	public Texture PuzzleImage2;
+	public Texture PuzzleImage3;
 
 	// the width and height of the puzzle in tiles.
 	public int Height = 3;
 	public int Width  = 3;
+
+	// tracking completion of puzzle.
+	public int PuzzleComplete = 0;
 
 	// additional scaling value.
 	public Vector3 PuzzleScale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -234,7 +240,44 @@ public class ST_PuzzleDisplay : MonoBehaviour
 		if(Complete)
 		{
 			Debug.Log("Puzzle Complete!");
-			 SceneManager.LoadScene("memory1");
+
+			// upgrade the image.
+			imageSlider.UpgradeImage();
+
+			// reset the puzzle.
+			Complete = false;
+			// set new image for the puzzle.
+			PuzzleImage = PuzzleImage2;
+
+	
+
+
+			// clear the display positions.
+			DisplayPositions.Clear();
+
+			// destroy the old puzzle tiles.
+			for(int j = Height - 1; j >= 0; j--)
+			{
+				for(int i = 0; i < Width; i++)
+				{
+					Destroy(TileDisplayArray[i,j]);
+				}
+			}
+
+			// create the new puzzle tiles.
+			// wait for the image to be updated.
+			yield return new WaitForSeconds(2f);
+
+			// reset tile display array.
+			TileDisplayArray = null;
+
+
+
+
+			CreatePuzzleTiles();
+
+			StartCoroutine(JugglePuzzle());
+			PuzzleComplete++;
 
 		}
 
@@ -268,8 +311,13 @@ public class ST_PuzzleDisplay : MonoBehaviour
 		// using the width and height variables create an array.
 		TileDisplayArray = new GameObject[Width,Height];
 
+
 		// set the scale and position values for this puzzle.
 		Scale = new Vector3(1.0f/Width, 1.0f, 1.0f/Height);
+
+		Debug.Log("Scale: " + Scale);
+
+
 		Tile.transform.localScale = Scale;
 
 		// used to count the number of tiles and assign each tile a correct value.
@@ -285,12 +333,15 @@ public class ST_PuzzleDisplay : MonoBehaviour
 				                       0.0f, 
 				                      ((Scale.z * (j + 0.5f))-(Scale.z * (Height/2.0f))) * (10.0f + SeperationBetweenTiles));
 
+
 				// set this location on the display grid.
 				DisplayPositions.Add(Position);
 
 				// spawn the object into play.
 				TileDisplayArray[i,j] = Instantiate(Tile, new Vector3(0.0f, 0.0f, 0.0f) , Quaternion.Euler(90.0f, -180.0f, 0.0f)) as GameObject;
 				TileDisplayArray[i,j].gameObject.transform.parent = this.transform;
+				TileDisplayArray[i,j].gameObject.transform.localScale= Scale;
+				Debug.Log("TileDisplayArray[i,j]: " + TileDisplayArray[i,j]);
 
 				// set and increment the display number counter.
 				ST_PuzzleTile thisTile = TileDisplayArray[i,j].GetComponent<ST_PuzzleTile>();
@@ -312,15 +363,10 @@ public class ST_PuzzleDisplay : MonoBehaviour
 				// assign the new material to this tile for display.
 				TileDisplayArray[i,j].GetComponent<Renderer>().material = thisTileMaterial;
 			}
+
+			
 		}
 
-		/*
-		// Enable an impossible puzzle for fun!
-		// switch the second and third grid location textures.
-		Material thisTileMaterial2 = TileDisplayArray[1,3].GetComponent<Renderer>().material;
-		Material thisTileMaterial3 = TileDisplayArray[2,3].GetComponent<Renderer>().material;
-		TileDisplayArray[1,3].GetComponent<Renderer>().material = thisTileMaterial3;
-		TileDisplayArray[2,3].GetComponent<Renderer>().material = thisTileMaterial2;
-		*/
+
 	}
 }
