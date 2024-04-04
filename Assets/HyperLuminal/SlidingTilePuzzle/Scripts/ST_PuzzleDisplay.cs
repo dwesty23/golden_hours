@@ -239,6 +239,8 @@ public class ST_PuzzleDisplay : MonoBehaviour
 		// if we are still complete then all the tiles are correct.
 		if(Complete)
 		{
+
+
 			Debug.Log("Puzzle Complete!");
 
 			// upgrade the image.
@@ -246,8 +248,18 @@ public class ST_PuzzleDisplay : MonoBehaviour
 
 			// reset the puzzle.
 			Complete = false;
-			// set new image for the puzzle.
-			PuzzleImage = PuzzleImage2;
+
+
+			if(PuzzleComplete == 0)
+			{
+				PuzzleImage = PuzzleImage2;
+
+			}
+			else if(PuzzleComplete == 1)
+			{
+				PuzzleImage = PuzzleImage3;
+
+			}
 
 	
 
@@ -265,19 +277,27 @@ public class ST_PuzzleDisplay : MonoBehaviour
 			}
 
 			// create the new puzzle tiles.
-			// wait for the image to be updated.
+
+
+
 			yield return new WaitForSeconds(2f);
+			if(PuzzleComplete == 2)
+			{
+				SceneManager.LoadScene("memory1");
+			}
+
 
 			// reset tile display array.
 			TileDisplayArray = null;
 
 
 
-
+			PuzzleComplete++;
 			CreatePuzzleTiles();
 
 			StartCoroutine(JugglePuzzle());
-			PuzzleComplete++;
+			
+			
 
 		}
 

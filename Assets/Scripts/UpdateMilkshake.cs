@@ -8,9 +8,10 @@ public class ImageSlider : MonoBehaviour
     public Sprite[] upgradedImages; // Array of sprites for upgraded images (length 3)
     public float slideDuration = 1.0f; // Duration of the slide
 
-    private int currentIndex = 0; // To keep track of the current pair of images
+    public int currentIndex = 0; // To keep track of the current pair of images
 
     // Call this method when the puzzle is completed
+   // Call this method when the puzzle is completed
     public void UpgradeImage()
     {
         if (currentIndex >= defaultImages.Length)
@@ -19,29 +20,26 @@ public class ImageSlider : MonoBehaviour
             return;
         }
 
-        // Start sliding out the current default image and sliding in the upgraded image
-        StartCoroutine(SlideOutIn(defaultImages[currentIndex], upgradedImages[currentIndex]));
+        StartCoroutine(SlideOutIn(currentIndex));
     }
 
-    private IEnumerator SlideOutIn(Image defaultImage, Sprite upgradedSprite)
+    private IEnumerator SlideOutIn(int index)
     {
-        // Create the upgraded image in the same position as the default one
+        Image defaultImage = defaultImages[index];
+        Sprite upgradedSprite = upgradedImages[index];
+
         Image upgradedImage = Instantiate(defaultImage, defaultImage.transform.parent);
         upgradedImage.sprite = upgradedSprite;
         upgradedImage.rectTransform.anchoredPosition = defaultImage.rectTransform.anchoredPosition;
         upgradedImage.gameObject.SetActive(true);
 
-        // Deactivate the default image
         defaultImage.gameObject.SetActive(false);
 
-        // Wait for half a second before starting the slide
         yield return new WaitForSeconds(1f);
 
-        // Calculate the end position to the right of the current position
         Vector2 startPosition = upgradedImage.rectTransform.anchoredPosition;
-        Vector2 endPosition = startPosition + Vector2.right * 700; // Adjust this value to move the image off-screen
+        Vector2 endPosition = startPosition + Vector2.right * 700;
 
-        // Start sliding the upgraded image to the right
         float time = 0;
         while (time <= slideDuration)
         {
@@ -51,37 +49,35 @@ public class ImageSlider : MonoBehaviour
             yield return null;
         }
 
-        // Deactivate the upgraded image after sliding off the screen
         upgradedImage.gameObject.SetActive(false);
 
-        // Optionally fade out the upgraded image here if you want a fading effect
-        // StartCoroutine(FadeOutImage(upgradedImage));
+        // Ensure the default image for the next round is updated if it's re-instantiated.
+        if (currentIndex + 1 < defaultImages.Length)
+        {
+            Image nextDefaultImage = Instantiate(defaultImages[currentIndex + 1], defaultImages[currentIndex + 1].transform.parent);
+            defaultImages[currentIndex + 1] = nextDefaultImage;
+        }
 
-        // Update the current index
         currentIndex++;
 
-        // Optionally call a method to slide in the next default image
-        StartCoroutine(SlideInNextImage());
+        StartCoroutine(SlideInNextImage(index + 1));
     }
 
-    private IEnumerator SlideInNextImage()
+    private IEnumerator SlideInNextImage(int index)
     {
-        if (currentIndex >= defaultImages.Length)
+        if (index >= defaultImages.Length)
         {
             Debug.LogError("All images have been upgraded!");
             yield break;
         }
 
-        // Create the next default image off-screen to the left
-        Image nextImage = Instantiate(defaultImages[currentIndex], defaultImages[currentIndex].transform.parent);
-        nextImage.rectTransform.anchoredPosition = defaultImages[currentIndex].rectTransform.anchoredPosition - Vector2.right * 700; // Adjust this value to move the image off-screen
+        Image nextImage = defaultImages[index]; // This now references the newly instantiated image.
+        nextImage.rectTransform.anchoredPosition -= Vector2.right * 700;
         nextImage.gameObject.SetActive(true);
 
-        // Calculate the end position to the right of the current position
         Vector2 startPosition = nextImage.rectTransform.anchoredPosition;
-        Vector2 endPosition = startPosition + Vector2.right * 700; // Adjust this value to move the image off-screen
+        Vector2 endPosition = startPosition + Vector2.right * 700;
 
-        // Start sliding the next default image to the right
         float time = 0;
         while (time <= slideDuration)
         {
@@ -90,16 +86,7 @@ public class ImageSlider : MonoBehaviour
             nextImage.rectTransform.anchoredPosition = Vector2.Lerp(startPosition, endPosition, t);
             yield return null;
         }
-
-        // Optionally fade in the next default image here if you want a fading effect
-        // StartCoroutine(FadeInImage(nextImage));
     }
 
-    // get image function for the puzzle
-    public Sprite GetImage()
-    {
-        return upgradedImages[currentIndex+1];
-
-    }
 
 }
