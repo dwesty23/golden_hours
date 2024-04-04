@@ -30,7 +30,7 @@ public class SpriteDisplayController : MonoBehaviour
             if (currentSprite == sprites.Length - 1)
             {
                 StopCoroutine(spriteCoroutine);
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene("Main");
             }
         }
     }
@@ -44,7 +44,7 @@ public class SpriteDisplayController : MonoBehaviour
         }
         if (index == sprites.Length - 1)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("Main");
         }
          // Activate the selected sprite
         GameObject selectedSprite = sprites[index];
