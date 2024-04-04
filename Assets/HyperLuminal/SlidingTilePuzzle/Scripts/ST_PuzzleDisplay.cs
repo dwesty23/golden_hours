@@ -190,7 +190,7 @@ public class ST_PuzzleDisplay : MonoBehaviour
 		yield return new WaitForSeconds(1.0f);
 
 		// hide a puzzle tile (one is always missing to allow the puzzle movement).
-		TileDisplayArray[0,0].GetComponent<ST_PuzzleTile>().Active = false;
+		TileDisplayArray[0,2].GetComponent<ST_PuzzleTile>().Active = false;
 
 		yield return new WaitForSeconds(1.0f);
 
