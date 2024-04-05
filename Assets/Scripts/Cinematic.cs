@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 using System;
 
@@ -13,6 +14,10 @@ public class DialogueManager : MonoBehaviour
 
     public float typingSpeed = 0.05f; // Speed of typing effect
     public float pauseAfterDialogue = 1f; // Pause after each dialogue
+
+    [Header("Scenes to Load")]  
+    [SerializeField] private SceneField _persistentGameplay;
+    [SerializeField] private SceneField _levelSceneMain;
 
     void Start()
     {
@@ -39,7 +44,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogues.Count == 0)
         {
-            EndDialogue();
+            StartMain();
             return;
         }
 
@@ -62,9 +67,10 @@ public class DialogueManager : MonoBehaviour
         DisplayNextDialogue(); // Automatically proceed to next dialogue
     }
 
-    void EndDialogue()
+    public void StartMain()
     {
-        SceneManager.LoadScene(2); // Load next scene after dialogue ends
+        SceneManager.LoadSceneAsync(_persistentGameplay);
+        SceneManager.LoadSceneAsync(_levelSceneMain, LoadSceneMode.Additive);
     }
 }
 
