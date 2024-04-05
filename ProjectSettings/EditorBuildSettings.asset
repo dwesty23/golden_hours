@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Police_Station.unity
     guid: 2599c9e727f6a4f40941b07463914638
   - enabled: 1
+    path: Assets/Scenes/Meeting_Maya.unity
+    guid: 8f9ee9d1a62564b589fc3b02f80d2df3
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -24,6 +27,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Settings.unity
     guid: f7014a804a6b64e9aa54e7a9b0758d20
   - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: 43c7fdf88150e48a09034478956305c3
+    path: Assets/Scenes/Main 2.unity
+    guid: 9bc2bdbcd444d430885a173093bdccbc
+  - enabled: 1
+    path: Assets/Scenes/PersistentGameplay.unity
+    guid: 99fb98ee4c50e49a1babe0be8287a8c3
+  - enabled: 1
+    path: Assets/Scenes/Main 3.unity
+    guid: 7d63e79f33cd04b8a8960749f9b126dc
+  - enabled: 1
+    path: Assets/Scenes/Main 4.unity
+    guid: 6701b3a409faa42f4ab6d001a6da05a7
   m_configObjects: {}
