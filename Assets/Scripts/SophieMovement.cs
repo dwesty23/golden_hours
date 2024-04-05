@@ -72,7 +72,7 @@ public class SophieMovement : MonoBehaviour
             FlipCharacter();
         }
         animator.SetFloat("horizontalValue", Mathf.Abs(moveDirection));
-        //animator.SetBool("isJumping", isJumping);
+        animator.SetBool("isJumping", isJumping);
     }
 
     private void FlipCharacter()

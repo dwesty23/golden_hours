@@ -11,7 +11,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private SceneField _persistentGameplay;
     [SerializeField] private SceneField _levelScene;
 
-
+    
 
     // Start is called before the first frame update
     public void StartGame()
