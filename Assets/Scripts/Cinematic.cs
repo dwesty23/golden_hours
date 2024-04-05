@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 using System;
 
@@ -19,6 +20,10 @@ public class DialogueManager : MonoBehaviour
     private string currentDialogue = ""; // Store the current dialogue
     private string currentSpeaker = ""; // Store the current speaker's name
     public float typingSpeed = 0.12f; // Speed of typing effect
+
+    [Header("Scenes to Load")]  
+    [SerializeField] private SceneField _persistentGameplay;
+    [SerializeField] private SceneField _levelSceneMain;
 
     void Start()
     {
@@ -65,7 +70,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogues.Count == 0)
         {
-            EndDialogue();
+            StartMain();
             return;
         }
 
@@ -124,9 +129,10 @@ public class DialogueManager : MonoBehaviour
         characterImage.sprite = newSprite; // Update the sprite
     }
 
-    void EndDialogue()
+    public void StartMain()
     {
-        SceneManager.LoadScene(2); // Load next scene after dialogue ends
+        SceneManager.LoadSceneAsync(_persistentGameplay);
+        SceneManager.LoadSceneAsync(_levelSceneMain, LoadSceneMode.Additive);
     }
 
     private void SeparateDialogue(string fullDialogue)

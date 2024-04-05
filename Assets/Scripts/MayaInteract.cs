@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using System.Collections;
+using UnityEngine.SceneManagement;
 public class MayaInteract : Interactable
 {
     public Transform SophieTransform; // Assign Sophie's transform in the Inspector
@@ -8,17 +9,19 @@ public class MayaInteract : Interactable
     public float minCryVolume = 0.1f; // Minimum volume when Sophie is far away from Maya
     public float maxCryDistance = 10f; // Distance at which Maya's cries are at minimum volume
     public GameObject dialogueManagerObject; // Assign this in the Inspector
-    private DialogueManagerMM dialogueManager; // Reference to the DialogueManagerMM script
+    private Tester dialogueManager;
+    private bool hasInteracted = false;
 
     public override void Interact()
     {
         Debug.Log("Interacting with Maya");
+        if (hasInteracted) return;
         TriggerDialogue();
     }
 
     void Start()
     {
-        dialogueManager = dialogueManagerObject.GetComponent<DialogueManagerMM>();
+        dialogueManager = dialogueManagerObject.GetComponent<Tester>();
     }
 
     void Update()
@@ -29,8 +32,23 @@ public class MayaInteract : Interactable
     private void TriggerDialogue()
     {
         Debug.Log("Starting Dialogue");
+        hasInteracted = true;
         mayaCries.Stop(); // Stop the crying audio
-        dialogueManager.Start();
+        dialogueManager.StartConvo();
+        //Load next scene after dialoguee
+        StartCoroutine(LoadSceneAfterDialogue());
+    }
+
+    private IEnumerator LoadSceneAfterDialogue()
+    {
+        // Wait until the dialogue is not active
+        while (!dialogueManager.IsConversationFinished())
+        {
+            yield return null;
+        }
+
+        // Load the scene
+        SceneManager.LoadScene("Main");
     }
 
     void AdjustCryVolume(float distance)

@@ -537,6 +537,12 @@ MonoBehaviour:
   sophieFont: {fileID: 11400000, guid: f2c3be8ba8d404d9f845d45d592a6ecc, type: 2}
   officerFont: {fileID: 11400000, guid: 8f1d367c7200394449de0259a51b01d4, type: 2}
   typingSpeed: 0.12
+  _persistentGameplay:
+    _sceneAsset: {fileID: 102900000, guid: 99fb98ee4c50e49a1babe0be8287a8c3, type: 3}
+    _sceneName: PersistentGameplay
+  _levelSceneMain:
+    _sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+    _sceneName: Main
 --- !u!4 &1739839241
 Transform:
   m_ObjectHideFlags: 0
