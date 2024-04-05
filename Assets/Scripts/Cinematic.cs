@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 using System;
 
@@ -14,7 +15,8 @@ public class DialogueManager : MonoBehaviour
     public float typingSpeed = 0.05f; // Speed of typing effect
     public float pauseAfterDialogue = 1f; // Pause after each dialogue
 
-    [Header("Scene to Load")]
+    [Header("Scenes to Load")]  
+    [SerializeField] private SceneField _persistentGameplay;
     [SerializeField] private SceneField _levelSceneMain;
 
     void Start()
@@ -67,8 +69,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartMain()
     {
-        // Load the police scene
-        SceneManager.LoadScene(_levelSceneMain, LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync(_persistentGameplay);
+        SceneManager.LoadSceneAsync(_levelSceneMain, LoadSceneMode.Additive);
     }
 }
 

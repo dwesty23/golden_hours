@@ -606,6 +606,9 @@ MonoBehaviour:
   dialogueText: {fileID: 994648288}
   typingSpeed: 0.1
   pauseAfterDialogue: 1
+  _persistentGameplay:
+    _sceneAsset: {fileID: 102900000, guid: 99fb98ee4c50e49a1babe0be8287a8c3, type: 3}
+    _sceneName: PersistentGameplay
   _levelSceneMain:
     _sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
     _sceneName: Main
