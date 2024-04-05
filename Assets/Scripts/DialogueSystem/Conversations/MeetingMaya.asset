@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035a34823bc7142888f798a8f65f69fc, type: 3}
+  m_Name: MeetingMaya
+  m_EditorClassIdentifier: 
+  allLines:
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: Uh, hello?
+  - speaker: {fileID: 11400000, guid: 642484ff3c2cd4946896f464a693f2aa, type: 2}
+    dialogue: "Waaa\u2026. Waaaa\u2026."
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: Hello, uh, are you okay?
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: Huh? Wait, are you talking to me?
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: Do you see anybody else around?
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "No, I\u2019m just confused. How can you see me? I\u2019m a ghost!"
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: Well, it was hard to ignore you.
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "Well I\u2019m glad I found you! I really need your help. "
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: When I turned into a ghost, I lost all my memories. Like they were
+      all poofed away!
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "I don\u2019t know where I am, I don\u2019t know where to go, I don\u2019t
+      know what happened to me, all I can remember is my name. "
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "I\u2019m Maya, what\u2019s your name?"
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: "Sorry, but I can\u2019t help you right now. I have my own stuff to
+      deal with."
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: Oh please! I promise I can be of help to you too if you help me.
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: What do you mean?
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: I overheard you talking to the policeman, you said your sister was
+      missing right?
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: Well, I can help you find her! I just need your help first.
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: You were spying on me?
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: No no no! I was just trying to find help, but nobody would talk to
+      me. Nobody would even look at me.
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "You are the only person who has talked to me since I woke up like
+      this. You are the only person that I can ask for help. Please. I\u2019m scared."
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: "Ok fine, I\u2019ll help you, but you have to help me too."
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: "We don\u2019t have much time, if I\u2019m correct, we only have 72
+      hours to find her before\u2026"
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: Before what?
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: "Before I could lose my only family forever. She\u2019s all I have
+      left. "
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: "I\u2019m trusting you to help me, don\u2019t make me regret this."
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "I promise you won\u2019t, I\u2019m a great partner. We will find your
+      sister, don\u2019t worry!"
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: Thank you Maya.
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "You\u2019re welcome\u2026 wait you never told me your name! Now that
+      we\u2019re partners, I think I should at least know that."
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: "Right sorry, it\u2019s Sophie."
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: Sophie! I like your name!
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "So Sophie, how about we start asking around to see if people have
+      seen your sister? Let\u2019s find somewhere that has lots of people!"
