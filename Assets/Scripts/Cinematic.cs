@@ -14,6 +14,9 @@ public class DialogueManager : MonoBehaviour
     public float typingSpeed = 0.05f; // Speed of typing effect
     public float pauseAfterDialogue = 1f; // Pause after each dialogue
 
+    [Header("Scene to Load")]
+    [SerializeField] private SceneField _levelSceneMain;
+
     void Start()
     {
         dialogues = new Queue<string>();
@@ -39,7 +42,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogues.Count == 0)
         {
-            EndDialogue();
+            StartMain();
             return;
         }
 
@@ -62,9 +65,10 @@ public class DialogueManager : MonoBehaviour
         DisplayNextDialogue(); // Automatically proceed to next dialogue
     }
 
-    void EndDialogue()
+    public void StartMain()
     {
-        SceneManager.LoadScene(2); // Load next scene after dialogue ends
+        // Load the police scene
+        SceneManager.LoadScene(_levelSceneMain, LoadSceneMode.Single);
     }
 }
 

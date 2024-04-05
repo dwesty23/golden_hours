@@ -235,9 +235,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1971161816}
-        m_TargetAssemblyTypeName: SettingsButton, Assembly-CSharp
-        m_MethodName: OnPlayButton
+      - m_Target: {fileID: 282700574}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: Settings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -299,12 +299,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920561ff2c5a94d309960f8afb941a23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _persistentGameplay:
-    _sceneAsset: {fileID: 102900000, guid: 99fb98ee4c50e49a1babe0be8287a8c3, type: 3}
-    _sceneName: PersistentGameplay
-  _levelScene:
-    _sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-    _sceneName: Main
+  _levelScenePolice:
+    _sceneAsset: {fileID: 102900000, guid: 2599c9e727f6a4f40941b07463914638, type: 3}
+    _sceneName: Police_Station
+  _levelSceneSettings:
+    _sceneAsset: {fileID: 102900000, guid: f7014a804a6b64e9aa54e7a9b0758d20, type: 3}
+    _sceneName: Settings
+  _levelSceneCredits:
+    _sceneAsset: {fileID: 102900000, guid: 43c7fdf88150e48a09034478956305c3, type: 3}
+    _sceneName: Credits
 --- !u!1 &334990015
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +319,6 @@ GameObject:
   - component: {fileID: 334990018}
   - component: {fileID: 334990017}
   - component: {fileID: 334990016}
-  - component: {fileID: 334990019}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -510,9 +512,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1971161817}
-        m_TargetAssemblyTypeName: CreditsButton, Assembly-CSharp
-        m_MethodName: OnPlayButton
+      - m_Target: {fileID: 282700574}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: Credits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -829,9 +831,6 @@ GameObject:
   - component: {fileID: 1971161813}
   - component: {fileID: 1971161812}
   - component: {fileID: 1971161811}
-  - component: {fileID: 1971161815}
-  - component: {fileID: 1971161816}
-  - component: {fileID: 1971161817}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -922,42 +921,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1971161815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1971161810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f3a5262d8e7349ad86dc6088ad21e13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1971161816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1971161810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5738a64d83f614d9ca9fd2c85495102f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1971161817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1971161810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa16ccbd8ad674694b06f3f7635f2629, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

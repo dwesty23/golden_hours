@@ -606,6 +606,9 @@ MonoBehaviour:
   dialogueText: {fileID: 994648288}
   typingSpeed: 0.1
   pauseAfterDialogue: 1
+  _levelSceneMain:
+    _sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+    _sceneName: Main
 --- !u!4 &1739839241
 Transform:
   m_ObjectHideFlags: 0
