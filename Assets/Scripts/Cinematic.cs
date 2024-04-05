@@ -1,19 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 using System;
 
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText; // TextMeshProUGUI to display dialogues
-
-    private Queue<string> dialogues; // Queue to store dialogues
-
-    public float typingSpeed = 0.05f; // Speed of typing effect
-    public float pauseAfterDialogue = 1f; // Pause after each dialogue
+    public Image characterImage; // Image to display character portraits of whose speaking
+    public Sprite sophieSpeakingSprite, sophieNotSpeakingSprite; // Sprites for Sophie
+    public Sprite officerSpeakingSprite, officerNotSpeakingSprite; // Sprites for Officer
+    public TMP_FontAsset sophieFont; // Font for Sophie's dialogues
+    public TMP_FontAsset officerFont; // Font for Officer's dialogues
+    private Queue<string> dialogues = new Queue<string>(); // Queue to store dialogues
+    private bool isCurrentlyTyping = false; // Flag to check if currently typing
+    private string currentDialogue = ""; // Store the current dialogue
+    private string currentSpeaker = ""; // Store the current speaker's name
+    public float typingSpeed = 0.12f; // Speed of typing effect
 
     [Header("Scenes to Load")]  
     [SerializeField] private SceneField _persistentGameplay;
@@ -21,8 +26,6 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        dialogues = new Queue<string>();
-
         // Enqueue the dialogues
         dialogues.Enqueue("Sophie: Excuse me? Excuse me!");
         dialogues.Enqueue("Officer: Hm?");
@@ -40,6 +43,28 @@ public class DialogueManager : MonoBehaviour
         DisplayNextDialogue();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (isCurrentlyTyping)
+            {
+                StopAllCoroutines(); // Stop the typing coroutine
+                dialogueText.text = currentSpeaker + " " + currentDialogue; // Display the full dialogue instantly
+                isCurrentlyTyping = false; // Update flag
+                UpdateCharacterImage(false); // Ensure the character image updates to not speaking
+            }
+            else if (!isCurrentlyTyping && dialogues.Count > 0)
+            {
+                DisplayNextDialogue(); // Proceed to display the next dialogue
+            }
+            else if (!isCurrentlyTyping && dialogues.Count == 0)
+            {
+                StartMain(); // Load the main scene
+            }
+        }
+    }
+
     public void DisplayNextDialogue()
     {
         if (dialogues.Count == 0)
@@ -48,23 +73,59 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string dialogue = dialogues.Dequeue();
-        StopAllCoroutines(); // Stop current coroutine to ensure no overlap
-        StartCoroutine(TypeDialogue(dialogue));
+        string fullDialogue = dialogues.Dequeue();
+        SeparateDialogue(fullDialogue);
+        StartCoroutine(TypeDialogue(currentDialogue));
     }
 
     IEnumerator TypeDialogue(string dialogue)
     {
-        dialogueText.text = ""; // Clear text at the start
-        foreach (char letter in dialogue.ToCharArray())
-        {
-            dialogueText.text += letter; // Add each letter one by one
-            yield return new WaitForSeconds(typingSpeed); // Wait between each letter
-        }
-        
-        yield return new WaitForSeconds(pauseAfterDialogue); // Wait after the dialogue is complete before proceeding
+        UpdateCharacterImage(true); // Set to speaking state
+        isCurrentlyTyping = true;
+        dialogueText.text = currentSpeaker + " "; // Append a space after the speaker's name for readability
 
-        DisplayNextDialogue(); // Automatically proceed to next dialogue
+        int i = 0;
+        // Start iterating from the point after the speaker's name to skip typing it out again
+        while (i < dialogue.Length)
+        {
+            if (dialogue[i] == '<')
+            {
+                int tagClose = dialogue.IndexOf('>', i);
+                if (tagClose != -1)
+                {
+                    // Instantly append the entire tag to the text
+                    dialogueText.text += dialogue.Substring(i, tagClose - i + 1);
+                    i = tagClose; // Skip ahead to the end of the tag
+                }
+            }
+            else
+            {
+                // Type out the dialogue character by character
+                dialogueText.text += dialogue[i];
+                yield return new WaitForSeconds(typingSpeed);
+            }
+            i++;
+        }
+
+        UpdateCharacterImage(false); // Set to not speaking state once done
+        isCurrentlyTyping = false;
+    }
+
+    private void UpdateCharacterImage(bool isSpeaking)
+    {
+        // Default to not speaking sprites initially
+        Sprite newSprite = sophieNotSpeakingSprite; // Default sprite
+
+        if (currentSpeaker.ToLower().Contains("sophie"))
+        {
+            newSprite = isSpeaking ? sophieSpeakingSprite : sophieNotSpeakingSprite;
+        }
+        else if (currentSpeaker.ToLower().Contains("officer"))
+        {
+            newSprite = isSpeaking ? officerSpeakingSprite : officerNotSpeakingSprite;
+        }
+
+        characterImage.sprite = newSprite; // Update the sprite
     }
 
     public void StartMain()
@@ -72,5 +133,41 @@ public class DialogueManager : MonoBehaviour
         SceneManager.LoadSceneAsync(_persistentGameplay);
         SceneManager.LoadSceneAsync(_levelSceneMain, LoadSceneMode.Additive);
     }
+
+    private void SeparateDialogue(string fullDialogue)
+    {
+        int colonIndex = fullDialogue.IndexOf(':');
+        if (colonIndex != -1)
+        {
+            string speaker = fullDialogue.Substring(0, colonIndex).ToLower(); // Get the speaker in lowercase
+            currentDialogue = fullDialogue.Substring(colonIndex + 2); // Extract dialogue part
+
+            switch (speaker)
+            {
+                case "sophie":
+                    // For Sophie: everything in lowercase, no extra styling
+                    currentSpeaker = "Sophie:"; // Keeping the initial capital for names for readability
+                    currentDialogue = currentDialogue.ToLower(); // Convert dialogue to lowercase
+                    dialogueText.font = sophieFont; // Assuming you have a specific font for Sophie
+                    break;
+                case "officer":
+                    // For the Officer: bold and uppercase
+                    currentSpeaker = "<b>OFFICER:</b>"; // Make name bold and uppercase
+                    currentDialogue = $"<b>{currentDialogue.ToUpper()}</b>"; // Convert dialogue to uppercase and make bold
+                    dialogueText.font = officerFont; // Assuming you have a specific font for the Officer
+                    break;
+                default:
+                    // Default case if needed
+                    break;
+            }
+        }
+        else // If no colon is found, treat the whole string as dialogue
+        {
+            currentSpeaker = ""; // No speaker name
+            currentDialogue = fullDialogue; // Use the original string as is
+        }
+    }
 }
+
+
 
