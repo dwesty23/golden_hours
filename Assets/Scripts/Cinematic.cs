@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
 using System;
 
@@ -61,7 +60,7 @@ public class DialogueManager : MonoBehaviour
             }
             else if (!isCurrentlyTyping && dialogues.Count == 0)
             {
-                EndDialogue(); // Or handle the end of dialogues appropriately
+                StartMain(); // Load the main scene
             }
         }
     }
