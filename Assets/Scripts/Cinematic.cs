@@ -24,6 +24,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private SceneField _persistentGameplay;
     [SerializeField] private SceneField _levelSceneMain;
 
+    [Header("Sophie Movement")]
+    public SophieMovement sophieMovement; // Reference to the SophieMovement script
+
     void Start()
     {
         // Enqueue the dialogues
@@ -40,6 +43,14 @@ public class DialogueManager : MonoBehaviour
         dialogues.Enqueue("Officer: In LINE ma’am. Or I will have to escort you out of the premises.");
         dialogues.Enqueue("Sophie: Forget it. I’ll find her myself."); 
 
+        //DisplayNextDialogue();
+        StartCoroutine(MoveSophie());
+    }
+
+    IEnumerator MoveSophie()
+    {
+        sophieMovement.FlipCharacter(); // Flip Sophie to face right
+        yield return new WaitForSeconds(2f); // Wait for 1 second before moving Sophie
         DisplayNextDialogue();
     }
 
