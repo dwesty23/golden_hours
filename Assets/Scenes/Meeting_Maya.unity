@@ -1753,7 +1753,7 @@ MonoBehaviour:
   maxCryVolume: 1
   minCryVolume: 0.1
   maxCryDistance: 10
-  dialogueManagerObject: {fileID: 98825577}
+  convo: {fileID: 11400000, guid: 2f453db7396694ff7801a12b2760165c, type: 2}
 --- !u!61 &1949251597
 BoxCollider2D:
   m_ObjectHideFlags: 0
