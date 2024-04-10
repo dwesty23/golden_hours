@@ -7,7 +7,6 @@ public class DialogueManagerM : MonoBehaviour
 {
     public TextMeshProUGUI speakerName, dialogue;
     public Image speakerSprite;
-
     public Sprite SophieSprite;
 
     private int currentIndex;
@@ -71,6 +70,7 @@ public class DialogueManagerM : MonoBehaviour
         finishTyping = false;
         instance.StartCoroutine(TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue));
         speakerSprite.sprite = currentConvo.GetLineByIndex(currentIndex).speaker.GetSprite();
+        instance.dialogue.font = currentConvo.GetLineByIndex(currentIndex).speaker.GetFont();
         currentIndex++;
     }
 
