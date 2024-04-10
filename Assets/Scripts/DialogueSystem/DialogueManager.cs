@@ -14,13 +14,14 @@ public class DialogueManagerM : MonoBehaviour
     private Conversation currentConvo;
     private Animator animator;
     private bool finishTyping = false;
-    private bool conversationFinished = false;
+    private bool conversationFinished = true;
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            conversationFinished = false;
             animator = GetComponent<Animator>();
         }
         else
