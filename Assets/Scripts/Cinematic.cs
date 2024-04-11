@@ -87,7 +87,7 @@ public class DialogueManager : MonoBehaviour
                 if (isCurrentlyTyping)
                 {
                     StopAllCoroutines(); // Stop the typing coroutine
-                    dialogueText.text = currentSpeaker + " " + currentDialogue; // Display the full dialogue instantly
+                    dialogueText.text = currentDialogue; // Display the full dialogue instantly
                     isCurrentlyTyping = false; // Update flag
                     UpdateCharacterImage(false); // Ensure the character image updates to not speaking
                 }
@@ -134,6 +134,13 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextDialogue()
     {
+
+        if (dialogues.Count == 0)
+        {
+            textBubble.SetActive(false); // Hide the text bubble if there are no more dialogues
+            return; // Exit the method early
+        }
+
         string fullDialogue = dialogues.Dequeue();
         SeparateDialogue(fullDialogue);
         StartCoroutine(TypeDialogue(currentDialogue));
@@ -143,7 +150,7 @@ public class DialogueManager : MonoBehaviour
     {
         UpdateCharacterImage(true); // Set to speaking state
         isCurrentlyTyping = true;
-        dialogueText.text = currentSpeaker + " "; // Append a space after the speaker's name for readability
+        dialogueText.text = ""; // Append a space after the speaker's name for readability
 
         int i = 0;
         // Start iterating from the point after the speaker's name to skip typing it out again
