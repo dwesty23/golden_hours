@@ -6,10 +6,10 @@ public class SophieMovement : MonoBehaviour
     public float speed;
     public float jumpPower;
     public float moveDirection;
-    private bool facingRight = false;
+    public bool facingRight = false;
     private bool isJumping = false;
     private bool hasJumped = false;
-    private Animator animator;
+    public Animator animator;
     public LayerMask groundLayer;
     private Vector2 boxSize = new Vector2(0.1f, 1f);
 
@@ -75,7 +75,7 @@ public class SophieMovement : MonoBehaviour
         //animator.SetBool("isJumping", isJumping);
     }
 
-    private void FlipCharacter()
+    public void FlipCharacter()
     {
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);

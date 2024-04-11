@@ -19,13 +19,17 @@ public class DialogueManager : MonoBehaviour
     private string currentDialogue = ""; // Store the current dialogue
     private string currentSpeaker = ""; // Store the current speaker's name
     public float typingSpeed = 0.12f; // Speed of typing effect
+    public GameObject textBubble; // Reference to the text bubble game object
 
-    [Header("Scenes to Load")]  
-    [SerializeField] private SceneField _persistentGameplay;
-    [SerializeField] private SceneField _levelSceneMain;
+    [Header("Scene to Load")]
+    [SerializeField] private SceneField _levelSceneMeetingMaya;
+
+    [Header("Sophie Movement")]
+    public SophieMovement sophieMovement; // Reference to the SophieMovement script
 
     void Start()
     {
+        textBubble.SetActive(false); // Hide the text bubble initially
         // Enqueue the dialogues
         dialogues.Enqueue("Sophie: Excuse me? Excuse me!");
         dialogues.Enqueue("Officer: Hm?");
@@ -40,7 +44,35 @@ public class DialogueManager : MonoBehaviour
         dialogues.Enqueue("Officer: In LINE ma’am. Or I will have to escort you out of the premises.");
         dialogues.Enqueue("Sophie: Forget it. I’ll find her myself."); 
 
-        DisplayNextDialogue();
+        //DisplayNextDialogue();
+        StartCoroutine(MoveSophie());
+    }
+
+    IEnumerator MoveSophie()
+    {
+        sophieMovement.FlipCharacter();  // Ensure Sophie is facing right
+        UpdateCharacterImage(false);  // Ensure the character image updates to not speaking
+
+        float duration = 2.7f;  // Duration Sophie should keep moving
+        float endTime = Time.time + duration;
+
+        while (Time.time < endTime)
+        {
+            sophieMovement.moveDirection = 1;  // Keep setting moveDirection to 1 to ensure continuous movement
+            sophieMovement.animator.SetFloat("horizontalValue", 1);  // Update animation speed or state
+            yield return null;  // Wait until the next frame
+        }
+
+        // Transition to idle animation
+        sophieMovement.moveDirection = 0;  // Stop moving Sophie by setting moveDirection to 0
+        sophieMovement.animator.SetFloat("horizontalValue", 0);  // Reset the walking animation speed or state to idle
+
+        // Ensure the animation resets correctly
+        yield return new WaitForSeconds(0.5f);  // Short delay to allow the animation to transition back to idle smoothly
+
+        textBubble.SetActive(true); // Show the text bubble
+        Invoke("DisplayNextDialogue", 0.2f);  // Proceed to the next dialogue after a short delay
+        //DisplayNextDialogue();  // Proceed to the next dialogue
     }
 
     void Update()
@@ -130,8 +162,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartMain()
     {
-        SceneManager.LoadSceneAsync(_persistentGameplay);
-        SceneManager.LoadSceneAsync(_levelSceneMain, LoadSceneMode.Additive);
+        SceneManager.LoadScene(_levelSceneMeetingMaya, LoadSceneMode.Single);
     }
 
     private void SeparateDialogue(string fullDialogue)
