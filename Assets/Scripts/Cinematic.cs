@@ -50,6 +50,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator MoveSophie()
     {
+        sophieMovement.currentlyInteracting = true;  // Set the currentlyInteracting flag to true to stop Sophie from moving by player input
         sophieMovement.FlipCharacter();  // Ensure Sophie is facing right
         UpdateCharacterImage(false);  // Ensure the character image updates to not speaking
 
@@ -92,19 +93,24 @@ public class DialogueManager : MonoBehaviour
             }
             else if (!isCurrentlyTyping && dialogues.Count == 0)
             {
-                StartMain(); // Load the main scene
+                // Clear the dialogue text and set the text bubble to inactive
+                dialogueText.text = "";
+                textBubble.SetActive(false);
+                sophieMovement.currentlyInteracting = false; // Update the currentlyInteracting flag
+            }
+        }
+        else if (!isCurrentlyTyping && dialogues.Count == 0)
+        {
+            if (Mathf.Abs(sophieMovement.transform.position.x) > 9.2)
+            {
+                // Start the main scene once Sophie has moved off-screen
+                StartMain();
             }
         }
     }
 
     public void DisplayNextDialogue()
     {
-        if (dialogues.Count == 0)
-        {
-            StartMain();
-            return;
-        }
-
         string fullDialogue = dialogues.Dequeue();
         SeparateDialogue(fullDialogue);
         StartCoroutine(TypeDialogue(currentDialogue));
