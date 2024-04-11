@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     public TMP_FontAsset officerFont; // Font for Officer's dialogues
     private Queue<string> dialogues = new Queue<string>(); // Queue to store dialogues
     private bool isCurrentlyTyping = false; // Flag to check if currently typing
+    private bool animationOver = false; // Flag to check if animation is over
     private string currentDialogue = ""; // Store the current dialogue
     private string currentSpeaker = ""; // Store the current speaker's name
     public float typingSpeed = 0.12f; // Speed of typing effect
@@ -72,39 +73,61 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);  // Short delay to allow the animation to transition back to idle smoothly
 
         textBubble.SetActive(true); // Show the text bubble
+        animationOver = true;  // Update the animationOver flag
         Invoke("DisplayNextDialogue", 0.2f);  // Proceed to the next dialogue after a short delay
         //DisplayNextDialogue();  // Proceed to the next dialogue
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (animationOver)
         {
-            if (isCurrentlyTyping)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                StopAllCoroutines(); // Stop the typing coroutine
-                dialogueText.text = currentSpeaker + " " + currentDialogue; // Display the full dialogue instantly
-                isCurrentlyTyping = false; // Update flag
-                UpdateCharacterImage(false); // Ensure the character image updates to not speaking
-            }
-            else if (!isCurrentlyTyping && dialogues.Count > 0)
-            {
-                DisplayNextDialogue(); // Proceed to display the next dialogue
+                if (isCurrentlyTyping)
+                {
+                    StopAllCoroutines(); // Stop the typing coroutine
+                    dialogueText.text = currentSpeaker + " " + currentDialogue; // Display the full dialogue instantly
+                    isCurrentlyTyping = false; // Update flag
+                    UpdateCharacterImage(false); // Ensure the character image updates to not speaking
+                }
+                else if (!isCurrentlyTyping && dialogues.Count > 0)
+                {
+                    DisplayNextDialogue(); // Proceed to display the next dialogue
+                }
+                else if (!isCurrentlyTyping && dialogues.Count == 0)
+                {
+                    // Clear the dialogue text and set the text bubble to inactive
+                    dialogueText.text = "";
+                    textBubble.SetActive(false);
+                    sophieMovement.currentlyInteracting = false; // Update the currentlyInteracting flag
+                }
             }
             else if (!isCurrentlyTyping && dialogues.Count == 0)
             {
-                // Clear the dialogue text and set the text bubble to inactive
-                dialogueText.text = "";
-                textBubble.SetActive(false);
-                sophieMovement.currentlyInteracting = false; // Update the currentlyInteracting flag
-            }
-        }
-        else if (!isCurrentlyTyping && dialogues.Count == 0)
-        {
-            if (Mathf.Abs(sophieMovement.transform.position.x) > 9.2)
-            {
-                // Start the main scene once Sophie has moved off-screen
-                StartMain();
+                if (sophieMovement.transform.position.x < -9.2)
+                {
+                    // Start the main scene once Sophie has moved off-screen to the left
+                    StartMain();
+                }
+                else if (sophieMovement.transform.position.x > 7.5)
+                {
+                    // Restrict movement to the right by setting moveDirection based on the current player input
+                    float moveHorizontal = Input.GetAxis("Horizontal");
+
+                    // Only allow leftward movement (negative direction)
+                    if (moveHorizontal < 0)
+                    {
+                        sophieMovement.moveDirection = moveHorizontal;
+                        sophieMovement.animator.SetFloat("horizontalValue", Mathf.Abs(moveHorizontal));
+                    }
+                    else
+                    {
+                        // Stop any rightward or stationary movement
+                        sophieMovement.moveDirection = 0;
+                        sophieMovement.animator.SetFloat("horizontalValue", 0);
+                    }
+                }
             }
         }
     }
