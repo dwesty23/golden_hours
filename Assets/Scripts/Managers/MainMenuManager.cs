@@ -10,6 +10,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private SceneField _levelScenePolice;
     [SerializeField] private SceneField _levelSceneSettings;
     [SerializeField] private SceneField _levelSceneCredits;
+    [SerializeField] private SceneField _levelSceneMainMenu;
 
     public void StartGame()
     {
@@ -27,6 +28,12 @@ public class MainMenuManager : MonoBehaviour
     {
         // Load the credits scene
         SceneManager.LoadScene(_levelSceneCredits, LoadSceneMode.Single);
+    }
+
+    public void MainMenu()
+    {
+        // Load the main menu scene
+        SceneManager.LoadScene(_levelSceneMainMenu, LoadSceneMode.Single);
     }
 
 }
