@@ -9,7 +9,7 @@ public class SophieMovement : MonoBehaviour
     public bool facingRight = false;
     private bool isJumping = false;
     private bool hasJumped = false;
-    private Animator animator;
+    public Animator animator;
     public LayerMask groundLayer;
     private Vector2 boxSize = new Vector2(0.1f, 1f);
 
