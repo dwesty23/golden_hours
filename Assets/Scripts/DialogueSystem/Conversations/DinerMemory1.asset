@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7797ac506eb8c415f81331981ef0491a, type: 3}
-  m_Name: Sophie
+  m_Script: {fileID: 11500000, guid: 035a34823bc7142888f798a8f65f69fc, type: 3}
+  m_Name: DinerMemory1
   m_EditorClassIdentifier: 
-  speakerName: Sophie
-  speakerSprite: {fileID: 21300000, guid: 325c89d3b0ed2442999c007ff4419aac, type: 3}
-  speakerFont: {fileID: 11400000, guid: f2c3be8ba8d404d9f845d45d592a6ecc, type: 2}
+  allLines:
+  - speaker: {fileID: 11400000, guid: dc6f2a96e92e94c089a3dda26b7a3ac3, type: 2}
+    dialogue: Mommy! Mom!

@@ -5,6 +5,7 @@ using System.Collections;
 public class SpriteDisplayController : MonoBehaviour
 {
     public GameObject[] sprites;
+    public Conversation[] conversations;
     private int currentSprite = 0;
     private Coroutine spriteCoroutine;
 
@@ -13,26 +14,26 @@ public class SpriteDisplayController : MonoBehaviour
         // Start with only the first sprite active
         StartCoroutine(ShowSprite(0));
 
-        // Start the coroutine to show the next sprite
-        spriteCoroutine = StartCoroutine(ShowNextSpriteAfterDelay(5f));
+        // Start the coroutine to show the next sprite after the conversation ends
+        spriteCoroutine = StartCoroutine(ShowNextSpriteAfterConversation());
     }
 
     void Update()
     {
         // If the space key is pressed, stop the current coroutine and show the next sprite
-        if (Input.GetKeyDown(KeyCode.Space))
-        {   
-            if (currentSprite < sprites.Length - 1 && spriteCoroutine != null)
-            {
-                StopCoroutine(spriteCoroutine);
-                ShowNextSprite();
-            }
-            if (currentSprite == sprites.Length - 1)
-            {
-                StopCoroutine(spriteCoroutine);
-                SceneManager.LoadScene("Main");
-            }
-        }
+        // if (Input.GetKeyDown(KeyCode.Space) && DialogueManagerM.IsConversationFinished())
+        // {   
+        //     if (currentSprite < sprites.Length - 1 && spriteCoroutine != null)
+        //     {
+        //         StopCoroutine(spriteCoroutine);
+        //         ShowNextSprite();
+        //     }
+        //     if (currentSprite == sprites.Length - 1)
+        //     {
+        //         StopCoroutine(spriteCoroutine);
+        //         SceneManager.LoadScene("Main");
+        //     }
+        // }
     }
 
     private IEnumerator ShowSprite(int index)
@@ -41,10 +42,6 @@ public class SpriteDisplayController : MonoBehaviour
         foreach (GameObject sprite in sprites)
         {
             sprite.SetActive(false);
-        }
-        if (index == sprites.Length - 1)
-        {
-            SceneManager.LoadScene("Main");
         }
          // Activate the selected sprite
         GameObject selectedSprite = sprites[index];
@@ -59,7 +56,7 @@ public class SpriteDisplayController : MonoBehaviour
         spriteRenderer.color = color;
 
         // Fade in over 1 second
-        float duration = 1f;
+        float duration = 3f;
         float elapsed = 0f;
         while (elapsed < duration)
         {
@@ -68,6 +65,7 @@ public class SpriteDisplayController : MonoBehaviour
             spriteRenderer.color = color;
             yield return null;
         }
+        DialogueManagerM.StartConversation(conversations[index]);
         // Activate the sprite at the specified index
         if (index < 0 || index >= sprites.Length)
         {
@@ -75,23 +73,55 @@ public class SpriteDisplayController : MonoBehaviour
             yield break;
         }
         currentSprite = index;
+        // spriteCoroutine = StartCoroutine(ShowNextSpriteAfterConversation());
     }
 
     private void ShowNextSprite()
     {
-        // Show the next sprite
-        StartCoroutine(ShowSprite(currentSprite + 1));
+        // Increment the current sprite index
+        currentSprite++;
+        Debug.Log("Current Sprite: " + currentSprite);
+        // Check if the current sprite index is within the array bounds
+        if (currentSprite < sprites.Length)
+        {
+            // Show the next sprite
+            StartCoroutine(ShowSprite(currentSprite));
 
-        // Start the coroutine to show the next sprite after a delay
-        spriteCoroutine = StartCoroutine(ShowNextSpriteAfterDelay(5f));
+            spriteCoroutine = StartCoroutine(ShowNextSpriteAfterConversationDelay(5f));
+        }
+        else
+        {
+            // All sprites have been shown, do something else (e.g., load a new scene)
+            Debug.Log("All sprites have been shown");
+            SceneManager.LoadScene("Main");
+        }
     }
 
-    private IEnumerator ShowNextSpriteAfterDelay(float delay)
+    private IEnumerator ShowNextSpriteAfterConversationDelay(float delay)
     {
         // Wait for the specified delay
+        Debug.Log("Waiting for delay: " + delay);
         yield return new WaitForSeconds(delay);
 
+        Debug.Log("Delay finished");
         // Show the next sprite
+        StartCoroutine(ShowNextSpriteAfterConversation());
+    }
+
+    private IEnumerator ShowNextSpriteAfterConversation()
+    {
+        // Wait until the dialogue is not active
+        while (!DialogueManagerM.IsConversationFinished())
+        {
+            yield return null;
+        }
+        Debug.Log("Conversation finished");
+
+        if (spriteCoroutine != null)
+        {
+            StopCoroutine(spriteCoroutine);
+        }
+
         ShowNextSprite();
     }
 }
