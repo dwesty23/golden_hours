@@ -10,6 +10,7 @@ public class ST_PuzzleDisplay : MonoBehaviour
 	public Texture PuzzleImage;
 	public Texture PuzzleImage2;
 	public Texture PuzzleImage3;
+	public Conversation[] conversations;
 
 	// the width and height of the puzzle in tiles.
 	public int Height = 3;
@@ -49,6 +50,7 @@ public class ST_PuzzleDisplay : MonoBehaviour
 	{
 		// create the games puzzle tiles from the provided image.
 		CreatePuzzleTiles();
+		DialogueManagerM.StartConversation(conversations[PuzzleComplete]);
 
 		// mix up the puzzle.
 		StartCoroutine(JugglePuzzle());
@@ -283,7 +285,9 @@ public class ST_PuzzleDisplay : MonoBehaviour
 			yield return new WaitForSeconds(2f);
 			if(PuzzleComplete == 2)
 			{
-				SceneManager.LoadScene("memory1");
+				DialogueManagerM.StartConversation(conversations[PuzzleComplete+1]);
+				StartCoroutine(LoadSceneAfterDialogue());
+				yield break;
 			}
 
 
@@ -294,7 +298,7 @@ public class ST_PuzzleDisplay : MonoBehaviour
 
 			PuzzleComplete++;
 			CreatePuzzleTiles();
-
+			DialogueManagerM.StartConversation(conversations[PuzzleComplete]);
 			StartCoroutine(JugglePuzzle());
 			
 			
@@ -302,6 +306,18 @@ public class ST_PuzzleDisplay : MonoBehaviour
 		}
 
 		yield return null;
+	}
+
+	private IEnumerator LoadSceneAfterDialogue()
+	{
+		// Wait until the dialogue is not active
+		while (!DialogueManagerM.IsConversationFinished())
+		{
+			yield return null;
+		}
+
+		// Load the scene
+		SceneManager.LoadScene("memory1");
 	}
 
 	private Vector2 ConvertIndexToGrid(int index)

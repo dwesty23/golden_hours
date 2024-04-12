@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 035a34823bc7142888f798a8f65f69fc, type: 3}
-  m_Name: DinerMemory3
+  m_Name: DinerPuzzle2
   m_EditorClassIdentifier: 
   allLines:
-  - speaker: {fileID: 11400000, guid: dc6f2a96e92e94c089a3dda26b7a3ac3, type: 2}
-    dialogue: Man that hit the spot! Thank you for the milkshake mom, and thank you
-      for everything that you do for me.
-  - speaker: {fileID: 11400000, guid: 1b3ee762ad175412c821c47e59e19a0d, type: 2}
-    dialogue: Everything I do will always be for you, sweetie.
+  - speaker: {fileID: 11400000, guid: d1b0b622112b64c81a64cbd4cd30624b, type: 2}
+    dialogue: I want a chocolate peanut butter shake!
+  - speaker: {fileID: 11400000, guid: ff296b9f035a14467bb355955446e139, type: 2}
+    dialogue: Coming right up.
