@@ -6,10 +6,11 @@ public class SophieMovement : MonoBehaviour
     public float speed;
     public float jumpPower;
     public float moveDirection;
-    private bool facingRight = false;
+    public bool facingRight = false;
     private bool isJumping = false;
     private bool hasJumped = false;
-    private Animator animator;
+    public bool currentlyInteracting = false; // Flag used in the police scene to stop sophie from moving while interacting
+    public Animator animator;
     public LayerMask groundLayer;
     private Vector2 boxSize = new Vector2(0.1f, 1f);
 
@@ -32,18 +33,21 @@ public class SophieMovement : MonoBehaviour
 
     private void ProcessInputs()
     {
-        moveDirection = Input.GetAxis("Horizontal");
-        if (Input.GetKeyDown(KeyCode.UpArrow) && !isJumping && !hasJumped)
-        {
-            isJumping = true;
-            playerRb.velocity = new Vector2(playerRb.velocity.x, jumpPower);
-            hasJumped = true;
-        }
+        if (!currentlyInteracting)
+        {   
+            moveDirection = Input.GetAxis("Horizontal");
+            if (Input.GetKeyDown(KeyCode.UpArrow) && !isJumping && !hasJumped)
+            {
+                isJumping = true;
+                playerRb.velocity = new Vector2(playerRb.velocity.x, jumpPower);
+                hasJumped = true;
+            }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            CheckInteraction();
-            Debug.Log("E key pressed");
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                CheckInteraction();
+                Debug.Log("E key pressed");
+            }
         }
     }
 
@@ -72,10 +76,10 @@ public class SophieMovement : MonoBehaviour
             FlipCharacter();
         }
         animator.SetFloat("horizontalValue", Mathf.Abs(moveDirection));
-        //animator.SetBool("isJumping", isJumping);
+        animator.SetBool("isJumping", isJumping);
     }
 
-    private void FlipCharacter()
+    public void FlipCharacter()
     {
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);

@@ -308,6 +308,9 @@ MonoBehaviour:
   _levelSceneCredits:
     _sceneAsset: {fileID: 102900000, guid: 43c7fdf88150e48a09034478956305c3, type: 3}
     _sceneName: Credits
+  _levelSceneMainMenu:
+    _sceneAsset: {fileID: 102900000, guid: 5321e289aecb44156ac29f2697b36acd, type: 3}
+    _sceneName: Menu
 --- !u!1 &334990015
 GameObject:
   m_ObjectHideFlags: 0

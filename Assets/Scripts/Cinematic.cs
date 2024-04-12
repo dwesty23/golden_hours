@@ -16,16 +16,21 @@ public class DialogueManager : MonoBehaviour
     public TMP_FontAsset officerFont; // Font for Officer's dialogues
     private Queue<string> dialogues = new Queue<string>(); // Queue to store dialogues
     private bool isCurrentlyTyping = false; // Flag to check if currently typing
+    private bool animationOver = false; // Flag to check if animation is over
     private string currentDialogue = ""; // Store the current dialogue
     private string currentSpeaker = ""; // Store the current speaker's name
     public float typingSpeed = 0.12f; // Speed of typing effect
+    public GameObject textBubble; // Reference to the text bubble game object
 
-    [Header("Scenes to Load")]  
-    [SerializeField] private SceneField _persistentGameplay;
-    [SerializeField] private SceneField _levelSceneMain;
+    [Header("Scene to Load")]
+    [SerializeField] private SceneField _levelSceneMeetingMaya;
+
+    [Header("Sophie Movement")]
+    public SophieMovement sophieMovement; // Reference to the SophieMovement script
 
     void Start()
     {
+        textBubble.SetActive(false); // Hide the text bubble initially
         // Enqueue the dialogues
         dialogues.Enqueue("Sophie: Excuse me? Excuse me!");
         dialogues.Enqueue("Officer: Hm?");
@@ -40,37 +45,100 @@ public class DialogueManager : MonoBehaviour
         dialogues.Enqueue("Officer: In LINE ma’am. Or I will have to escort you out of the premises.");
         dialogues.Enqueue("Sophie: Forget it. I’ll find her myself."); 
 
-        DisplayNextDialogue();
+        //DisplayNextDialogue();
+        StartCoroutine(MoveSophie());
+    }
+
+    IEnumerator MoveSophie()
+    {
+        sophieMovement.currentlyInteracting = true;  // Set the currentlyInteracting flag to true to stop Sophie from moving by player input
+        sophieMovement.FlipCharacter();  // Ensure Sophie is facing right
+        UpdateCharacterImage(false);  // Ensure the character image updates to not speaking
+
+        float duration = 2.7f;  // Duration Sophie should keep moving
+        float endTime = Time.time + duration;
+
+        while (Time.time < endTime)
+        {
+            sophieMovement.moveDirection = 1;  // Keep setting moveDirection to 1 to ensure continuous movement
+            sophieMovement.animator.SetFloat("horizontalValue", 1);  // Update animation speed or state
+            yield return null;  // Wait until the next frame
+        }
+
+        // Transition to idle animation
+        sophieMovement.moveDirection = 0;  // Stop moving Sophie by setting moveDirection to 0
+        sophieMovement.animator.SetFloat("horizontalValue", 0);  // Reset the walking animation speed or state to idle
+
+        // Ensure the animation resets correctly
+        yield return new WaitForSeconds(0.5f);  // Short delay to allow the animation to transition back to idle smoothly
+
+        textBubble.SetActive(true); // Show the text bubble
+        animationOver = true;  // Update the animationOver flag
+        Invoke("DisplayNextDialogue", 0.2f);  // Proceed to the next dialogue after a short delay
+        //DisplayNextDialogue();  // Proceed to the next dialogue
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (animationOver)
         {
-            if (isCurrentlyTyping)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                StopAllCoroutines(); // Stop the typing coroutine
-                dialogueText.text = currentSpeaker + " " + currentDialogue; // Display the full dialogue instantly
-                isCurrentlyTyping = false; // Update flag
-                UpdateCharacterImage(false); // Ensure the character image updates to not speaking
-            }
-            else if (!isCurrentlyTyping && dialogues.Count > 0)
-            {
-                DisplayNextDialogue(); // Proceed to display the next dialogue
+                if (isCurrentlyTyping)
+                {
+                    StopAllCoroutines(); // Stop the typing coroutine
+                    dialogueText.text = currentDialogue; // Display the full dialogue instantly
+                    isCurrentlyTyping = false; // Update flag
+                    UpdateCharacterImage(false); // Ensure the character image updates to not speaking
+                }
+                else if (!isCurrentlyTyping && dialogues.Count > 0)
+                {
+                    DisplayNextDialogue(); // Proceed to display the next dialogue
+                }
+                else if (!isCurrentlyTyping && dialogues.Count == 0)
+                {
+                    // Clear the dialogue text and set the text bubble to inactive
+                    dialogueText.text = "";
+                    textBubble.SetActive(false);
+                    sophieMovement.currentlyInteracting = false; // Update the currentlyInteracting flag
+                }
             }
             else if (!isCurrentlyTyping && dialogues.Count == 0)
             {
-                StartMain(); // Load the main scene
+                if (sophieMovement.transform.position.x < -9.2)
+                {
+                    // Start the main scene once Sophie has moved off-screen to the left
+                    StartMain();
+                }
+                else if (sophieMovement.transform.position.x > 7.5)
+                {
+                    // Restrict movement to the right by setting moveDirection based on the current player input
+                    float moveHorizontal = Input.GetAxis("Horizontal");
+
+                    // Only allow leftward movement (negative direction)
+                    if (moveHorizontal < 0)
+                    {
+                        sophieMovement.moveDirection = moveHorizontal;
+                        sophieMovement.animator.SetFloat("horizontalValue", Mathf.Abs(moveHorizontal));
+                    }
+                    else
+                    {
+                        // Stop any rightward or stationary movement
+                        sophieMovement.moveDirection = 0;
+                        sophieMovement.animator.SetFloat("horizontalValue", 0);
+                    }
+                }
             }
         }
     }
 
     public void DisplayNextDialogue()
     {
+
         if (dialogues.Count == 0)
         {
-            StartMain();
-            return;
+            textBubble.SetActive(false); // Hide the text bubble if there are no more dialogues
+            return; // Exit the method early
         }
 
         string fullDialogue = dialogues.Dequeue();
@@ -82,7 +150,7 @@ public class DialogueManager : MonoBehaviour
     {
         UpdateCharacterImage(true); // Set to speaking state
         isCurrentlyTyping = true;
-        dialogueText.text = currentSpeaker + " "; // Append a space after the speaker's name for readability
+        dialogueText.text = ""; // Append a space after the speaker's name for readability
 
         int i = 0;
         // Start iterating from the point after the speaker's name to skip typing it out again
@@ -130,8 +198,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartMain()
     {
-        SceneManager.LoadSceneAsync(_persistentGameplay);
-        SceneManager.LoadSceneAsync(_levelSceneMain, LoadSceneMode.Additive);
+        SceneManager.LoadScene(_levelSceneMeetingMaya, LoadSceneMode.Single);
     }
 
     private void SeparateDialogue(string fullDialogue)
