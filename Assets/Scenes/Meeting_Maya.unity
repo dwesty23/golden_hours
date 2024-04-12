@@ -495,6 +495,9 @@ MonoBehaviour:
   speed: 5
   jumpPower: 5
   moveDirection: 0
+  facingRight: 0
+  currentlyInteracting: 0
+  animator: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -1754,6 +1757,12 @@ MonoBehaviour:
   minCryVolume: 0.1
   maxCryDistance: 10
   convo: {fileID: 11400000, guid: 2f453db7396694ff7801a12b2760165c, type: 2}
+  _persistentScene:
+    _sceneAsset: {fileID: 102900000, guid: 99fb98ee4c50e49a1babe0be8287a8c3, type: 3}
+    _sceneName: PersistentGameplay
+  _mainScene:
+    _sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+    _sceneName: Main
 --- !u!61 &1949251597
 BoxCollider2D:
   m_ObjectHideFlags: 0
