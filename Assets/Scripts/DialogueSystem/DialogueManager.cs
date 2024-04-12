@@ -48,20 +48,24 @@ public class DialogueManagerM : MonoBehaviour
     }
     public static void StartConversation(Conversation convo)
     {
+        Debug.Log("StartConversation called");
         instance.animator.SetBool("isOpen", true);
         instance.currentIndex = 0;
         instance.currentConvo = convo;
         // instance.speakerName.text = "";
         instance.dialogue.text = "";
+        instance.conversationFinished = false;
 
         instance.ReadNext();
     }
 
     public void ReadNext()
     {
+        Debug.Log("ReadNext called");
         if (currentIndex > currentConvo.GetLength())
         {
             instance.animator.SetBool("isOpen", false);
+            Debug.Log("Conversation Finished");
             // Set sprite to Sophie Mouth Closed Sprite
             speakerSprite.sprite = SophieSprite;
             conversationFinished = true;
