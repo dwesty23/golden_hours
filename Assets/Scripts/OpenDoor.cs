@@ -10,6 +10,6 @@ public class OpenDoor : Interactable
     }
 
     private void TriggerDinerScene() {
-        SceneManager.LoadScene("SlidingTilePuzzle");
+        SceneManager.LoadScene("DinerOpenCutScene");
     }
 }

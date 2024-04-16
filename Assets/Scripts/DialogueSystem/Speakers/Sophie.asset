@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Sophie
   speakerSprite: {fileID: 21300000, guid: 325c89d3b0ed2442999c007ff4419aac, type: 3}
+  speakerFont: {fileID: 11400000, guid: f2c3be8ba8d404d9f845d45d592a6ecc, type: 2}

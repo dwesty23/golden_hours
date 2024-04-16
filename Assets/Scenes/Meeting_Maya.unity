@@ -495,6 +495,9 @@ MonoBehaviour:
   speed: 5
   jumpPower: 5
   moveDirection: 0
+  facingRight: 0
+  currentlyInteracting: 0
+  animator: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -714,7 +717,7 @@ GameObject:
   - component: {fileID: 214185487}
   - component: {fileID: 214185486}
   - component: {fileID: 472317946}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Street_v1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1596,7 +1599,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 97ef0b68433204deba39b0a8590cd3ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb9a50529d8e44087b85209671458699, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1753,7 +1756,13 @@ MonoBehaviour:
   maxCryVolume: 1
   minCryVolume: 0.1
   maxCryDistance: 10
-  dialogueManagerObject: {fileID: 98825577}
+  convo: {fileID: 11400000, guid: 2f453db7396694ff7801a12b2760165c, type: 2}
+  _persistentScene:
+    _sceneAsset: {fileID: 102900000, guid: 99fb98ee4c50e49a1babe0be8287a8c3, type: 3}
+    _sceneName: PersistentGameplay
+  _mainScene:
+    _sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+    _sceneName: Main
 --- !u!61 &1949251597
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1790,7 +1799,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.1666665, y: 4.1666665}
+    oldSize: {x: 4.236111, y: 4.398148}
     newSize: {x: 4.1666665, y: 4.1666665}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

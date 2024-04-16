@@ -42,8 +42,6 @@ MonoBehaviour:
       deal with."
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
     dialogue: Oh please! I promise I can be of help to you too if you help me.
-  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
-    dialogue: What do you mean?
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
     dialogue: I overheard you talking to the policeman, you said your sister was
       missing right?
@@ -53,30 +51,19 @@ MonoBehaviour:
     dialogue: You were spying on me?
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
     dialogue: No no no! I was just trying to find help, but nobody would talk to
-      me. Nobody would even look at me.
-  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: "You are the only person who has talked to me since I woke up like
-      this. You are the only person that I can ask for help. Please. I\u2019m scared."
+      me. Nobody would even look at me. Except you.
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
     dialogue: "Ok fine, I\u2019ll help you, but you have to help me too."
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
     dialogue: "We don\u2019t have much time, if I\u2019m correct, we only have 72
-      hours to find her before\u2026"
+      hours to find her before I could lose her forever."
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: Before what?
-  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
-    dialogue: "Before I could lose my only family forever. She\u2019s all I have
-      left. "
-  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
-    dialogue: "I\u2019m trusting you to help me, don\u2019t make me regret this."
-  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: "I promise you won\u2019t, I\u2019m a great partner. We will find your
-      sister, don\u2019t worry!"
+    dialogue: "I promise you I won\u2019t, I\u2019m a great partner. We will find
+      your sister, don\u2019t worry!"
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
     dialogue: Thank you Maya.
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: "You\u2019re welcome\u2026 wait you never told me your name! Now that
-      we\u2019re partners, I think I should at least know that."
+    dialogue: "You\u2019re welcome\u2026 wait you never told me your name!"
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
     dialogue: "Right sorry, it\u2019s Sophie."
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}

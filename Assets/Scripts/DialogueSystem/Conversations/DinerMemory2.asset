@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035a34823bc7142888f798a8f65f69fc, type: 3}
+  m_Name: DinerMemory2
+  m_EditorClassIdentifier: 
+  allLines:
+  - speaker: {fileID: 11400000, guid: 1b3ee762ad175412c821c47e59e19a0d, type: 2}
+    dialogue: "What\u2019s wrong? Are you alright?!"
+  - speaker: {fileID: 11400000, guid: dc6f2a96e92e94c089a3dda26b7a3ac3, type: 2}
+    dialogue: "I\u2019m better than alright, I\u2019m all better now! Good as new!"
+  - speaker: {fileID: 11400000, guid: 1b3ee762ad175412c821c47e59e19a0d, type: 2}
+    dialogue: What do you mean?
+  - speaker: {fileID: 11400000, guid: dc6f2a96e92e94c089a3dda26b7a3ac3, type: 2}
+    dialogue: "I mean I\u2019m not sick! I\u2019m all better now so\u2026 I don\u2019t
+      have to stay in my bed anymore. I\u2019m ready to go outside."
+  - speaker: {fileID: 11400000, guid: 1b3ee762ad175412c821c47e59e19a0d, type: 2}
+    dialogue: "\u2026"
+  - speaker: {fileID: 11400000, guid: dc6f2a96e92e94c089a3dda26b7a3ac3, type: 2}
+    dialogue: "Oh please mom, I promise I\u2019m not lying. You know I\u2019ve been
+      doing better, I\u2019m really ready. And\u2026 I really want to get milkshakes
+      with you. Like we used to! Our strawberry shakes, with the cherry on top! "
+  - speaker: {fileID: 11400000, guid: 1b3ee762ad175412c821c47e59e19a0d, type: 2}
+    dialogue: "It\u2019s not safe for you out there Maya."
+  - speaker: {fileID: 11400000, guid: dc6f2a96e92e94c089a3dda26b7a3ac3, type: 2}
+    dialogue: "I never ask for anything, please just this once and I promise I\u2019ll
+      stay inside afterward for as long as you want. I just want you to see that
+      I really am all better now."
+  - speaker: {fileID: 11400000, guid: 1b3ee762ad175412c821c47e59e19a0d, type: 2}
+    dialogue: Ok. Just this once
