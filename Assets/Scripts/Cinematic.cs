@@ -21,6 +21,8 @@ public class DialogueManager : MonoBehaviour
     private string currentSpeaker = ""; // Store the current speaker's name
     public float typingSpeed = 0.12f; // Speed of typing effect
     public GameObject textBubble; // Reference to the text bubble game object
+    public GameObject journalControls; // Reference to the journal game object
+    public GameObject journalIcon; // Reference to the journal game object
 
     [Header("Scene to Load")]
     [SerializeField] private SceneField _levelSceneMeetingMaya;
@@ -30,6 +32,8 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+        journalControls.SetActive(false); // Hide the journal controls initially
+        journalIcon.SetActive(false); // Hide the journal icon initially
         textBubble.SetActive(false); // Hide the text bubble initially
         // Enqueue the dialogues
         dialogues.Enqueue("Sophie: Excuse me? Excuse me!");
@@ -100,11 +104,17 @@ public class DialogueManager : MonoBehaviour
                     // Clear the dialogue text and set the text bubble to inactive
                     dialogueText.text = "";
                     textBubble.SetActive(false);
+                    journalControls.SetActive(true); // Show the journal controls
                     sophieMovement.currentlyInteracting = false; // Update the currentlyInteracting flag
                 }
             }
             else if (!isCurrentlyTyping && dialogues.Count == 0)
             {
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    journalControls.SetActive(false); // Show the journal controls
+                    journalIcon.SetActive(true); // Show the journal icon
+                }
                 if (sophieMovement.transform.position.x < -9.2)
                 {
                     // Start the main scene once Sophie has moved off-screen to the left
@@ -129,6 +139,7 @@ public class DialogueManager : MonoBehaviour
                     }
                 }
             }
+
         }
     }
 
