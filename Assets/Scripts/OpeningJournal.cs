@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System;
 
-public class JournalMenuManager : MonoBehaviour
+public class OpeningJournalManager : MonoBehaviour
 {
     [Header("Scene to Load")]
     [SerializeField] private SceneField _SceneJournal;
