@@ -845,6 +845,7 @@ GameObject:
   - component: {fileID: 1409293042}
   - component: {fileID: 1409293041}
   - component: {fileID: 1409293040}
+  - component: {fileID: 1409293043}
   m_Layer: 5
   m_Name: Journal_Icon
   m_TagString: Untagged
@@ -894,8 +895,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.8807186, b: 0, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 0.5019608, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -915,7 +916,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1409293041}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1409293043}
+        m_TargetAssemblyTypeName: JournalMenuManager, Assembly-CSharp
+        m_MethodName: Journal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1409293041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,90 +967,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409293038}
   m_CullTransparentMesh: 1
---- !u!1 &1554377736
-GameObject:
+--- !u!114 &1409293043
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1554377738}
-  - component: {fileID: 1554377737}
-  m_Layer: 0
-  m_Name: Journal_Controls
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &1554377737
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554377736}
+  m_GameObject: {fileID: 1409293038}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a5490473b411f4c5492e3801f6a5de30, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1554377738
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554377736}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62bfa02896ef14c028e1b4961271c186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SceneJournal:
+    _sceneAsset: {fileID: 102900000, guid: bad979f81a00f42e19d0d585bff75611, type: 3}
+    _sceneName: Journal_Menu
 --- !u!1 &1739839239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,11 +1021,13 @@ MonoBehaviour:
   officerFont: {fileID: 11400000, guid: 8f1d367c7200394449de0259a51b01d4, type: 2}
   typingSpeed: 0.12
   textBubble: {fileID: 1916101543}
-  journalControls: {fileID: 1554377736}
   journalIcon: {fileID: 1409293038}
   _levelSceneMeetingMaya:
     _sceneAsset: {fileID: 102900000, guid: 8f9ee9d1a62564b589fc3b02f80d2df3, type: 3}
     _sceneName: Meeting_Maya
+  _JournalControls:
+    _sceneAsset: {fileID: 102900000, guid: 0866a52df6e3a4d959dc5c60ddab63fd, type: 3}
+    _sceneName: Journal_Controls
   sophieMovement: {fileID: 1333476060}
 --- !u!4 &1739839241
 Transform:
@@ -1490,4 +1436,3 @@ SceneRoots:
   - {fileID: 1778044481}
   - {fileID: 1739839241}
   - {fileID: 1333476064}
-  - {fileID: 1554377738}

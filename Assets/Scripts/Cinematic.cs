@@ -21,18 +21,17 @@ public class DialogueManager : MonoBehaviour
     private string currentSpeaker = ""; // Store the current speaker's name
     public float typingSpeed = 0.12f; // Speed of typing effect
     public GameObject textBubble; // Reference to the text bubble game object
-    public GameObject journalControls; // Reference to the journal game object
     public GameObject journalIcon; // Reference to the journal game object
 
     [Header("Scene to Load")]
     [SerializeField] private SceneField _levelSceneMeetingMaya;
+    [SerializeField] private SceneField _JournalControls;
 
     [Header("Sophie Movement")]
     public SophieMovement sophieMovement; // Reference to the SophieMovement script
 
     void Start()
     {
-        journalControls.SetActive(false); // Hide the journal controls initially
         journalIcon.SetActive(false); // Hide the journal icon initially
         textBubble.SetActive(false); // Hide the text bubble initially
         // Enqueue the dialogues
@@ -104,7 +103,7 @@ public class DialogueManager : MonoBehaviour
                     // Clear the dialogue text and set the text bubble to inactive
                     dialogueText.text = "";
                     textBubble.SetActive(false);
-                    journalControls.SetActive(true); // Show the journal controls
+                    SceneManager.LoadSceneAsync(_JournalControls, LoadSceneMode.Additive);
                     sophieMovement.currentlyInteracting = false; // Update the currentlyInteracting flag
                 }
             }
@@ -112,7 +111,7 @@ public class DialogueManager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    journalControls.SetActive(false); // Show the journal controls
+                    SceneManager.UnloadSceneAsync(_JournalControls);
                     journalIcon.SetActive(true); // Show the journal icon
                 }
                 if (sophieMovement.transform.position.x < -9.2)
