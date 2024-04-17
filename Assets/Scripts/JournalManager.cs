@@ -12,7 +12,6 @@ public class JournalManager : MonoBehaviour
     [SerializeField] private SceneField _SceneMainMenu;
     [SerializeField] private SceneField _SceneSettings;
     [SerializeField] private SceneField _SceneControls;
-    [SerializeField] private SceneField _SceneCredits;
     [SerializeField] private SceneField _SceneJournal;
 
     public void MainMenu()
@@ -27,10 +26,6 @@ public class JournalManager : MonoBehaviour
     public void Controls()
     {
         SceneManager.LoadSceneAsync(_SceneControls, LoadSceneMode.Additive);
-    }
-
-    public void Credits()
-    {
     }
 
     void Update()
