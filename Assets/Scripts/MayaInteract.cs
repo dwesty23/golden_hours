@@ -11,6 +11,10 @@ public class MayaInteract : Interactable
     public Conversation convo;
     private bool hasInteracted = false;
 
+    [Header("Scenes to Load")]
+    [SerializeField] private SceneField _persistentScene;
+    [SerializeField] private SceneField _mainScene;
+
     public override void Interact()
     {
         Debug.Log("Interacting with Maya");
@@ -42,7 +46,8 @@ public class MayaInteract : Interactable
         }
 
         // Load the scene
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadSceneAsync(_persistentScene);
+        SceneManager.LoadSceneAsync(_mainScene, LoadSceneMode.Additive);
     }
 
     void AdjustCryVolume(float distance)

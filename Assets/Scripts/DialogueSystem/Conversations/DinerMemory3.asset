@@ -16,5 +16,5 @@ MonoBehaviour:
   - speaker: {fileID: 11400000, guid: dc6f2a96e92e94c089a3dda26b7a3ac3, type: 2}
     dialogue: Man that hit the spot! Thank you for the milkshake mom, and thank you
       for everything that you do for me.
-  - speaker: {fileID: 11400000, guid: 0175d9f3620be430aa4356109ab1b89a, type: 2}
+  - speaker: {fileID: 11400000, guid: 1b3ee762ad175412c821c47e59e19a0d, type: 2}
     dialogue: Everything I do will always be for you, sweetie.

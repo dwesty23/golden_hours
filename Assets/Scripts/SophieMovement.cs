@@ -14,6 +14,13 @@ public class SophieMovement : MonoBehaviour
     public LayerMask groundLayer;
     private Vector2 boxSize = new Vector2(0.1f, 1f);
 
+    // sound stuff
+    AudioManaging audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManaging>();    
+    }
+
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
@@ -39,6 +46,7 @@ public class SophieMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow) && !isJumping && !hasJumped)
             {
                 isJumping = true;
+                audioManager.PlaySFX(audioManager.jump);
                 playerRb.velocity = new Vector2(playerRb.velocity.x, jumpPower);
                 hasJumped = true;
             }
@@ -62,6 +70,7 @@ public class SophieMovement : MonoBehaviour
         {
             hasJumped = false;
             isJumping = false;
+            audioManager.PlaySFX(audioManager.land);
         }
     }
 

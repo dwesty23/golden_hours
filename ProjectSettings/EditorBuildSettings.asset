@@ -47,4 +47,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DinerOpenMain.unity
     guid: edda4a43390ee4a6fa656620a2f1c97a
+  - enabled: 1
+    path: Assets/Scenes/DinerFinishCutScene.unity
+    guid: f7d485b5e2b4d4f5a859d8325b3b96e9
+  - enabled: 1
+    path: Assets/Scenes/Journal_Menu.unity
+    guid: 488bfcbed2957415ca2f56a36cfabb2b
+  - enabled: 1
+    path: Assets/Scenes/Journal_Controls.unity
+    guid: 0866a52df6e3a4d959dc5c60ddab63fd
   m_configObjects: {}
