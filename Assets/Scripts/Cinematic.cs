@@ -17,22 +17,22 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> dialogues = new Queue<string>(); // Queue to store dialogues
     private bool isCurrentlyTyping = false; // Flag to check if currently typing
     private bool animationOver = false; // Flag to check if animation is over
+    private bool finalSpace = false; // Flag to check if the final space key has been pressed
     private string currentDialogue = ""; // Store the current dialogue
     private string currentSpeaker = ""; // Store the current speaker's name
     public float typingSpeed = 0.12f; // Speed of typing effect
     public GameObject textBubble; // Reference to the text bubble game object
-    public GameObject journalControls; // Reference to the journal game object
     public GameObject journalIcon; // Reference to the journal game object
 
     [Header("Scene to Load")]
     [SerializeField] private SceneField _levelSceneMeetingMaya;
+    [SerializeField] private SceneField _JournalControls;
 
     [Header("Sophie Movement")]
     public SophieMovement sophieMovement; // Reference to the SophieMovement script
 
     void Start()
     {
-        journalControls.SetActive(false); // Hide the journal controls initially
         journalIcon.SetActive(false); // Hide the journal icon initially
         textBubble.SetActive(false); // Hide the text bubble initially
         // Enqueue the dialogues
@@ -88,33 +88,33 @@ public class DialogueManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (isCurrentlyTyping)
+                if (!finalSpace)
                 {
-                    StopAllCoroutines(); // Stop the typing coroutine
-                    dialogueText.text = currentDialogue; // Display the full dialogue instantly
-                    isCurrentlyTyping = false; // Update flag
-                    UpdateCharacterImage(false); // Ensure the character image updates to not speaking
-                }
-                else if (!isCurrentlyTyping && dialogues.Count > 0)
-                {
-                    DisplayNextDialogue(); // Proceed to display the next dialogue
-                }
-                else if (!isCurrentlyTyping && dialogues.Count == 0)
-                {
-                    // Clear the dialogue text and set the text bubble to inactive
-                    dialogueText.text = "";
-                    textBubble.SetActive(false);
-                    journalControls.SetActive(true); // Show the journal controls
-                    sophieMovement.currentlyInteracting = false; // Update the currentlyInteracting flag
+                    if (isCurrentlyTyping)
+                    {
+                        StopAllCoroutines(); // Stop the typing coroutine
+                        dialogueText.text = currentDialogue; // Display the full dialogue instantly
+                        isCurrentlyTyping = false; // Update flag
+                        UpdateCharacterImage(false); // Ensure the character image updates to not speaking
+                    }
+                    else if (!isCurrentlyTyping && dialogues.Count > 0)
+                    {
+                        DisplayNextDialogue(); // Proceed to display the next dialogue
+                    }
+                    else if (!isCurrentlyTyping && dialogues.Count == 0)
+                    {
+                        // Clear the dialogue text and set the text bubble to inactive
+                        dialogueText.text = "";
+                        textBubble.SetActive(false);
+                        finalSpace = true; // Update the finalSpace flag
+                        SceneManager.LoadSceneAsync(_JournalControls, LoadSceneMode.Additive);
+                        sophieMovement.currentlyInteracting = false; // Update the currentlyInteracting flag
+                        journalIcon.SetActive(true); // Show the journal icon
+                    }
                 }
             }
             else if (!isCurrentlyTyping && dialogues.Count == 0)
             {
-                if (Input.GetKeyDown(KeyCode.Escape))
-                {
-                    journalControls.SetActive(false); // Show the journal controls
-                    journalIcon.SetActive(true); // Show the journal icon
-                }
                 if (sophieMovement.transform.position.x < -9.2)
                 {
                     // Start the main scene once Sophie has moved off-screen to the left
