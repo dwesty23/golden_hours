@@ -109,16 +109,12 @@ public class DialogueManager : MonoBehaviour
                         finalSpace = true; // Update the finalSpace flag
                         SceneManager.LoadSceneAsync(_JournalControls, LoadSceneMode.Additive);
                         sophieMovement.currentlyInteracting = false; // Update the currentlyInteracting flag
+                        journalIcon.SetActive(true); // Show the journal icon
                     }
                 }
             }
             else if (!isCurrentlyTyping && dialogues.Count == 0)
             {
-                if (Input.GetKeyDown(KeyCode.Escape))
-                {
-                    SceneManager.UnloadSceneAsync(_JournalControls);
-                    journalIcon.SetActive(true); // Show the journal icon
-                }
                 if (sophieMovement.transform.position.x < -9.2)
                 {
                     // Start the main scene once Sophie has moved off-screen to the left

@@ -1330,7 +1330,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 923685868}
-        m_TargetAssemblyTypeName: JournalMenuManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: OpeningJournalManager, Assembly-CSharp
         m_MethodName: Journal
         m_Mode: 1
         m_Arguments:
