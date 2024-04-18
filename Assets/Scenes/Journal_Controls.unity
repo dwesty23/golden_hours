@@ -505,7 +505,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 321153238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97f339f1ce266ac41b54523d64f87867, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fc469eab40d444c797fc898fc3a7cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _SceneJournal:
