@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Meeting_Maya.unity
     guid: 8f9ee9d1a62564b589fc3b02f80d2df3
   - enabled: 1
-    path: Assets/Scenes/Main.unity
+    path: Assets/Scenes/2_MainStreet.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/SlidingTilePuzzle.unity
