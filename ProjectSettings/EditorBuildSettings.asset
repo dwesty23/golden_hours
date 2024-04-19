@@ -56,4 +56,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Journal_Controls.unity
     guid: 0866a52df6e3a4d959dc5c60ddab63fd
+  - enabled: 1
+    path: Assets/Scenes/1_Forest.unity
+    guid: c2e39172a4ce44f2599433194f469d1e
+  - enabled: 1
+    path: Assets/Scenes/1_MainStreet.unity
+    guid: e9c7bbf8338fb4be5816459b26757270
+  - enabled: 1
+    path: Assets/Scenes/1_Neighborhood.unity
+    guid: fea0dd98b02ab4c7dac1c3e81eef8c4c
   m_configObjects: {}

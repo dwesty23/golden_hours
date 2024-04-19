@@ -181,12 +181,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 3d842f4dd95834c69a60456df94bbe02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c79112bfc3db44906b9af07990c99f41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 80, y: 21.601562}
+  m_Size: {x: 28.365652, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2125,9 +2125,18 @@ MonoBehaviour:
   _persistentScene:
     _sceneAsset: {fileID: 102900000, guid: 99fb98ee4c50e49a1babe0be8287a8c3, type: 3}
     _sceneName: PersistentGameplay
+  scenesToLoad:
+  - _sceneAsset: {fileID: 102900000, guid: c2e39172a4ce44f2599433194f469d1e, type: 3}
+    _sceneName: 1_Forest
+  - _sceneAsset: {fileID: 102900000, guid: e9c7bbf8338fb4be5816459b26757270, type: 3}
+    _sceneName: 1_MainStreet
+  - _sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+    _sceneName: 2_MainStreet
+  - _sceneAsset: {fileID: 102900000, guid: fea0dd98b02ab4c7dac1c3e81eef8c4c, type: 3}
+    _sceneName: 1_Neighborhood
   _mainScene:
     _sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-    _sceneName: Main
+    _sceneName: 2_MainStreet
 --- !u!61 &1949251597
 BoxCollider2D:
   m_ObjectHideFlags: 0

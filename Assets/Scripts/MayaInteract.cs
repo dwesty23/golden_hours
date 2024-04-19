@@ -11,8 +11,11 @@ public class MayaInteract : Interactable
     public Conversation convo;
     private bool hasInteracted = false;
 
-    [Header("Scenes to Load")]
+    [Header("Persistence scene")]
     [SerializeField] private SceneField _persistentScene;
+    [Header("Scenes to Load")]
+    [SerializeField] private SceneField[] scenesToLoad;
+    
     [SerializeField] private SceneField _mainScene;
 
     public override void Interact()
@@ -47,6 +50,11 @@ public class MayaInteract : Interactable
 
         // Load the scene
         SceneManager.LoadSceneAsync(_persistentScene);
+        // iterate through scenes to load and load them additively
+        // foreach (SceneField scene in scenesToLoad)
+        // {
+        //     SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
+        // }
         SceneManager.LoadSceneAsync(_mainScene, LoadSceneMode.Additive);
     }
 
