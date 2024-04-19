@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SophieMovement : MonoBehaviour
 {
@@ -13,6 +14,13 @@ public class SophieMovement : MonoBehaviour
     public Animator animator;
     public LayerMask groundLayer;
     private Vector2 boxSize = new Vector2(0.1f, 1f);
+
+    // sound stuff
+    AudioManaging audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManaging>();    
+    }
 
     void Start()
     {
@@ -36,9 +44,10 @@ public class SophieMovement : MonoBehaviour
         if (!currentlyInteracting)
         {   
             moveDirection = Input.GetAxis("Horizontal");
-            if (Input.GetKeyDown(KeyCode.UpArrow) && !isJumping && !hasJumped)
+            if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))  && !isJumping && !hasJumped)
             {
                 isJumping = true;
+                audioManager.PlaySFX(audioManager.jump);
                 playerRb.velocity = new Vector2(playerRb.velocity.x, jumpPower);
                 hasJumped = true;
             }
@@ -62,6 +71,7 @@ public class SophieMovement : MonoBehaviour
         {
             hasJumped = false;
             isJumping = false;
+            audioManager.PlaySFX(audioManager.land);
         }
     }
 

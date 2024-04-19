@@ -73,7 +73,7 @@ public class DialogueManagerM : MonoBehaviour
         }
         // speakerName.text = currentConvo.GetLineByIndex(currentIndex).speaker.GetName();
         finishTyping = false;
-        instance.StartCoroutine(TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue));
+        instance.StartCoroutine(TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue.ToUpper()));
         speakerSprite.sprite = currentConvo.GetLineByIndex(currentIndex).speaker.GetSprite();
         instance.dialogue.font = currentConvo.GetLineByIndex(currentIndex).speaker.GetFont();
         currentIndex++;
@@ -82,7 +82,6 @@ public class DialogueManagerM : MonoBehaviour
     private IEnumerator TypeText(string text)
     {
         dialogue.text = "";
-
         foreach (char c in text)
         {
             dialogue.text += c;
