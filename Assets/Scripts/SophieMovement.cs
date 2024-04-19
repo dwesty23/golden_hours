@@ -11,7 +11,6 @@ public class SophieMovement : MonoBehaviour
     private bool isJumping = false;
     private bool hasJumped = false;
     public bool currentlyInteracting = false; // Flag used in the police scene to stop sophie from moving while interacting
-    public bool stopJumping = false; // Flag used to stop sophie from jumping in the police station
     public Animator animator;
     public LayerMask groundLayer;
     private Vector2 boxSize = new Vector2(0.1f, 1f);
@@ -27,14 +26,6 @@ public class SophieMovement : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
-        // Hack for now to stop sophie from jumping in the police station until we have a solution to implement her being able to jump in the police station
-        Scene currentScene = SceneManager.GetActiveScene();
-        string sceneName = currentScene.name;
-        if (sceneName == "Police_Station")
-        {
-            stopJumping = true;
-        }
     }
 
     void Update()
@@ -53,15 +44,12 @@ public class SophieMovement : MonoBehaviour
         if (!currentlyInteracting)
         {   
             moveDirection = Input.GetAxis("Horizontal");
-            if (!stopJumping)
+            if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))  && !isJumping && !hasJumped)
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow) && !isJumping && !hasJumped)
-                {
-                    isJumping = true;
-                    audioManager.PlaySFX(audioManager.jump);
-                    playerRb.velocity = new Vector2(playerRb.velocity.x, jumpPower);
-                    hasJumped = true;
-                }
+                isJumping = true;
+                audioManager.PlaySFX(audioManager.jump);
+                playerRb.velocity = new Vector2(playerRb.velocity.x, jumpPower);
+                hasJumped = true;
             }
 
             if (Input.GetKeyDown(KeyCode.E))
