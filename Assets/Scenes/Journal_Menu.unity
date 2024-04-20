@@ -399,8 +399,8 @@ MonoBehaviour:
     _sceneAsset: {fileID: 102900000, guid: 5321e289aecb44156ac29f2697b36acd, type: 3}
     _sceneName: Menu
   _SceneSettings:
-    _sceneAsset: {fileID: 102900000, guid: f7014a804a6b64e9aa54e7a9b0758d20, type: 3}
-    _sceneName: Settings
+    _sceneAsset: {fileID: 102900000, guid: bafee72f39c1bed42aa5487c2a33241e, type: 3}
+    _sceneName: Journal_Settings
   _SceneControls:
     _sceneAsset: {fileID: 102900000, guid: 0c0850ea49fa66643afe873930d2ea1f, type: 3}
     _sceneName: Journal_Controls

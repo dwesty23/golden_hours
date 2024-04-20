@@ -511,7 +511,7 @@ MonoBehaviour:
   _SceneJournal:
     _sceneAsset: {fileID: 102900000, guid: bad979f81a00f42e19d0d585bff75611, type: 3}
     _sceneName: Journal_Menu
-  _SceneControls:
+  _SceneJournalCurrent:
     _sceneAsset: {fileID: 102900000, guid: 0c0850ea49fa66643afe873930d2ea1f, type: 3}
     _sceneName: Journal_Controls
 --- !u!1 &1355148365

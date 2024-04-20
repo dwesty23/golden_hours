@@ -36,6 +36,8 @@ public class JournalManager : MonoBehaviour
 
     public void Settings()
     {
+        SceneManager.LoadSceneAsync(_SceneSettings, LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync(_SceneJournal);
     }
 
     public void Controls()
