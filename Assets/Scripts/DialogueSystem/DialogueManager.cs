@@ -73,14 +73,20 @@ public class DialogueManagerM : MonoBehaviour
         }
         // speakerName.text = currentConvo.GetLineByIndex(currentIndex).speaker.GetName();
         finishTyping = false;
-        instance.StartCoroutine(TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue.ToUpper()));
+        instance.StartCoroutine(TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue, currentConvo.GetLineByIndex(currentIndex).speaker.GetFont()));
         speakerSprite.sprite = currentConvo.GetLineByIndex(currentIndex).speaker.GetSprite();
         instance.dialogue.font = currentConvo.GetLineByIndex(currentIndex).speaker.GetFont();
         currentIndex++;
     }
 
-    private IEnumerator TypeText(string text)
+    private IEnumerator TypeText(string text, TMP_FontAsset currentFont)
     {
+        if (currentFont.name == "Font Diner Boss SDF")
+        {
+            text = text.ToUpper();
+            Debug.Log("Converted Text to Uppercase: " + text);  // Check the output here
+        }
+
         dialogue.text = "";
         foreach (char c in text)
         {

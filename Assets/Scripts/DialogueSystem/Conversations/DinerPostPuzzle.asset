@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allLines:
   - speaker: {fileID: 11400000, guid: a06c9cc93e7244f7eaa30d7c36c2ba35, type: 2}
-    dialogue: Good work Sophia, you can leave now.
+    dialogue: GOOD WORK SOPHIA, YOU CAN LEAVE NOW.
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
     dialogue: "You did it! You are amazing! And those milkshakes all looked\u2026
       so tasty\u2026"

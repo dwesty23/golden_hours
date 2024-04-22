@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allLines:
   - speaker: {fileID: 11400000, guid: a06c9cc93e7244f7eaa30d7c36c2ba35, type: 2}
-    dialogue: 'There you are Sophia! Late on your first day, really? Unbelievable! '
+    dialogue: 'THERE YOU ARE SOPHIA! LATE ON YOUR FIRST DAY, REALLY? UNBELIEVABLE! '
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
     dialogue: "Uhhh is he talking to you\u2026?"
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
     dialogue: Crap! I forgot I was supposed to start my new job today. This is terrible
       timing!
   - speaker: {fileID: 11400000, guid: a06c9cc93e7244f7eaa30d7c36c2ba35, type: 2}
-    dialogue: Huh? What are you yapping about?
+    dialogue: HUH? WHAT ARE YOU YAPPING ABOUT?
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
     dialogue: "I know this is going to sound a bit farfetched, but I can\u2019t start
       today."
@@ -29,13 +29,13 @@ MonoBehaviour:
     dialogue: "I\u2019m dealing with something personal right now, my sister is missing,
       she went missing this morning and I\u2019m trying to find her."
   - speaker: {fileID: 11400000, guid: a06c9cc93e7244f7eaa30d7c36c2ba35, type: 2}
-    dialogue: "I\u2019ve gotten a lot of excuses to bail on work in my day, but this
-      might be one of the craziest. "
+    dialogue: "I\u2019VE GOTTEN A LOT OF EXCUSES TO BAIL ON WORK IN MY DAY, BUT THIS
+      MIGHT BE ONE OF THE CRAZIEST. "
   - speaker: {fileID: 11400000, guid: a06c9cc93e7244f7eaa30d7c36c2ba35, type: 2}
-    dialogue: "Not to mention you were just talking about getting a milkshake, don\u2019t
-      think I didn\u2019t hear you!"
+    dialogue: "NOT TO MENTION YOU WERE JUST TALKING ABOUT GETTING A MILKSHAKE, DON\u2019T
+      THINK I DIDN\u2019T HEAR YOU!"
   - speaker: {fileID: 11400000, guid: a06c9cc93e7244f7eaa30d7c36c2ba35, type: 2}
-    dialogue: Now, unless you want to lose your job here and everywhere else you
-      work, I expect you to be in the kitchen NOW!
+    dialogue: NOW, UNLESS YOU WANT TO LOSE YOUR JOB HERE AND EVERYWHERE ELSE YOU
+      WORK, I EXPECT YOU TO BE IN THE KITCHEN NOW!
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
     dialogue: "This is ridiculous. Let\u2019s just make this quick."
