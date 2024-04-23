@@ -31,6 +31,8 @@ public class SwitchPuzzleManager : MonoBehaviour
         {
             ActivateNote(); // Activate a note based on correct flips
 
+            
+
             if (currentSwitchOrder.Count == correctSwitchOrder.Count)
             {
                 Debug.Log("Puzzle solved! Correct order.");

@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1187849126a4b4b8e9600ab2fb010a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctSwitchOrder: 020000000000000001000000070000000300000004000000
+  correctSwitchOrder: 0200000000000000010000000700000003000000
   switchPrefabs:
   - {fileID: 1010466660}
   - {fileID: 8588115808243437757}
