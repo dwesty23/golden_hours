@@ -1,12 +1,15 @@
 using UnityEngine;
-using System; // Needed for Action
+using System;
 
 public class SwitchTrigger : MonoBehaviour
 {
-    public static event Action<SwitchTrigger> OnSwitchClicked;
+    public static event Action<SwitchesController> OnSwitchClicked;
 
-    void OnMouseDown()
+    public SwitchesController switchesController; // Reference to SwitchesController
+
+    private void OnMouseDown()
     {
-        OnSwitchClicked?.Invoke(this);
+        // When the switch is clicked, trigger the event with this instance
+        OnSwitchClicked?.Invoke(switchesController);
     }
 }
