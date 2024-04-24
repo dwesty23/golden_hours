@@ -7,6 +7,7 @@ public class SwitchPuzzleManager : MonoBehaviour
     private List<int> currentSwitchOrder = new List<int>(); // Track order of clicked switches
     public List<GameObject> switchPrefabs; // List of all switch GameObjects in the scene
     public List<GameObject> notes; // List of note GameObjects to activate
+    public GameObject arcadeMachine; // Reference to the arcade machine
 
     private void OnEnable()
     {
@@ -36,7 +37,7 @@ public class SwitchPuzzleManager : MonoBehaviour
             if (currentSwitchOrder.Count == correctSwitchOrder.Count)
             {
                 Debug.Log("Puzzle solved! Correct order.");
-                // Logic for when the puzzle is solved, like opening a door
+                arcadeMachine.SetActive(true); 
             }
         }
         else
