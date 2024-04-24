@@ -217,7 +217,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 697304192372203505, guid: 2adb9aadce0d24a2fb6caad56ed44540, type: 3}
       propertyPath: _scenesToLoad.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 697304192372203505, guid: 2adb9aadce0d24a2fb6caad56ed44540, type: 3}
       propertyPath: _scenesToUnload.Array.size
@@ -229,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 697304192372203505, guid: 2adb9aadce0d24a2fb6caad56ed44540, type: 3}
       propertyPath: _scenesToLoad.Array.data[1]._sceneName
-      value: 2_MainStreet
+      value: 1_Graveyard
       objectReference: {fileID: 0}
     - target: {fileID: 697304192372203505, guid: 2adb9aadce0d24a2fb6caad56ed44540, type: 3}
       propertyPath: _scenesToLoad.Array.data[0]._sceneAsset
@@ -238,7 +238,7 @@ PrefabInstance:
     - target: {fileID: 697304192372203505, guid: 2adb9aadce0d24a2fb6caad56ed44540, type: 3}
       propertyPath: _scenesToLoad.Array.data[1]._sceneAsset
       value: 
-      objectReference: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+      objectReference: {fileID: 102900000, guid: 371a51f545aa64bdabd06452a3f047e9, type: 3}
     - target: {fileID: 697304192372203505, guid: 2adb9aadce0d24a2fb6caad56ed44540, type: 3}
       propertyPath: _scenesToUnload.Array.data[0]._sceneName
       value: 2_MainStreet
@@ -249,11 +249,11 @@ PrefabInstance:
       objectReference: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
     - target: {fileID: 6350057387451527753, guid: 2adb9aadce0d24a2fb6caad56ed44540, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.29
+      value: -31.79
       objectReference: {fileID: 0}
     - target: {fileID: 6350057387451527753, guid: 2adb9aadce0d24a2fb6caad56ed44540, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.72
+      value: 6.39
       objectReference: {fileID: 0}
     - target: {fileID: 6350057387451527753, guid: 2adb9aadce0d24a2fb6caad56ed44540, type: 3}
       propertyPath: m_LocalPosition.z
@@ -455,7 +455,7 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -5.5}
+  m_Offset: {x: 0, y: -5.59}
   m_EdgeRadius: 0
   m_Points:
   - {x: -19.20149, y: 0}
