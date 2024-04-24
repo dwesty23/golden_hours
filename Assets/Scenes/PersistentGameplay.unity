@@ -560,6 +560,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 953531661}
   smoothTime: 0.25
+  minValue: {x: -950.09, y: -534.87, z: -1.55}
+  maxValue: {x: -911.6, y: -529.11, z: -1.55}
 --- !u!114 &313903977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -777,7 +779,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 526028109}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1067,7 +1069,7 @@ GameObject:
   - component: {fileID: 953531664}
   - component: {fileID: 953531663}
   - component: {fileID: 953531662}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sophie
   m_TagString: Sophie
   m_Icon: {fileID: 0}
@@ -1125,7 +1127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRb: {fileID: 953531665}
   speed: 5
-  jumpPower: 5
+  jumpPower: 7
   moveDirection: 0
   facingRight: 0
   currentlyInteracting: 0
@@ -1165,8 +1167,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18, y: -0.27}
-  m_Size: {x: 1.73, y: 7.7}
+  m_Offset: {x: -0.18000004, y: -3.1065495}
+  m_Size: {x: 1.7300001, y: 2.0269048}
   m_Direction: 0
 --- !u!50 &953531665
 Rigidbody2D:
@@ -1382,7 +1384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1118206249}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: boxCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
