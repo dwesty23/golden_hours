@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Journal_Settings.unity
     guid: bafee72f39c1bed42aa5487c2a33241e
+  - enabled: 1
+    path: Assets/Scenes/memory1_overlay.unity
+    guid: 5d1a3d9d840c6446da817c4b43268a02
   m_configObjects: {}
