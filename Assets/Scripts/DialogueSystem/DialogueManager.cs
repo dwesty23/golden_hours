@@ -15,6 +15,8 @@ public class DialogueManagerM : MonoBehaviour
     private Animator animator;
     private bool finishTyping = false;
     private bool conversationFinished = true;
+    private bool UsingUpperCase = false;
+    private bool UsingLowerCase = false;
 
     private void Awake()
     {
@@ -41,7 +43,14 @@ public class DialogueManagerM : MonoBehaviour
             else if (!finishTyping)
             {
                 StopAllCoroutines();
-                instance.dialogue.text = currentConvo.GetLineByIndex(currentIndex-1).dialogue;
+                if (UsingUpperCase)
+                {
+                    instance.dialogue.text = currentConvo.GetLineByIndex(currentIndex-1).dialogue.ToUpper();
+                }
+                else if (UsingLowerCase)
+                {
+                    instance.dialogue.text = currentConvo.GetLineByIndex(currentIndex-1).dialogue.ToLower();
+                }
                 finishTyping = true;
             }
         }
@@ -81,16 +90,22 @@ public class DialogueManagerM : MonoBehaviour
 
     private IEnumerator TypeText(string text, TMP_FontAsset currentFont)
     {
-        if (currentFont.name == "Font Diner Boss SDF")
-        {
-            text = text.ToUpper();
-            Debug.Log("Converted Text to Uppercase: " + text);  // Check the output here
-        }
 
         dialogue.text = "";
         foreach (char c in text)
         {
-            dialogue.text += c;
+            if (currentFont.name == "Font Diner Boss SDF")
+            {
+                UsingUpperCase = true;
+                UsingLowerCase = false;
+                dialogue.text += c.ToString().ToUpper();
+            }
+            else 
+            {
+                UsingUpperCase = false;
+                UsingLowerCase = true;
+                dialogue.text += c.ToString().ToLower();
+            }
             yield return new WaitForSeconds(0.05f);
         }
         finishTyping = true;

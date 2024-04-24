@@ -187,35 +187,71 @@ public class ST_PuzzleDisplay : MonoBehaviour
 		return thisTile;
 	}
 
+	// private IEnumerator JugglePuzzle()
+	// {
+	// 	yield return new WaitForSeconds(1.0f);
+
+	// 	// hide a puzzle tile (one is always missing to allow the puzzle movement).
+	// 	TileDisplayArray[0,2].GetComponent<ST_PuzzleTile>().Active = false;
+
+	// 	yield return new WaitForSeconds(1.0f);
+
+	// 	
+
+	// 	// continually check for the correct answer.
+	// 	StartCoroutine(CheckForComplete());
+
+	// 	yield return null;
+	// }
+
 	private IEnumerator JugglePuzzle()
 	{
 		yield return new WaitForSeconds(1.0f);
 
-		// hide a puzzle tile (one is always missing to allow the puzzle movement).
-		TileDisplayArray[0,2].GetComponent<ST_PuzzleTile>().Active = false;
+		// Hide a puzzle tile (one is always missing to allow the puzzle movement).
+		TileDisplayArray[0, 2].GetComponent<ST_PuzzleTile>().Active = false;
 
 		yield return new WaitForSeconds(1.0f);
 
-		for(int k = 0; k < 20; k++)
+		// Loop for random shuffle actions
+		if(PuzzleComplete == 0){
+		for (int k = 0; k < 20; k++)
 		{
-			// use random to position each puzzle section in the array delete the number once the space is filled.
-			for(int j = 0; j < Height; j++)
+			// Only shuffle the upper rows, excluding the bottom row
+			for (int j = Height - 1; j > 0; j--)  // Changed 'j >= 0' to 'j > 0' to exclude the bottom row
 			{
-				for(int i = 0; i < Width; i++)
-				{		
-					// attempt to execute a move for this tile.
-					TileDisplayArray[i,j].GetComponent<ST_PuzzleTile>().ExecuteAdditionalMove();
-
+				for (int i = 0; i < Width; i++)
+				{       
+					// Attempt to execute a move for this tile.
+					TileDisplayArray[i, j].GetComponent<ST_PuzzleTile>().ExecuteAdditionalMove();
 					yield return new WaitForSeconds(0.02f);
 				}
 			}
 		}
+		}
+		else {
+		for(int k = 0; k < 20; k++)
+			{
+				// use random to position each puzzle section in the array delete the number once the space is filled.
+				for(int j = 0; j < Height; j++)
+				{
+					for(int i = 0; i < Width; i++)
+					{		
+						// attempt to execute a move for this tile.
+						TileDisplayArray[i,j].GetComponent<ST_PuzzleTile>().ExecuteAdditionalMove();
 
-		// continually check for the correct answer.
+						yield return new WaitForSeconds(0.02f);
+					}
+				}
+			}
+		}
+
+		// Continually check for the correct answer.
 		StartCoroutine(CheckForComplete());
 
 		yield return null;
 	}
+
 
 	public IEnumerator CheckForComplete()
 	{
