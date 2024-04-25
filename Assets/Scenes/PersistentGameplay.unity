@@ -1627,6 +1627,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1500210069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1500210071}
+  - component: {fileID: 1500210070}
+  m_Layer: 0
+  m_Name: Scenes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1500210070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500210069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b770128ee5ec34481884b16a181a856b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _persistentScene:
+    _sceneAsset: {fileID: 102900000, guid: 99fb98ee4c50e49a1babe0be8287a8c3, type: 3}
+    _sceneName: PersistentGameplay
+  _scenesToLoad:
+  - _sceneAsset: {fileID: 102900000, guid: c2e39172a4ce44f2599433194f469d1e, type: 3}
+    _sceneName: 1_Forest
+  - _sceneAsset: {fileID: 102900000, guid: 371a51f545aa64bdabd06452a3f047e9, type: 3}
+    _sceneName: 1_Graveyard
+  - _sceneAsset: {fileID: 102900000, guid: e9c7bbf8338fb4be5816459b26757270, type: 3}
+    _sceneName: 1_MainStreet
+  - _sceneAsset: {fileID: 102900000, guid: fea0dd98b02ab4c7dac1c3e81eef8c4c, type: 3}
+    _sceneName: 1_Neighborhood
+  - _sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+    _sceneName: 2_MainStreet
+--- !u!4 &1500210071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500210069}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1506680318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2872,3 +2930,4 @@ SceneRoots:
   - {fileID: 1481871964}
   - {fileID: 1515813877}
   - {fileID: 1688618561}
+  - {fileID: 1500210071}

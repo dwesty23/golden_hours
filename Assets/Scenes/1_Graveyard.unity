@@ -263,7 +263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 697304192372203505, guid: 2adb9aadce0d24a2fb6caad56ed44540, type: 3}
       propertyPath: _scenesToUnload.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 697304192372203505, guid: 2adb9aadce0d24a2fb6caad56ed44540, type: 3}
       propertyPath: _scenesToLoad.Array.data[0]._sceneName
