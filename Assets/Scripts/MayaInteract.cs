@@ -10,14 +10,6 @@ public class MayaInteract : Interactable
     public float maxCryDistance = 10f; // Distance at which Maya's cries are at minimum volume
     public Conversation convo;
     private bool hasInteracted = false;
-
-    [Header("Persistence scene")]
-    [SerializeField] private SceneField _persistentScene;
-    [Header("Scenes to Load")]
-    [SerializeField] private SceneField[] scenesToLoad;
-    
-    [SerializeField] private SceneField _mainScene;
-
     public override void Interact()
     {
         Debug.Log("Interacting with Maya");
@@ -49,13 +41,7 @@ public class MayaInteract : Interactable
         }
 
         // Load the scene
-        SceneManager.LoadSceneAsync(_persistentScene);
-        // iterate through scenes to load and load them additively
-        // foreach (SceneField scene in scenesToLoad)
-        // {
-        //     SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
-        // }
-        SceneManager.LoadSceneAsync(_mainScene, LoadSceneMode.Additive);
+        Scenes.Instance.LoadMap();
     }
 
     void AdjustCryVolume(float distance)
