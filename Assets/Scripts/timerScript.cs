@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        yellowColor = new Color(221f/255f, 192f/255f, 98f/255f);
+        yellowColor = new Color(228f/255f, 191f/255f, 79f/255f);
         timerImage.fillAmount = 1.0f;
         segmentTime = totalTime / numberOfSegments;
         timeRemaining = segmentTime;
