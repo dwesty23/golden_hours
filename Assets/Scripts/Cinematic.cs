@@ -37,16 +37,25 @@ public class DialogueManager : MonoBehaviour
         textBubble.SetActive(false); // Hide the text bubble initially
         // Enqueue the dialogues
         dialogues.Enqueue("Sophie: Excuse me? Excuse me!");
+
         dialogues.Enqueue("Officer: Hm?");
+
         dialogues.Enqueue("Sophie: I’ve been here for an hour and nobody has helped me. Can I PLEASE talk to you?");
-        dialogues.Enqueue("Officer: Ma’am, you have to wait your turn.");
-        dialogues.Enqueue("Officer: I’m sure everybody here needs to be helped just as much as you do.");
-        dialogues.Enqueue("Sophie: My little sister is missing, she’s 10. Last night, we got in a… fight.");
-        dialogues.Enqueue("Sophie: Just a small argument really. She stormed off and I haven’t seen her since last night.");
-        dialogues.Enqueue("Sophie: I called her friends, nobody has seen her. Please, help-");
+
+        dialogues.Enqueue("Officer: Ma’am, you have to wait your turn, I’m sure everybody here needs to be helped just as much as you do.");
+
+        dialogues.Enqueue("Sophie: My little sister Amber is missing, she’s 10.");
+
+        dialogues.Enqueue("Sophie: Last night, we got in an… argument. She stormed off and I haven’t seen her since.");
+
+        dialogues.Enqueue("Sophie: I already called her friends, they haven’t seen her either. Please, help-");
+
         dialogues.Enqueue("Officer: Wait. In. Line.");
+
         dialogues.Enqueue("Sophie: But I-");
+        
         dialogues.Enqueue("Officer: In LINE ma’am. Or I will have to escort you out of the premises.");
+
         dialogues.Enqueue("Sophie: Forget it. I’ll find her myself."); 
 
         //DisplayNextDialogue();

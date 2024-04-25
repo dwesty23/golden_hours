@@ -13,61 +13,44 @@ MonoBehaviour:
   m_Name: MeetingMaya
   m_EditorClassIdentifier: 
   allLines:
-  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
-    dialogue: Uh, hello?
   - speaker: {fileID: 11400000, guid: 642484ff3c2cd4946896f464a693f2aa, type: 2}
     dialogue: "Waaa\u2026. Waaaa\u2026."
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
-    dialogue: Hello, uh, are you okay?
+    dialogue: Hello?
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: Huh? Wait, are you talking to me?
+    dialogue: Huh? Are you talking to me?
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
     dialogue: Do you see anybody else around?
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: "No, I\u2019m just confused. How can you see me? I\u2019m a ghost!"
+    dialogue: "No, I\u2019m just confused. How can you see me?"
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
     dialogue: Well, it was hard to ignore you.
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: "Well I\u2019m glad I found you! I really need your help. "
+    dialogue: "I don\u2019t know if you\u2019ve noticed, but I\u2019m a ghost. Like
+      I\u2019m dead! Gone!"
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: When I turned into a ghost, I lost all my memories. Like they were
-      all poofed away!
-  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: "I don\u2019t know where I am, I don\u2019t know where to go, I don\u2019t
-      know what happened to me, all I can remember is my name. "
-  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: "I\u2019m Maya, what\u2019s your name?"
+    dialogue: "No longer breathing! And worst of all, I can\u2019t remember a stinking
+      thing about how it happened!!!"
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
-    dialogue: "Sorry, but I can\u2019t help you right now. I have my own stuff to
-      deal with."
+    dialogue: Well, I hope you can figure it out.
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: Oh please! I promise I can be of help to you too if you help me.
+    dialogue: Wait! I overheard you talking to the policeman, you said your sister
+      was missing right?
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: I overheard you talking to the policeman, you said your sister was
-      missing right?
-  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: Well, I can help you find her! I just need your help first.
+    dialogue: Well, I can help you find her! Having a partner would help right? In
+      exchange, you can help me get my memories back!
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
-    dialogue: You were spying on me?
+    dialogue: Wait what? You were spying on me?
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
     dialogue: No no no! I was just trying to find help, but nobody would talk to
       me. Nobody would even look at me. Except you.
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
-    dialogue: "Ok fine, I\u2019ll help you, but you have to help me too."
+    dialogue: "Ok but I need you to understand how important this is. If we don\u2019t
+      find her in 72 hours, we could potentially never find her again."
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "Don\u2019t worry, we\u2019ll find her! My name\u2019s Maya, what\u2019s
+      your name?"
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
-    dialogue: "We don\u2019t have much time, if I\u2019m correct, we only have 72
-      hours to find her before I could lose her forever."
+    dialogue: Sophie.
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: "I promise you I won\u2019t, I\u2019m a great partner. We will find
-      your sister, don\u2019t worry!"
-  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
-    dialogue: Thank you Maya.
-  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: "You\u2019re welcome\u2026 wait you never told me your name!"
-  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
-    dialogue: "Right sorry, it\u2019s Sophie."
-  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: Sophie! I like your name!
-  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
-    dialogue: "So Sophie, how about we start asking around to see if people have
-      seen your sister? Let\u2019s find somewhere that has lots of people!"
+    dialogue: "Alright Sophie, let\u2019s go find your sister! "
