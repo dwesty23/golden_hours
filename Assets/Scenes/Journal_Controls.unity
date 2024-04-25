@@ -236,7 +236,6 @@ GameObject:
   m_Component:
   - component: {fileID: 318922024}
   - component: {fileID: 318922023}
-  - component: {fileID: 318922022}
   - component: {fileID: 318922021}
   m_Layer: 0
   m_Name: Camera
@@ -289,14 +288,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &318922022
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 318922020}
-  m_Enabled: 1
 --- !u!20 &318922023
 Camera:
   m_ObjectHideFlags: 0
@@ -511,7 +502,7 @@ MonoBehaviour:
   _SceneJournal:
     _sceneAsset: {fileID: 102900000, guid: bad979f81a00f42e19d0d585bff75611, type: 3}
     _sceneName: Journal_Menu
-  _SceneControls:
+  _SceneJournalCurrent:
     _sceneAsset: {fileID: 102900000, guid: 0c0850ea49fa66643afe873930d2ea1f, type: 3}
     _sceneName: Journal_Controls
 --- !u!1 &1355148365

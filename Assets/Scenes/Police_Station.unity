@@ -430,7 +430,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 715ab46f94c634d0d94ff30c7f242036, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5809cb2039470434e8bc3b7616c4021f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -874,7 +874,6 @@ MonoBehaviour:
   moveDirection: 0
   facingRight: 0
   currentlyInteracting: 0
-  stopJumping: 0
   animator: {fileID: 0}
   groundLayer:
     serializedVersion: 2

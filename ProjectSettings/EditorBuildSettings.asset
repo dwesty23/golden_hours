@@ -66,6 +66,12 @@ EditorBuildSettings:
     path: Assets/Scenes/1_Neighborhood.unity
     guid: fea0dd98b02ab4c7dac1c3e81eef8c4c
   - enabled: 1
+
     path: Assets/Scenes/1_Graveyard.unity
     guid: 371a51f545aa64bdabd06452a3f047e9
+    path: Assets/Scenes/Journal_Settings.unity
+    guid: bafee72f39c1bed42aa5487c2a33241e
+  - enabled: 1
+    path: Assets/Scenes/memory1_overlay.unity
+    guid: 5d1a3d9d840c6446da817c4b43268a02
   m_configObjects: {}

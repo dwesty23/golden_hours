@@ -14,13 +14,17 @@ public class JournalManager : MonoBehaviour
     [SerializeField] private SceneField _SceneControls;
     [SerializeField] private SceneField _SceneJournal;
     
-    [Header("Memory Images")]
+    [Header("Memory 1")]
     public Image MemoryImage1;
+    public Button MemoryButton1;
+    [SerializeField] private SceneField _SceneMemory1;
+
     public bool Memory1Collected = false;
 
     void Start()
     {
         MemoryImage1.enabled = false;
+        MemoryButton1.enabled = false;
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         if (sceneName == "DinerFinishCutScene")
@@ -36,6 +40,8 @@ public class JournalManager : MonoBehaviour
 
     public void Settings()
     {
+        SceneManager.LoadSceneAsync(_SceneSettings, LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync(_SceneJournal);
     }
 
     public void Controls()
@@ -44,11 +50,22 @@ public class JournalManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(_SceneJournal);
     }
 
+    public void PlayMemory1()
+    {
+        SceneManager.LoadSceneAsync(_SceneMemory1, LoadSceneMode.Additive);
+        foreach (GameObject go in SceneManager.GetActiveScene().GetRootGameObjects())
+        {
+            go.SetActive(false);
+        }
+        SceneManager.UnloadSceneAsync(_SceneJournal);
+    }
+
     void Update()
     {
         if (Memory1Collected == true)
         {
             MemoryImage1.enabled = true;
+            MemoryButton1.enabled = true;
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
