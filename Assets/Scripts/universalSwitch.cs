@@ -7,6 +7,9 @@ public class SwitchPuzzleManager : MonoBehaviour
     private List<int> currentSwitchOrder = new List<int>(); // Track order of clicked switches
     public List<GameObject> switchPrefabs; // List of all switch GameObjects in the scene
     public List<GameObject> notes; // List of note GameObjects to activate
+    public GameObject arcadeMachine; // Reference to the arcade machine
+
+    public AudioManaging audioManager;
 
     private void OnEnable()
     {
@@ -35,8 +38,10 @@ public class SwitchPuzzleManager : MonoBehaviour
 
             if (currentSwitchOrder.Count == correctSwitchOrder.Count)
             {
+                audioManager.StopBackgroundSound();
+                audioManager.PlaySFX(audioManager.puzzle2Complete);
                 Debug.Log("Puzzle solved! Correct order.");
-                // Logic for when the puzzle is solved, like opening a door
+                arcadeMachine.SetActive(true); 
             }
         }
         else
@@ -49,9 +54,11 @@ public class SwitchPuzzleManager : MonoBehaviour
     private void ActivateNote()
     {
         int noteIndex = currentSwitchOrder.Count - 1; // Index for notes (0-based)
+
         
         if (noteIndex >= 0 && noteIndex < notes.Count) // Ensure within range
         {
+            audioManager.PlaySFX(audioManager.switchSounds[noteIndex]);
             notes[noteIndex].SetActive(true); // Activate the corresponding note
         }
     }
@@ -65,9 +72,12 @@ public class SwitchPuzzleManager : MonoBehaviour
             Debug.Log("Correct switch order: " + correctSwitchOrder[i]);
             if (currentSwitchOrder[i] != correctSwitchOrder[i])
             {
+                audioManager.PlaySFX(audioManager.switchSounds[5]);
                 return false;
+                
             }
         }
+        
         return true;
     }
 
