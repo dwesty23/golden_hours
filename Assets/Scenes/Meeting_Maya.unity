@@ -398,9 +398,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundSource: {fileID: 1113428165}
   sfxSource: {fileID: 1981027812}
-  wind: {fileID: 8300000, guid: 2ac181d91c5b24b5f825ebe69fab7632, type: 3}
+  background: {fileID: 8300000, guid: 2ac181d91c5b24b5f825ebe69fab7632, type: 3}
   jump: {fileID: 8300000, guid: c0407909a8c6e4891af319ab94a2aae1, type: 3}
   land: {fileID: 8300000, guid: c1675ee17e7244ab1a720908908788ac, type: 3}
+  melody1: {fileID: 0}
+  puzzle2Complete: {fileID: 0}
+  switchSounds: []
 --- !u!4 &112544100
 Transform:
   m_ObjectHideFlags: 0
@@ -2122,21 +2125,6 @@ MonoBehaviour:
   minCryVolume: 0.1
   maxCryDistance: 10
   convo: {fileID: 11400000, guid: 2f453db7396694ff7801a12b2760165c, type: 2}
-  _persistentScene:
-    _sceneAsset: {fileID: 102900000, guid: 99fb98ee4c50e49a1babe0be8287a8c3, type: 3}
-    _sceneName: PersistentGameplay
-  scenesToLoad:
-  - _sceneAsset: {fileID: 102900000, guid: c2e39172a4ce44f2599433194f469d1e, type: 3}
-    _sceneName: 1_Forest
-  - _sceneAsset: {fileID: 102900000, guid: e9c7bbf8338fb4be5816459b26757270, type: 3}
-    _sceneName: 1_MainStreet
-  - _sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-    _sceneName: 2_MainStreet
-  - _sceneAsset: {fileID: 102900000, guid: fea0dd98b02ab4c7dac1c3e81eef8c4c, type: 3}
-    _sceneName: 1_Neighborhood
-  _mainScene:
-    _sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-    _sceneName: 2_MainStreet
 --- !u!61 &1949251597
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -7,20 +7,38 @@ public class AudioManaging : MonoBehaviour
     [SerializeField] AudioSource sfxSource;
 
     [Header("----------Audio Clips----------")]
-    public AudioClip wind;
+    public AudioClip background;
     public AudioClip jump;
     public AudioClip land;
 
-    private void Start()
-{
-    backgroundSource.clip = wind;
+    public AudioClip melody1;
+
+    public AudioClip puzzle2Complete;
+
+    public AudioClip[] switchSounds;
+
+
+    private void Start(){
+
+    backgroundSource.clip = background;
+    
     backgroundSource.loop = true;
     backgroundSource.Play();
 }
 
-public void PlaySFX(AudioClip clip)
-{
-    sfxSource.PlayOneShot(clip);
-}
+    public void PlaySFX(AudioClip clip)
+    {
+        sfxSource.PlayOneShot(clip);
+    }
+
+    public void StopBackgroundSound()
+        {
+            if (backgroundSource.isPlaying)
+            {
+                backgroundSource.Stop();
+            }
+        }
+
+
 
 }
