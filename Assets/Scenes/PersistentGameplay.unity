@@ -1250,8 +1250,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1879558989
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 5f87c92a15dab42a9a62a969a784dc43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1582,7 +1582,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000b334f88f71300656
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1722,7 +1722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ppv: {fileID: 1515813876}
-  cycleDuration: 60
+  cycleDuration: 20
   lightsToggleThreshold: 0.75
 --- !u!1 &1555359479
 GameObject:
@@ -2328,6 +2328,9 @@ MonoBehaviour:
   melody1: {fileID: 0}
   puzzle2Complete: {fileID: 0}
   switchSounds: []
+  puzzle1Complete: {fileID: 0}
+  glassSlide: {fileID: 0}
+  tileSlide: {fileID: 0}
 --- !u!1 &1957178446
 GameObject:
   m_ObjectHideFlags: 0

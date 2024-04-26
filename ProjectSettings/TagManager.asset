@@ -47,3 +47,6 @@ TagManager:
   - name: HUD
     uniqueID: 1443246193
     locked: 0
+  - name: Sophie
+    uniqueID: 2415408307
+    locked: 0
