@@ -531,8 +531,8 @@ GameObject:
   - component: {fileID: 1082377956}
   - component: {fileID: 1082377955}
   - component: {fileID: 1082377954}
-  - component: {fileID: 1082377957}
   - component: {fileID: 1082377958}
+  - component: {fileID: 1082377959}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -614,30 +614,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1082377957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082377953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89b0d7ed8beda4eeb99ec4d28ef8110d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 1525240086}
-  - {fileID: 1961342023}
-  - {fileID: 1356270613}
-  - {fileID: 26777670}
-  - {fileID: 2061749753}
-  conversations:
-  - {fileID: 11400000, guid: 128f5c3119ce84c5da039656db52def7, type: 2}
-  - {fileID: 11400000, guid: 2d2b2d86fd3524576bcfac2647d079ed, type: 2}
-  - {fileID: 11400000, guid: c8e751cde37aa4d189dc1345b77e22d5, type: 2}
-  - {fileID: 11400000, guid: 15c69d7ca980b4aa6846b5e24a1f4b13, type: 2}
-  - {fileID: 11400000, guid: 757acb354cc404826a959a9d7dde8a23, type: 2}
 --- !u!114 &1082377958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,6 +658,30 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1082377959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082377953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a220280ad36ec4faa848aaba52eea683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 1961342023}
+  - {fileID: 1356270613}
+  - {fileID: 26777670}
+  - {fileID: 2061749753}
+  - {fileID: 1525240086}
+  conversations:
+  - {fileID: 11400000, guid: 128f5c3119ce84c5da039656db52def7, type: 2}
+  - {fileID: 11400000, guid: 2d2b2d86fd3524576bcfac2647d079ed, type: 2}
+  - {fileID: 11400000, guid: c8e751cde37aa4d189dc1345b77e22d5, type: 2}
+  - {fileID: 11400000, guid: 15c69d7ca980b4aa6846b5e24a1f4b13, type: 2}
+  - {fileID: 11400000, guid: 757acb354cc404826a959a9d7dde8a23, type: 2}
 --- !u!1 &1356270613
 GameObject:
   m_ObjectHideFlags: 0
