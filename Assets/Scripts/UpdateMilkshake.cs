@@ -10,8 +10,17 @@ public class ImageSlider : MonoBehaviour
 
     public int currentIndex = 0; // To keep track of the current pair of images
 
+    // sound stuff
+    AudioManaging audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManaging>();    
+    }
+
+
     // Call this method when the puzzle is completed
    // Call this method when the puzzle is completed
+
     public void UpgradeImage()
     {
         if (currentIndex >= defaultImages.Length)
@@ -36,6 +45,7 @@ public class ImageSlider : MonoBehaviour
         defaultImage.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(1f);
+        audioManager.PlaySFX(audioManager.glassSlide);
 
         Vector2 startPosition = upgradedImage.rectTransform.anchoredPosition;
         Vector2 endPosition = startPosition + Vector2.right * 700;

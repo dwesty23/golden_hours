@@ -45,6 +45,13 @@ public class ST_PuzzleDisplay : MonoBehaviour
 	// has the puzzle been completed?
 	public bool Complete = false;
 
+	// sound stuff
+    AudioManaging audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManaging>();    
+    }
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -74,6 +81,7 @@ public class ST_PuzzleDisplay : MonoBehaviour
 
 		if(MoveTo != thisTile)
 		{
+			audioManager.PlaySFX(audioManager.tileSlide);
 			// get the target position for this new tile.
 			Vector3 TargetPos = MoveTo.TargetPosition;
 			Vector2 GridLocation = thisTile.GridLocation;
@@ -321,6 +329,7 @@ public class ST_PuzzleDisplay : MonoBehaviour
 			yield return new WaitForSeconds(2f);
 			if(PuzzleComplete == 2)
 			{
+				audioManager.PlaySFX(audioManager.puzzle1Complete);
 				DialogueManagerM.StartConversation(conversations[PuzzleComplete+1]);
 				StartCoroutine(LoadSceneAfterDialogue());
 				yield break;

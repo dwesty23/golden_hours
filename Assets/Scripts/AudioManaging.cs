@@ -17,6 +17,10 @@ public class AudioManaging : MonoBehaviour
 
     public AudioClip[] switchSounds;
 
+    public AudioClip puzzle1Complete;
+    public AudioClip glassSlide;
+    public AudioClip tileSlide;
+
 
     private void Start(){
 
