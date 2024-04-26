@@ -52,10 +52,13 @@ EditorBuildSettings:
     guid: f7d485b5e2b4d4f5a859d8325b3b96e9
   - enabled: 1
     path: Assets/Scenes/Journal_Menu.unity
-    guid: 488bfcbed2957415ca2f56a36cfabb2b
+    guid: bad979f81a00f42e19d0d585bff75611
   - enabled: 1
     path: Assets/Scenes/Journal_Controls.unity
-    guid: 0866a52df6e3a4d959dc5c60ddab63fd
+    guid: 0c0850ea49fa66643afe873930d2ea1f
+  - enabled: 1
+    path: Assets/Scenes/Journal_Settings.unity
+    guid: bafee72f39c1bed42aa5487c2a33241e
   - enabled: 1
     path: Assets/Scenes/1_Forest.unity
     guid: c2e39172a4ce44f2599433194f469d1e
