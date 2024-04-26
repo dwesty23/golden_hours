@@ -31,6 +31,6 @@ public class MayaDinerCutSceneInteract : Interactable
         }
 
         // Load the scene
-        SceneManager.LoadScene("DinerOpenMain");
+        Scenes.Instance.LoadMap();
     }
 }

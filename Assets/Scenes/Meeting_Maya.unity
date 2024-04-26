@@ -404,6 +404,9 @@ MonoBehaviour:
   melody1: {fileID: 0}
   puzzle2Complete: {fileID: 0}
   switchSounds: []
+  puzzle1Complete: {fileID: 0}
+  glassSlide: {fileID: 0}
+  tileSlide: {fileID: 0}
 --- !u!4 &112544100
 Transform:
   m_ObjectHideFlags: 0
@@ -1919,6 +1922,7 @@ GameObject:
   - component: {fileID: 1949251595}
   - component: {fileID: 1949251597}
   - component: {fileID: 1949251596}
+  - component: {fileID: 1949251598}
   m_Layer: 8
   m_Name: Maya
   m_TagString: Untagged
@@ -2170,6 +2174,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.1666665, y: 4.1666665}
   m_EdgeRadius: 0
+--- !u!95 &1949251598
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949251591}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c625af347c152446498bb7ccabec05aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1981027811
 GameObject:
   m_ObjectHideFlags: 0

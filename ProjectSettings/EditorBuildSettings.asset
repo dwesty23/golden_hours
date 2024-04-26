@@ -77,4 +77,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/memory2.unity
     guid: bf2d68b83c06f4e36999dd600c332d2d
+  - enabled: 1
+    path: Assets/Scenes/ArcadeOpenCutScene.unity
+    guid: 108b6baa64a2448ef9783dc9c5906bed
+  - enabled: 1
+    path: Assets/Scenes/1_Graveyard.unity
+    guid: 371a51f545aa64bdabd06452a3f047e9
   m_configObjects: {}

@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SwitchPuzzleManager : MonoBehaviour
 {
@@ -39,15 +41,24 @@ public class SwitchPuzzleManager : MonoBehaviour
             if (currentSwitchOrder.Count == correctSwitchOrder.Count)
             {
                 audioManager.StopBackgroundSound();
-                audioManager.PlaySFX(audioManager.puzzle2Complete);
-                Debug.Log("Puzzle solved! Correct order.");
-                arcadeMachine.SetActive(true); 
+                StartCoroutine(PlaySoundAndProceed());
             }
         }
         else
         {
             ResetSwitches(); // Reset switches and notes if order is incorrect
         }
+    }
+
+    private IEnumerator PlaySoundAndProceed()
+    {
+        audioManager.PlaySFX(audioManager.puzzle2Complete);
+        arcadeMachine.SetActive(true); 
+        yield return new WaitForSeconds(audioManager.puzzle2Complete.length);
+        
+        Debug.Log("Puzzle solved! Correct order.");
+        Scenes.Instance.CompletePuzzle(2); // Puzzle 2 is complete
+        SceneManager.LoadScene("ArcadeFinishedCutScene");
     }
 
     // Activate a note based on the number of correct switch flips
