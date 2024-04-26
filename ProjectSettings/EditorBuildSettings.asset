@@ -66,12 +66,12 @@ EditorBuildSettings:
     path: Assets/Scenes/1_Neighborhood.unity
     guid: fea0dd98b02ab4c7dac1c3e81eef8c4c
   - enabled: 1
-
-    path: Assets/Scenes/1_Graveyard.unity
-    guid: 371a51f545aa64bdabd06452a3f047e9
-    path: Assets/Scenes/Journal_Settings.unity
-    guid: bafee72f39c1bed42aa5487c2a33241e
+    path: Assets/Scenes/ArcadeFinishedCutScene.unity
+    guid: dddc9802c1afe422190b4f56906699de
   - enabled: 1
-    path: Assets/Scenes/memory1_overlay.unity
-    guid: 5d1a3d9d840c6446da817c4b43268a02
+    path: Assets/Scenes/puzzle2.unity
+    guid: afff9c26aaea14434b8382e37efccc97
+  - enabled: 1
+    path: Assets/Scenes/memory2.unity
+    guid: bf2d68b83c06f4e36999dd600c332d2d
   m_configObjects: {}
