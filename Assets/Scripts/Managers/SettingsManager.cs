@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SettingsMenu : MonoBehaviour
+public class SettingsManager : MonoBehaviour
 {
     public AudioMixer audioMixer; // Assign your Audio Mixer here
     public Slider volumeSlider; // Assign your volume slider here
@@ -13,27 +13,28 @@ public class SettingsMenu : MonoBehaviour
     private void Start()
     {
         // Load the saved volume level at the start or default to full volume
-        volumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1f);
-        ApplyVolume(); // Apply the loaded volume level
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(0); // Load the main menu scene
-        }
+        float savedVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
+        volumeSlider.value = savedVolume; // Set the slider to the saved volume
+        UpdateMixerVolume(savedVolume); // Apply the saved volume to the mixer
     }
 
     public void OnVolumeSliderChanged()
     {
-        ApplyVolume();
+        ApplyVolume();  // Apply volume when the slider value changes
     }
 
     void ApplyVolume()
     {
         float volume = Mathf.Log10(volumeSlider.value) * 20; // Convert slider value to decibels
+        UpdateMixerVolume(volumeSlider.value); // Apply the new volume to the mixer and save
+        PlayerPrefs.SetFloat("MasterVolume", volumeSlider.value); // Save the new volume level
+    }
+
+    private void UpdateMixerVolume(float sliderValue)
+    {
+        float volume = Mathf.Log10(sliderValue) * 20;
         audioMixer.SetFloat("MasterVolume", volume); // Set the volume in the AudioMixer
-        PlayerPrefs.SetFloat("MasterVolume", volumeSlider.value); // Save the volume level
     }
 }
+
+
