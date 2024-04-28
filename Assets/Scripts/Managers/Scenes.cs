@@ -55,7 +55,10 @@ public class Scenes : MonoBehaviour
         // Check puzzle objects
         foreach (PuzzleObject puzzleObject in FindObjectsOfType<PuzzleObject>())
         {
-            puzzleObject.CheckPuzzleCompletion();
+            if (puzzleObject != null)
+            {
+                puzzleObject.CheckPuzzleCompletion();
+            }
         }
     }
 }

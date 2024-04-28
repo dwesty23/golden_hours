@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRb: {fileID: 953531665}
-  speed: 5
+  speed: 7
   jumpPower: 7
   moveDirection: 0
   facingRight: 0
@@ -2572,7 +2572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDirection: 0
   playerRb: {fileID: 0}
-  speed: 2.75
+  speed: 6
   stoppingDistance: 1.5
 --- !u!212 &2060678456
 SpriteRenderer:

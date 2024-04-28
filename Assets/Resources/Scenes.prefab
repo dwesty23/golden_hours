@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4301802415406292263}
-  - component: {fileID: 1703152988840371535}
+  - component: {fileID: 8886476463187225972}
   m_Layer: 0
   m_Name: Scenes
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1703152988840371535
+--- !u!114 &8886476463187225972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,3 +61,5 @@ MonoBehaviour:
     _sceneName: 1_Neighborhood
   - _sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
     _sceneName: 2_MainStreet
+  - _sceneAsset: {fileID: 102900000, guid: 507ba29035d9345d1adbfa7b96502daf, type: 3}
+    _sceneName: Puzzles
