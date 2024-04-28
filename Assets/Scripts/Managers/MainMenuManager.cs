@@ -14,6 +14,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
+        PlayerPrefs.SetInt("Memory1Collected", 0); // Explicitly reset memory flag when starting a new game
+        PlayerPrefs.Save();
         // Load the police scene
         SceneManager.LoadScene(_levelScenePolice, LoadSceneMode.Single);
     }
@@ -34,6 +36,14 @@ public class MainMenuManager : MonoBehaviour
     {
         // Load the main menu scene
         SceneManager.LoadScene(_levelSceneMainMenu, LoadSceneMode.Single);
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            MainMenu();
+        }
     }
 
 }
