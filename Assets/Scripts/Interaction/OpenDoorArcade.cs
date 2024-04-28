@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class OpenDoorArcade : Interactable
 {
+
+    [SerializeField] private SceneField sceneToLoad;
     public override void Interact()
     {
         Debug.Log("Interacting with the door");
@@ -10,6 +12,8 @@ public class OpenDoorArcade : Interactable
     }
 
     private void TriggerArcadeScene() {
-        SceneManager.LoadScene("ArcadeOpenCutScene");
+
+        Scenes.Instance.SwitchToCutscene(sceneToLoad);
+        //SceneManager.LoadScene("ArcadeOpenCutScene");
     }
 }

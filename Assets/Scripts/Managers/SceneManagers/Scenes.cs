@@ -1,11 +1,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Scenes : MonoBehaviour
 {
+
+    [SerializeField] private GameObject sophie;
+    [SerializeField] private GameObject maya;
+    [SerializeField] private Camera mainCamera;
+
     public bool puzzle1Finished;
     public bool puzzle2Finished;
     public bool puzzle3Finished;
+
+    public bool loadFromSavedData;
+
+    // private bool initialSaveDone = false;
 
 
     public static Scenes Instance { get; private set; }
@@ -28,13 +38,47 @@ public class Scenes : MonoBehaviour
         }
     }
 
-    public void LoadMap()
+    public void AssignGameObjects(GameObject sophie, GameObject maya, Camera mainCamera)
     {
-        SceneManager.LoadSceneAsync(_persistentScene.SceneName);
+        this.sophie = sophie;
+        this.maya = maya;
+        this.mainCamera = mainCamera;
+    }
+
+    public void InitialSave()
+    {
+        SaveSystem.SavePlayerData(sophie.transform, "Sophie");
+        SaveSystem.SavePlayerData(maya.transform, "Maya");
+        SaveSystem.SaveCameraData(mainCamera);
+        //initialSaveDone = true;
+    }
+
+    public void SwitchToCutscene(SceneField scene)
+    {
+        SaveSystem.SavePlayerData(sophie.transform, "Sophie");
+        SaveSystem.SavePlayerData(maya.transform, "Maya");
+        SaveSystem.SaveCameraData(mainCamera);
+
+        SceneManager.LoadScene(scene.SceneName);
+    }
+
+    public IEnumerator LoadMap(bool loadFromSavedData = false)
+    {
+        this.loadFromSavedData = loadFromSavedData;
+        Debug.Log("Scene loaded, loadFromSavedData: " + loadFromSavedData);
+        //SceneManager.LoadSceneAsync(_persistentScene.SceneName);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(_persistentScene.SceneName);
         foreach (SceneField scene in _scenesToLoad)
         {
             SceneManager.LoadSceneAsync(scene.SceneName, LoadSceneMode.Additive);
         }
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+
     }
 
     public void CompletePuzzle(int puzzleNumber)
