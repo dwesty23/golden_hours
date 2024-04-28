@@ -30,7 +30,10 @@ public class MayaDinerCutSceneInteract : Interactable
             yield return null;
         }
 
-        // Load the scene
-        Scenes.Instance.LoadMap();
+        // Load the scene as a coroutine
+        Scenes.Instance.CompletePuzzle(1);
+        StartCoroutine(Scenes.Instance.LoadMap(true));
+        
+        // Scenes.Instance.LoadMap();
     }
 }
