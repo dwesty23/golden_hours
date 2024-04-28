@@ -41,7 +41,7 @@ public class MayaInteract : Interactable
         }
 
         // Load the scene
-        Scenes.Instance.LoadMap();
+        StartCoroutine(Scenes.Instance.LoadMap());
     }
 
     void AdjustCryVolume(float distance)

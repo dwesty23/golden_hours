@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5382c4faae9d947e786634c24f6f03f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sophie: {fileID: 0}
+  maya: {fileID: 0}
+  mainCamera: {fileID: 0}
   puzzle1Finished: 0
   puzzle2Finished: 0
   puzzle3Finished: 0

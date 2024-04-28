@@ -535,6 +535,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   outlineMaterial: {fileID: 2100000, guid: aae990fd25fb849e4ac3c47eb085d2de, type: 2}
+  _sceneToLoad:
+    _sceneAsset: {fileID: 102900000, guid: aea0d890e1688406baeade6b77963727, type: 3}
+    _sceneName: DinerOpenCutScene
 --- !u!61 &472317948
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1143,6 +1146,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   outlineMaterial: {fileID: 2100000, guid: aae990fd25fb849e4ac3c47eb085d2de, type: 2}
+  sceneToLoad:
+    _sceneAsset: {fileID: 102900000, guid: 108b6baa64a2448ef9783dc9c5906bed, type: 3}
+    _sceneName: ArcadeOpenCutScene
 --- !u!61 &2145431672
 BoxCollider2D:
   m_ObjectHideFlags: 0

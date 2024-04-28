@@ -29,7 +29,6 @@ public class PuzzleObject : MonoBehaviour
             case 1:
                 puzzle = Scenes.Instance.puzzle1Finished;
                 // log if this is reached and print the value of puzzle
-                Debug.Log("Puzzle 1: " + puzzle);
                 break;
             case 2:
                 puzzle = Scenes.Instance.puzzle2Finished;

@@ -80,7 +80,7 @@ public class SpriteDisplayController2 : MonoBehaviour
     {
         // Increment the current sprite index
         currentSprite++;
-        Debug.Log("Current Sprite: " + currentSprite);
+        //Debug.Log("Current Sprite: " + currentSprite);
         // Check if the current sprite index is within the array bounds
         if (currentSprite < sprites.Length)
         {
@@ -92,18 +92,19 @@ public class SpriteDisplayController2 : MonoBehaviour
         else
         {
             // All sprites have been shown, do something else (e.g., load a new scene)
-            Debug.Log("All sprites have been shown");
-            Scenes.Instance.LoadMap();
+            //Debug.Log("All sprites have been shown");
+            StartCoroutine(Scenes.Instance.LoadMap(true));
+            //Scenes.Instance.LoadMap();
         }
     }
 
     private IEnumerator ShowNextSpriteAfterConversationDelay(float delay)
     {
         // Wait for the specified delay
-        Debug.Log("Waiting for delay: " + delay);
+        //Debug.Log("Waiting for delay: " + delay);
         yield return new WaitForSeconds(delay);
 
-        Debug.Log("Delay finished");
+        //Debug.Log("Delay finished");
         // Show the next sprite
         StartCoroutine(ShowNextSpriteAfterConversation());
     }
@@ -115,7 +116,7 @@ public class SpriteDisplayController2 : MonoBehaviour
         {
             yield return null;
         }
-        Debug.Log("Conversation finished");
+        //Debug.Log("Conversation finished");
 
         if (spriteCoroutine != null)
         {
