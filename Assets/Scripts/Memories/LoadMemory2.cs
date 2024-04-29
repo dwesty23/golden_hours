@@ -8,6 +8,7 @@ public class SpriteDisplayController2 : MonoBehaviour
     public Conversation[] conversations;
     private int currentSprite = 0;
     private Coroutine spriteCoroutine;
+    public AudioManaging audioManager;
 
     void Start()
     {
@@ -88,14 +89,20 @@ public class SpriteDisplayController2 : MonoBehaviour
             StartCoroutine(ShowSprite(currentSprite));
 
             spriteCoroutine = StartCoroutine(ShowNextSpriteAfterConversationDelay(5f));
+
+            if (currentSprite == 4)
+            {
+                StartCoroutine(PlaySoundAndProceed());
+            }
         }
-        else
-        {
-            // All sprites have been shown, do something else (e.g., load a new scene)
-            //Debug.Log("All sprites have been shown");
-            StartCoroutine(Scenes.Instance.LoadMap(true));
-            //Scenes.Instance.LoadMap();
-        }
+    }
+
+    private IEnumerator PlaySoundAndProceed()
+    {
+        audioManager.PlaySFX(audioManager.puzzle2Complete);
+        yield return new WaitForSeconds(15f);
+
+        StartCoroutine(Scenes.Instance.LoadMap(true));
     }
 
     private IEnumerator ShowNextSpriteAfterConversationDelay(float delay)
