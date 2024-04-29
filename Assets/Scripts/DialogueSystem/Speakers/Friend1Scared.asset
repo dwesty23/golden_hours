@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7797ac506eb8c415f81331981ef0491a, type: 3}
+  m_Name: Friend1Scared
+  m_EditorClassIdentifier: 
+  speakerName: Friend 1 Scared
+  speakerSprite: {fileID: 21300000, guid: c2936a71e75934767b774eb6a6b11d04, type: 3}
+  speakerFont: {fileID: 11400000, guid: 1bec244158220453196fec5a044e8a0d, type: 2}
