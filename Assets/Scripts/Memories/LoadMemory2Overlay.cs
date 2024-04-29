@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class SpriteDisplayController2 : MonoBehaviour
+public class Memory2Overlay : MonoBehaviour
 {
     public GameObject[] sprites;
     public Conversation[] conversations;
@@ -66,7 +66,7 @@ public class SpriteDisplayController2 : MonoBehaviour
             spriteRenderer.color = color;
             yield return null;
         }
-        DialogueManagerM.StartConversation(conversations[index]);
+        DialogueManagerOverlay.StartConversation(conversations[index]);
         // Activate the sprite at the specified index
         if (index < 0 || index >= sprites.Length)
         {
@@ -102,9 +102,12 @@ public class SpriteDisplayController2 : MonoBehaviour
         audioManager.PlaySFX(audioManager.puzzle2Complete);
         yield return new WaitForSeconds(15f);
 
-        PlayerPrefs.SetInt("Memory2Collected", 1);
-        PlayerPrefs.Save();
-        StartCoroutine(Scenes.Instance.LoadMap(true));
+        Debug.Log("Unloading memory2_overlay");
+        foreach (GameObject go in SceneManager.GetActiveScene().GetRootGameObjects())
+        {
+            go.SetActive(true);
+        }
+        SceneManager.UnloadSceneAsync("memory2_overlay");
     }
 
     private IEnumerator ShowNextSpriteAfterConversationDelay(float delay)
@@ -121,7 +124,7 @@ public class SpriteDisplayController2 : MonoBehaviour
     private IEnumerator ShowNextSpriteAfterConversation()
     {
         // Wait until the dialogue is not active
-        while (!DialogueManagerM.IsConversationFinished())
+        while (!DialogueManagerOverlay.IsConversationFinished())
         {
             yield return null;
         }

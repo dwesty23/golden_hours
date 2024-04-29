@@ -404,8 +404,8 @@ MonoBehaviour:
     _sceneAsset: {fileID: 102900000, guid: 5d1a3d9d840c6446da817c4b43268a02, type: 3}
     _sceneName: memory1_overlay
   _SceneMemory2:
-    _sceneAsset: {fileID: 0}
-    _sceneName: 
+    _sceneAsset: {fileID: 102900000, guid: 0a62b1630517c4b79b501aeff0e6a341, type: 3}
+    _sceneName: memory2_overlay
   _SceneMemory3:
     _sceneAsset: {fileID: 0}
     _sceneName: 
