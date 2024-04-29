@@ -15,6 +15,8 @@ public class MainMenuManager : MonoBehaviour
     public void StartGame()
     {
         PlayerPrefs.SetInt("Memory1Collected", 0); // Explicitly reset memory flag when starting a new game
+        PlayerPrefs.SetInt("Memory2Collected", 0); // Explicitly reset memory flag when starting a new game
+        PlayerPrefs.SetInt("Memory3Collected", 0); // Explicitly reset memory flag when starting a new game
         PlayerPrefs.Save();
         // Load the police scene
         SceneManager.LoadScene(_levelScenePolice, LoadSceneMode.Single);

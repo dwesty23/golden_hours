@@ -93,6 +93,8 @@ public class SpriteDisplayController : MonoBehaviour
         {
             // All sprites have been shown, do something else (e.g., load a new scene)
             Debug.Log("All sprites have been shown");
+            PlayerPrefs.SetInt("Memory1Collected", 1);
+            PlayerPrefs.Save();
             SceneManager.LoadScene("DinerFinishCutScene");
         }
     }

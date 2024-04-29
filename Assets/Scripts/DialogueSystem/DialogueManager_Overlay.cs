@@ -17,6 +17,10 @@ public class DialogueManagerOverlay : MonoBehaviour
     private bool conversationFinished = true;
     private bool UsingUpperCase = false;
     private bool UsingLowerCase = false;
+    public Sprite momSprite1;
+    public Sprite momSprite2;
+    public Sprite momSprite3;
+    private string currentSpeaker;
 
     private void Awake()
     {
@@ -70,6 +74,7 @@ public class DialogueManagerOverlay : MonoBehaviour
 
     public void ReadNext()
     {
+        StopAllCoroutines();
         Debug.Log("ReadNext called");
         if (currentIndex > currentConvo.GetLength())
         {
@@ -83,9 +88,30 @@ public class DialogueManagerOverlay : MonoBehaviour
         // speakerName.text = currentConvo.GetLineByIndex(currentIndex).speaker.GetName();
         finishTyping = false;
         instance.StartCoroutine(TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue, currentConvo.GetLineByIndex(currentIndex).speaker.GetFont()));
-        speakerSprite.sprite = currentConvo.GetLineByIndex(currentIndex).speaker.GetSprite();
+        currentSpeaker = currentConvo.GetLineByIndex(currentIndex).speaker.GetSprite().name;
+        if (currentSpeaker == "1MysteryMomFrame1_v1")
+        {
+            StartCoroutine(CycleMomSprites());
+        }
+        else
+        {
+            speakerSprite.sprite = currentConvo.GetLineByIndex(currentIndex).speaker.GetSprite();
+        }
         instance.dialogue.font = currentConvo.GetLineByIndex(currentIndex).speaker.GetFont();
         currentIndex++;
+    }
+
+    private IEnumerator CycleMomSprites()
+    {
+        while (true)
+        {
+            speakerSprite.sprite = momSprite1;
+            yield return new WaitForSeconds(0.1f);
+            speakerSprite.sprite = momSprite2;
+            yield return new WaitForSeconds(0.1f);
+            speakerSprite.sprite = momSprite3;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     private IEnumerator TypeText(string text, TMP_FontAsset currentFont)
