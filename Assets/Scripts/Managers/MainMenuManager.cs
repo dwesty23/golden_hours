@@ -12,6 +12,28 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private SceneField _levelSceneCredits;
     [SerializeField] private SceneField _levelSceneMainMenu;
 
+    [Header("Animation")]
+    public GameObject _mainMenu;
+    public Sprite[] _mainMenuSprites;
+
+    public void Start()
+    {
+        StartCoroutine(AnimateMainMenu());
+    }
+
+    public IEnumerator AnimateMainMenu()
+    {
+        SpriteRenderer spriteRenderer = _mainMenu.GetComponent<SpriteRenderer>();
+        while (true)
+        {
+            foreach (Sprite sprite in _mainMenuSprites)
+            {
+                spriteRenderer.sprite = sprite;  // Set the sprite to the SpriteRenderer
+                yield return new WaitForSeconds(0.2f);
+            }
+        }
+    }
+
     public void StartGame()
     {
         PlayerPrefs.SetInt("Memory1Collected", 0); // Explicitly reset memory flag when starting a new game

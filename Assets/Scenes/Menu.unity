@@ -311,6 +311,17 @@ MonoBehaviour:
   _levelSceneMainMenu:
     _sceneAsset: {fileID: 102900000, guid: 5321e289aecb44156ac29f2697b36acd, type: 3}
     _sceneName: Menu
+  _mainMenu: {fileID: 1709204775}
+  _mainMenuSprites:
+  - {fileID: 21300000, guid: 61c40002a243a4f989ad425dd03a99d3, type: 3}
+  - {fileID: 21300000, guid: 61ddd16931022487cb5c7ef73e71435e, type: 3}
+  - {fileID: 21300000, guid: d06fdf3856fa04522991fc085894f80e, type: 3}
+  - {fileID: 21300000, guid: fdf9b7bd83ccb433b8d6e29d4496d802, type: 3}
+  - {fileID: 21300000, guid: e1619bde5e9f74ee4889758d08a7d5f1, type: 3}
+  - {fileID: 21300000, guid: 5a69b43a4b3784442850fc7a5e0932ba, type: 3}
+  - {fileID: 21300000, guid: defe0d9690815430980ccabfeefc7995, type: 3}
+  - {fileID: 21300000, guid: 378d4686735d348809cc06f9c160a374, type: 3}
+  - {fileID: 21300000, guid: 3ba8ff7d843514b9dab305009a89b91c, type: 3}
 --- !u!1 &334990015
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +849,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b5c46284a8ad6b041ac62401350a6fee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61c40002a243a4f989ad425dd03a99d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

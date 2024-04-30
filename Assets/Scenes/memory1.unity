@@ -927,9 +927,9 @@ MonoBehaviour:
   dialogue: {fileID: 832461362}
   speakerSprite: {fileID: 952511633}
   SophieSprite: {fileID: 21300000, guid: b790fc636f3dc42e38a031a796c1c8f5, type: 3}
-  momSprite1: {fileID: 21300000, guid: 974132e0db9ba4fa4ae4cd8d4cdc1d89, type: 3}
-  momSprite2: {fileID: 21300000, guid: 974e74d2b6ff24501bd8dac3c3b90f0a, type: 3}
-  momSprite3: {fileID: 21300000, guid: e804d8a08ad7d49989af918731224ed6, type: 3}
+  momSprite1: {fileID: 21300000, guid: 103d722580b094e1cb440dc173a8c660, type: 3}
+  momSprite2: {fileID: 21300000, guid: ae49c051599ab404e8eeada6e18fddac, type: 3}
+  momSprite3: {fileID: 21300000, guid: 1954ad2c93fcc4f1ba4ce8f9ad372d82, type: 3}
 --- !u!114 &1571856275
 MonoBehaviour:
   m_ObjectHideFlags: 0

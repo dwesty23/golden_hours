@@ -89,7 +89,7 @@ public class DialogueManagerOverlay : MonoBehaviour
         finishTyping = false;
         instance.StartCoroutine(TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue, currentConvo.GetLineByIndex(currentIndex).speaker.GetFont()));
         currentSpeaker = currentConvo.GetLineByIndex(currentIndex).speaker.GetSprite().name;
-        if (currentSpeaker == "1MysteryMomFrame1_v1")
+        if (currentSpeaker == "1MysteryMom1_v2")
         {
             StartCoroutine(CycleMomSprites());
         }
