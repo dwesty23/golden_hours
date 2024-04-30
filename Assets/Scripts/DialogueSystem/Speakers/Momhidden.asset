@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Mom
   speakerSprite: {fileID: 21300000, guid: 103d722580b094e1cb440dc173a8c660, type: 3}
-  speakerFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  speakerFont: {fileID: 11400000, guid: 44da6539293bc44828438e3e1f1dd785, type: 2}

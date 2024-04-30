@@ -322,9 +322,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundSource: {fileID: 2085593476}
   sfxSource: {fileID: 1980835970}
-  wind: {fileID: 8300000, guid: 2ac181d91c5b24b5f825ebe69fab7632, type: 3}
+  background: {fileID: 0}
   jump: {fileID: 8300000, guid: c0407909a8c6e4891af319ab94a2aae1, type: 3}
   land: {fileID: 8300000, guid: c1675ee17e7244ab1a720908908788ac, type: 3}
+  melody1: {fileID: 0}
+  puzzle2Complete: {fileID: 0}
+  switchSounds: []
+  puzzle1Complete: {fileID: 0}
+  glassSlide: {fileID: 0}
+  tileSlide: {fileID: 0}
 --- !u!4 &518901867
 Transform:
   m_ObjectHideFlags: 0
@@ -1195,7 +1201,7 @@ MonoBehaviour:
   officerNotSpeakingSprite: {fileID: 21300000, guid: fc8600521d53f466096bdc8d254f31da, type: 3}
   sophieFont: {fileID: 11400000, guid: f2c3be8ba8d404d9f845d45d592a6ecc, type: 2}
   officerFont: {fileID: 11400000, guid: 8f1d367c7200394449de0259a51b01d4, type: 2}
-  typingSpeed: 0.12
+  typingSpeed: 0.07
   textBubble: {fileID: 1916101543}
   journalIcon: {fileID: 1409293038}
   _levelSceneMeetingMaya:

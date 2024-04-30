@@ -20,7 +20,6 @@ public class DialogueManager : MonoBehaviour
     private bool finalSpace = false; // Flag to check if the final space key has been pressed
     private string currentDialogue = ""; // Store the current dialogue
     private string currentSpeaker = ""; // Store the current speaker's name
-    public float typingSpeed = 0.12f; // Speed of typing effect
     public GameObject textBubble; // Reference to the text bubble game object
     public GameObject journalIcon; // Reference to the journal game object
 
@@ -190,7 +189,7 @@ public class DialogueManager : MonoBehaviour
             {
                 // Type out the dialogue character by character
                 dialogueText.text += dialogue[i];
-                yield return new WaitForSeconds(typingSpeed);
+                yield return new WaitForSeconds(0.07f);
             }
             i++;
         }

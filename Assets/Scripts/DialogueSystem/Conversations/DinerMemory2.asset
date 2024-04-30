@@ -26,8 +26,10 @@ MonoBehaviour:
     dialogue: "\u2026"
   - speaker: {fileID: 11400000, guid: dc6f2a96e92e94c089a3dda26b7a3ac3, type: 2}
     dialogue: "Oh please mom, I promise I\u2019m not lying. You know I\u2019ve been
-      doing better, I\u2019m really ready. And\u2026 I really want to get milkshakes
-      with you. Like we used to! Our strawberry shakes, with the cherry on top! "
+      doing better, I\u2019m really ready."
+  - speaker: {fileID: 11400000, guid: dc6f2a96e92e94c089a3dda26b7a3ac3, type: 2}
+    dialogue: "And\u2026 I really want to get milkshakes with you. Like we used to!
+      Our strawberry shakes, with the cherry on top!"
   - speaker: {fileID: 11400000, guid: 1b3ee762ad175412c821c47e59e19a0d, type: 2}
     dialogue: "It\u2019s not safe for you out there Maya."
   - speaker: {fileID: 11400000, guid: dc6f2a96e92e94c089a3dda26b7a3ac3, type: 2}
@@ -35,4 +37,4 @@ MonoBehaviour:
       stay inside afterward for as long as you want. I just want you to see that
       I really am all better now."
   - speaker: {fileID: 11400000, guid: 1b3ee762ad175412c821c47e59e19a0d, type: 2}
-    dialogue: Ok. Just this once
+    dialogue: Ok. Just this once.
