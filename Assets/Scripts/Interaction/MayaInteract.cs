@@ -41,6 +41,8 @@ public class MayaInteract : Interactable
         }
 
         // Load the scene
+        PlayerPrefs.SetInt("DinerTrigger", 0);
+
         StartCoroutine(Scenes.Instance.LoadMap());
     }
 
