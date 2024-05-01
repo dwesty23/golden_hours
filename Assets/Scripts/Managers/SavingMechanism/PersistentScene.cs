@@ -14,6 +14,14 @@ public class PersistentScene : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name == _persistentScene.SceneName)
+        {
+            Scenes.Instance.AssignGameObjects(sophie, maya, mainCamera);
+        }
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
