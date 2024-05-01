@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &472927158
 Transform:
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 472927157}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -41.03, y: 5.08, z: 0}
+  m_LocalPosition: {x: -41.234, y: 5.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -608,8 +608,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00015002489, y: 0.000049948692, z: 0}
-    m_Extent: {x: 1.4955499, y: 1.49535, z: 0}
+    m_Center: {x: 0.00029999018, y: -0.00034999847, z: 0}
+    m_Extent: {x: 1.4951999, y: 1.49565, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -718,8 +718,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0027000308, y: -0.0020499825, z: 0}
-    m_Extent: {x: 1.4974, y: 1.4979501, z: 0}
+    m_Center: {x: 0.00075000525, y: 0.000050008297, z: 0}
+    m_Extent: {x: 1.49505, y: 1.4951501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -788,7 +788,7 @@ Transform:
   m_GameObject: {fileID: 1279411273}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -56.2, y: 7.64, z: 0}
+  m_LocalPosition: {x: -41.21, y: 4.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1122,8 +1122,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00015002489, y: 0.0022499561, z: 0}
-    m_Extent: {x: 1.49565, y: 1.49825, z: 0}
+    m_Center: {x: -0.0022999644, y: 0.00034999847, z: 0}
+    m_Extent: {x: 1.4981, y: 1.49555, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1232,8 +1232,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.002949953, y: -0.0022000074, z: 0}
-    m_Extent: {x: 1.49745, y: 1.4978, z: 0}
+    m_Center: {x: 0.000050008297, y: 0.000050008297, z: 0}
+    m_Extent: {x: 1.49575, y: 1.49495, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1342,8 +1342,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.000100016594, y: -0.00030004978, z: 0}
-    m_Extent: {x: 1.4959, y: 1.495, z: 0}
+    m_Center: {x: 0.00029999018, y: -0.00024998188, z: 0}
+    m_Extent: {x: 1.5002, y: 1.49535, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1653,7 +1653,7 @@ Transform:
   m_GameObject: {fileID: 2007592349}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -41.12, y: 4.88, z: 0}
+  m_LocalPosition: {x: -41.25, y: 5.172, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1777,8 +1777,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.000050008297, y: 0.000050008297, z: 0}
-    m_Extent: {x: 1.49595, y: 1.4955499, z: 0}
+    m_Center: {x: -0.0022499561, y: 0.0024000406, z: 0}
+    m_Extent: {x: 1.49755, y: 1.4972, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1887,8 +1887,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.000050008297, y: 0.002399981, z: 0}
-    m_Extent: {x: 1.5002501, y: 1.4974, z: 0}
+    m_Center: {x: 0.0018999577, y: -0.002300024, z: 0}
+    m_Extent: {x: 1.4978, y: 1.4977, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
