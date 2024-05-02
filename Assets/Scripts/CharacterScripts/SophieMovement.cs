@@ -105,6 +105,7 @@ public class SophieMovement : MonoBehaviour
             {
                 if (rc.transform.GetComponent<Interactable>())
                 {
+                    audioManager.PlaySFX(audioManager.inspect);
                     rc.transform.GetComponent<Interactable>().Interact();
                     return;
                 }
