@@ -50,6 +50,7 @@ MonoBehaviour:
   puzzle1Finished: 0
   puzzle2Finished: 0
   puzzle3Finished: 0
+  loadFromSavedData: 0
   _persistentScene:
     _sceneAsset: {fileID: 102900000, guid: 99fb98ee4c50e49a1babe0be8287a8c3, type: 3}
     _sceneName: PersistentGameplay
@@ -66,3 +67,6 @@ MonoBehaviour:
     _sceneName: 2_MainStreet
   - _sceneAsset: {fileID: 102900000, guid: 507ba29035d9345d1adbfa7b96502daf, type: 3}
     _sceneName: Puzzles
+  _gameoverScene:
+    _sceneAsset: {fileID: 102900000, guid: 5321e289aecb44156ac29f2697b36acd, type: 3}
+    _sceneName: Menu

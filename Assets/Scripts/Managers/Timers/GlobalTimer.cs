@@ -25,8 +25,12 @@ public class GlobalTimer : MonoBehaviour
     public void StartTimer()
     {
         // timeRemaining = totalTime;
-        timePassed = 0;
-        timerStarted = true;
+        if(!timerStarted)
+        {
+            timePassed = 0;
+            timerStarted = true;
+        }
+        
     }
 
     private void Update()
@@ -35,6 +39,10 @@ public class GlobalTimer : MonoBehaviour
         {
             timePassed += Time.deltaTime;
             timePassed = Mathf.Min(timePassed, totalTime);
+            if(timePassed == totalTime)
+            {
+                Scenes.Instance.GameOver();
+            }
         }
         
         
