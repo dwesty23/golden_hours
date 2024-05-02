@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
@@ -33,9 +34,10 @@ public class Timer : MonoBehaviour
             timerImage.color = yellowColor;
 
         }
-        else
-        {
-           Debug.Log("Time's up!");
-        }
+        // else
+        // {
+        //    //Debug.Log("Time's up!");
+           
+        // }
     }
 }
