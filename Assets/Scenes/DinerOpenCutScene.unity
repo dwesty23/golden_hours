@@ -272,6 +272,9 @@ MonoBehaviour:
   dialogue: {fileID: 1572254309}
   speakerSprite: {fileID: 141947881}
   SophieSprite: {fileID: 21300000, guid: 540a5679e66dd4aaea0600dcec49235d, type: 3}
+  momSprite1: {fileID: 0}
+  momSprite2: {fileID: 0}
+  momSprite3: {fileID: 0}
 --- !u!114 &98825583
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -33,6 +33,10 @@ public class MayaDinerCutSceneInteract : Interactable
         // Load the scene as a coroutine
         Scenes.Instance.CompletePuzzle(1);
         PlayerPrefs.SetInt("DinerTrigger", 1);
+        PlayerPrefs.SetInt("DialogueOn", 0);
+        PlayerPrefs.SetInt("MomDiner", 0);
+        PlayerPrefs.SetInt("KidDiner", 0);
+        PlayerPrefs.SetInt("PostMomKidTrigger", 0);
         StartCoroutine(Scenes.Instance.LoadMap(true));
         
         // Scenes.Instance.LoadMap();
