@@ -14,6 +14,23 @@ public class PersistentScene : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name == _persistentScene.SceneName)
+        {
+            Debug.Log("Assigning GameObjects");
+            Scenes.Instance.AssignGameObjects(sophie, maya, mainCamera);
+
+            Debug.Log("LoadFromSavedData: " + Scenes.Instance.loadFromSavedData);
+            if (!Scenes.Instance.loadFromSavedData)
+            {
+                Debug.Log("Initial Save");
+                Scenes.Instance.InitialSave();
+            }
+            //Scenes.Instance.InitialSave();
+        }
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
