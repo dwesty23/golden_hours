@@ -624,6 +624,9 @@ MonoBehaviour:
   dialogue: {fileID: 1711461471}
   speakerSprite: {fileID: 356979277}
   SophieSprite: {fileID: 21300000, guid: 79f66c5cd6ba847f39e6e90c33c49238, type: 3}
+  momSprite1: {fileID: 0}
+  momSprite2: {fileID: 0}
+  momSprite3: {fileID: 0}
 --- !u!114 &634867737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,8 +1101,8 @@ Camera:
   m_GameObject: {fileID: 863221134}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1963,7 +1966,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 576f7bc4b0d7148209c686cd8929df0f, type: 3}
   puzzle1Complete: {fileID: 8300000, guid: 8a796b7e2f1dd4815a8155e895423fbd, type: 3}
   glassSlide: {fileID: 8300000, guid: 5e41e18ff5a6e4d16b620ca9c0d52331, type: 3}
-  drink: {fileID: 8300000, guid: 7a54b1c7e412d4b4e937df451d945cc8, type: 3}
   tileSlide: {fileID: 8300000, guid: cb54916ed856c4a1bb188c9e99808732, type: 3}
 --- !u!4 &1818138453
 Transform:
