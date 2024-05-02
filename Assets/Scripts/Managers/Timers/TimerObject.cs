@@ -4,39 +4,37 @@ using UnityEngine.UI;
 public class TimerObject : MonoBehaviour
 {
     public Image timerImage;
-    public int numberOfSegments = 12;
-    public int durationInDays = 1; // How many "days" the timer represents
-    private float segmentTime;
+    public int timerOrder; // 1 for the first timer, 2 for the second, 3 for the third
     private Color yellowColor;
 
     private void Start()
     {
         yellowColor = new Color(228f/255f, 191f/255f, 79f/255f);
-        timerImage.fillAmount = 1.0f;
+        timerImage.fillAmount = 1.0f; // Start with a full timer
         timerImage.color = yellowColor;
-        segmentTime = GlobalTimer.Instance.totalTime / (float)(numberOfSegments * durationInDays);
-        
     }
 
     private void Update()
     {
-
         float timePassed = GlobalTimer.Instance.GetTimePassed();
+        float totalTime = GlobalTimer.Instance.totalTime;
+        float segmentTime = totalTime / 3; // Divide the total time into 3 segments
 
-        float totalTimeThisObject = ((float)GlobalTimer.Instance.totalTime / durationInDays);
-        
+        // Calculate the start and end times for this timer
+        float startTime = (timerOrder - 1) * segmentTime;
+        float endTime = timerOrder * segmentTime;
 
-        if (timePassed > totalTimeThisObject)
+        if (timePassed >= startTime && timePassed < endTime)
         {
-            timerImage.fillAmount = 1;
+            // This timer's segment is currently running
+            // Calculate fillAmount based on the proportion of the timePassed in this segment to the segmentTime
+            timerImage.fillAmount = 1 - Mathf.Clamp((timePassed - startTime) / segmentTime, 0, 1);
         }
-        else
+        else if (timePassed >= endTime)
         {
-            timerImage.fillAmount = Mathf.Clamp(timePassed / totalTimeThisObject, 0, 1);
+            // This timer's segment has ended
+            timerImage.fillAmount = 0;
         }
-
-        timerImage.color = yellowColor;
-
-
+        // If timePassed < startTime, this timer's segment hasn't started yet, so we don't need to do anything
     }
 }
