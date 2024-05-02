@@ -6,12 +6,17 @@ public class AudioManaging : MonoBehaviour
     [SerializeField] AudioSource backgroundSource;
     [SerializeField] AudioSource sfxSource;
 
-    [Header("----------Audio Clips----------")]
+    [Header("----------General Audio Clips----------")]
     public AudioClip background;
     public AudioClip jump;
     public AudioClip land;
+    public AudioClip inspect;
+    
+    [Header("----------Puzzle 1 Audio Clips----------")]
 
     public AudioClip melody1;
+
+    [Header("----------Puzzle 2 Audio Clips----------")]
 
     public AudioClip puzzle2Complete;
 
