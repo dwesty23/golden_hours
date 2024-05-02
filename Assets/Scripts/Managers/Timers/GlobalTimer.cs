@@ -41,11 +41,11 @@ public class GlobalTimer : MonoBehaviour
             timePassed = Mathf.Min(timePassed, totalTime);
             if(timePassed == totalTime)
             {
+                timerStarted = false;
                 Scenes.Instance.GameOver();
+                return;
             }
-        }
-        
-        
+        }        
     }
 
     public float GetTimePassed()
