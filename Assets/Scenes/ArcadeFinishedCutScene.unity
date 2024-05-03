@@ -695,9 +695,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4398549531437369440, guid: 8e88b6a87721943c4b2459cf3bea9e3b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -124.22998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398549531437369440, guid: 8e88b6a87721943c4b2459cf3bea9e3b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -67.372986
+      objectReference: {fileID: 0}
     - target: {fileID: 6944657803408062310, guid: 8e88b6a87721943c4b2459cf3bea9e3b, type: 3}
       propertyPath: m_Name
       value: TimerBackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8769056057369953636, guid: 8e88b6a87721943c4b2459cf3bea9e3b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -47.700012
+      objectReference: {fileID: 0}
+    - target: {fileID: 8769056057369953636, guid: 8e88b6a87721943c4b2459cf3bea9e3b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -67.899994
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1754,11 +1770,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 143566995}
   - {fileID: 141947880}
   - {fileID: 98825578}
   - {fileID: 160923626}
   - {fileID: 501243544}
-  - {fileID: 143566995}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

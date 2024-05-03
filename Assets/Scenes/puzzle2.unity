@@ -537,6 +537,7 @@ RectTransform:
   - {fileID: 1745371724}
   - {fileID: 6469870}
   - {fileID: 684991907}
+  - {fileID: 1803615414}
   - {fileID: 7664357361277841298}
   - {fileID: 254993834}
   - {fileID: 1345040587}
@@ -547,10 +548,9 @@ RectTransform:
   - {fileID: 1010466662}
   - {fileID: 1953521382}
   - {fileID: 496710113}
-  - {fileID: 1755292579}
   - {fileID: 1812181384}
+  - {fileID: 1755292579}
   - {fileID: 1393350587}
-  - {fileID: 1803615414}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -760,9 +760,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4398549531437369440, guid: 8e88b6a87721943c4b2459cf3bea9e3b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -124.22998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398549531437369440, guid: 8e88b6a87721943c4b2459cf3bea9e3b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -67.372986
+      objectReference: {fileID: 0}
     - target: {fileID: 6944657803408062310, guid: 8e88b6a87721943c4b2459cf3bea9e3b, type: 3}
       propertyPath: m_Name
       value: TimerBackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8769056057369953636, guid: 8e88b6a87721943c4b2459cf3bea9e3b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -47.700012
+      objectReference: {fileID: 0}
+    - target: {fileID: 8769056057369953636, guid: 8e88b6a87721943c4b2459cf3bea9e3b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -67.899994
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2356,7 +2372,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 067fb2414b8e64a47a5495aa9ed3a667, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
