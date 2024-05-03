@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035a34823bc7142888f798a8f65f69fc, type: 3}
+  m_Name: Graveyard1
+  m_EditorClassIdentifier: 
+  allLines:
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "Hey that scary cemetery guy is gone! Let\u2019s check it out."
+  - speaker: {fileID: 11400000, guid: f1c44a1a6b6e54e2a9ea19e7ac9f52ec, type: 2}
+    dialogue: Hey! What do you think you two are doing here!
+  - speaker: {fileID: 11400000, guid: 9705306cba1974f8ca9e0cd8a6936396, type: 2}
+    dialogue: 'Yeah yeah! '
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: Woah um, sorry to bother you guys, we are actually looking for someone
+      right now. Do you think you could help us?
+  - speaker: {fileID: 11400000, guid: f1c44a1a6b6e54e2a9ea19e7ac9f52ec, type: 2}
+    dialogue: Why should we help you? Scram!
+  - speaker: {fileID: 11400000, guid: 9705306cba1974f8ca9e0cd8a6936396, type: 2}
+    dialogue: Yeah yeah!
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "HEY. This girl\u2019s little sister is missing and you\u2019re being
+      rude!"
+  - speaker: {fileID: 11400000, guid: 97fc84e5a491f464da5c3c7038f66130, type: 2}
+    dialogue: Hm. We did see a little girl here last night, looked kinda like you,
+      blonde curly hair, glasses. Yeah she looked real upset.
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: "That\u2019s my sister! Did you see where she went?"
+  - speaker: {fileID: 11400000, guid: f1c44a1a6b6e54e2a9ea19e7ac9f52ec, type: 2}
+    dialogue: Hold up! Before we give you any more information, you need to do something
+      for us.
+  - speaker: {fileID: 11400000, guid: f1c44a1a6b6e54e2a9ea19e7ac9f52ec, type: 2}
+    dialogue: "You see, it\u2019s been getting boring playing hide and seek with
+      just the three of us. You play a game with us, and we will tell you what we
+      saw."
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: "I don\u2019t have time for this!"
+  - speaker: {fileID: 11400000, guid: f1c44a1a6b6e54e2a9ea19e7ac9f52ec, type: 2}
+    dialogue: Then say good-bye to finding your sister!
+  - speaker: {fileID: 11400000, guid: 9705306cba1974f8ca9e0cd8a6936396, type: 2}
+    dialogue: Yeah yeah!

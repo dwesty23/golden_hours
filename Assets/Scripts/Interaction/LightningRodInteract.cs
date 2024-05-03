@@ -4,6 +4,7 @@ public class LightningRodInteract : Interactable
 {
 
     public GameObject George;
+    public Conversation convo;
 
     public override void Interact()
     {
@@ -17,7 +18,8 @@ public class LightningRodInteract : Interactable
     public void GeorgeAppear()
     {
         George.SetActive(true);
-        Invoke("DisableGameObjects", 3f);
+        Invoke("DisableGameObjects", 5f);
+        DialogueManagerM.StartConversation(convo);
         
     }
 

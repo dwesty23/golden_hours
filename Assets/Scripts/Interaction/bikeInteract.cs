@@ -4,6 +4,7 @@ public class BikeInteract : Interactable
 {
 
    public GameObject Sauravi;
+   public Conversation convo;
 
     public override void Interact()
     {
@@ -19,7 +20,8 @@ public class BikeInteract : Interactable
     {
         Debug.Log("Sauravi appears");
         Sauravi.SetActive(true);
-        Invoke("DisableGameObjects", 3f);
+        Invoke("DisableGameObjects", 5f);
+        DialogueManagerM.StartConversation(convo);
         
     }
 

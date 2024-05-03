@@ -4,6 +4,7 @@ public class FountainInteract : Interactable
 {
 
     public GameObject david;
+    public Conversation convo;
 
     public override void Interact()
     {
@@ -18,7 +19,8 @@ public class FountainInteract : Interactable
     public void DavidAppear()
     {
         david.SetActive(true);
-        Invoke("DisableGameObjects", 3f);
+        Invoke("DisableGameObjects", 5f);
+        DialogueManagerM.StartConversation(convo);
        
     }
 
