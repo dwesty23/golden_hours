@@ -26,6 +26,9 @@ public class Scenes : MonoBehaviour
     [Header("Scenes to Load: ")]
     [SerializeField] private SceneField[] _scenesToLoad;
 
+    [Header("Gameover Scene")]
+    [SerializeField] private SceneField _gameoverScene;
+
     [RuntimeInitializeOnLoadMethod]
     private static void Initialize()
     {
@@ -64,6 +67,10 @@ public class Scenes : MonoBehaviour
 
     public IEnumerator LoadMap(bool loadFromSavedData = false)
     {
+        if(!loadFromSavedData)
+        {
+            GlobalTimer.Instance.StartTimer();
+        }
         this.loadFromSavedData = loadFromSavedData;
         Debug.Log("Scene loaded, loadFromSavedData: " + loadFromSavedData);
         //SceneManager.LoadSceneAsync(_persistentScene.SceneName);
@@ -104,5 +111,10 @@ public class Scenes : MonoBehaviour
                 puzzleObject.CheckPuzzleCompletion();
             }
         }
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene(_gameoverScene.SceneName);
     }
 }

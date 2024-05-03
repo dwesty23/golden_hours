@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035a34823bc7142888f798a8f65f69fc, type: 3}
+  m_Name: KidDiner
+  m_EditorClassIdentifier: 
+  allLines:
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: Hi Sierra, I hope you liked your milkshake.
+  - speaker: {fileID: 11400000, guid: d1b0b622112b64c81a64cbd4cd30624b, type: 2}
+    dialogue: "Oh it was awesome! Wish Amber could\u2019ve had one too, where is
+      she?"
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: "Actually, that\u2019s what I wanted to ask you about. Have you happened
+      to see or hear from Amber since last night?"
+  - speaker: {fileID: 11400000, guid: d1b0b622112b64c81a64cbd4cd30624b, type: 2}
+    dialogue: "No\u2026 is she lost?"
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: "Something like that, I\u2019m sure she will be home soon though so
+      don\u2019t worry, ok?"
+  - speaker: {fileID: 11400000, guid: d1b0b622112b64c81a64cbd4cd30624b, type: 2}
+    dialogue: "Ok! When she\u2019s back, tell her we need to hit the arcade again!
+      Well, when it\u2019s working again."

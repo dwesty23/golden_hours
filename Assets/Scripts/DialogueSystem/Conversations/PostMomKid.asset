@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035a34823bc7142888f798a8f65f69fc, type: 3}
+  m_Name: PostMomKid
+  m_EditorClassIdentifier: 
+  allLines:
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "Well, that wasn\u2019t super helpful."
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: Yeah, though it did give me a few ideas of where to look. Amber usually
+      hangs out around the arcade and sometimes the graveyard with her friends.
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "The graveyard\u2026?"
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: "She\u2019s in her angsty tween phase, don\u2019t ask."
