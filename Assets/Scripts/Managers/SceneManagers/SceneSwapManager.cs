@@ -47,10 +47,10 @@ public class SceneSwapManager : MonoBehaviour
     private IEnumerator FadeOutThenChangeScene(SceneField myScene, EdgeInteraction.EdgeToSpawnAT edgeToSpawnAt = EdgeInteraction.EdgeToSpawnAT.None)
     {
         //start fading to black
-        SceneFadeManager.instance.StartFadeOut();
+        SceneFadeManager.StartFadeOut();
 
         //keep fading out
-        while(SceneFadeManager.instance.isFadingOut)
+        while(SceneFadeManager.isFadingOut)
         {
             yield return null;
         }
@@ -64,7 +64,7 @@ public class SceneSwapManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         //start fading in
-        SceneFadeManager.instance.StartFadeIn();
+        SceneFadeManager.StartFadeIn();
         if(_loadFromEdge)
         {
             //warp player to the edge of the screen

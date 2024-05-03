@@ -66,14 +66,19 @@ public class Scenes : MonoBehaviour
         SceneManager.LoadScene(scene.SceneName);
     }
 
+    private void _Load()
+    {
+
+    }
     public IEnumerator LoadMap(bool loadFromSavedData = false)
     {
+        yield return StartCoroutine(SceneFadeManager.StartFadeOut());
+                
         if(!loadFromSavedData)
         {
             GlobalTimer.Instance.StartTimer();
         }
         this.loadFromSavedData = loadFromSavedData;
-        Debug.Log("Scene loaded, loadFromSavedData: " + loadFromSavedData);
         //SceneManager.LoadSceneAsync(_persistentScene.SceneName);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(_persistentScene.SceneName);
         foreach (SceneField scene in _scenesToLoad)
@@ -81,10 +86,15 @@ public class Scenes : MonoBehaviour
             SceneManager.LoadSceneAsync(scene.SceneName, LoadSceneMode.Additive);
         }
 
+
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
+
+        yield return StartCoroutine(SceneFadeManager.StartFadeIn());
+
+
 
 
     }
