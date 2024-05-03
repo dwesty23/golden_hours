@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7797ac506eb8c415f81331981ef0491a, type: 3}
+  m_Name: PoliceOfficer
+  m_EditorClassIdentifier: 
+  speakerName: Police Officer
+  speakerSprite: {fileID: 21300000, guid: e6a4ea3ed40c94ca1b16dbd0eb9fe933, type: 3}
+  speakerFont: {fileID: 11400000, guid: 8f1d367c7200394449de0259a51b01d4, type: 2}

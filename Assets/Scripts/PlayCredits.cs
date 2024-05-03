@@ -24,7 +24,7 @@ public class PlayCredits : MonoBehaviour
 
     public IEnumerator ShowCredits()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         while (credits.transform.position.y < 53f)
         {
             credits.transform.position += new Vector3(0, 1, 0) * 1.5f * Time.deltaTime;
