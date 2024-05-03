@@ -979,7 +979,7 @@ MonoBehaviour:
   glassSlide: {fileID: 0}
   tileSlide: {fileID: 0}
   melody1: {fileID: 0}
-  puzzle2Complete: {fileID: 8300000, guid: fc792b64c9a674987b68f6fc85919699, type: 3}
+  puzzle2Complete: {fileID: 8300000, guid: 915e2244172bd439f88f906b9934706b, type: 3}
   switchSounds:
   - {fileID: 8300000, guid: e9957ba2968b74c7d8986bc3fa73b8bd, type: 3}
   - {fileID: 8300000, guid: eef2a7e9df28e4d2ea55d1f6e604433a, type: 3}

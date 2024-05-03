@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundSource: {fileID: 658920247}
   sfxSource: {fileID: 763928792}
-  background: {fileID: 0}
+  background: {fileID: 8300000, guid: 59d55a2156a404cffa56703358a4a631, type: 3}
   jump: {fileID: 8300000, guid: c0407909a8c6e4891af319ab94a2aae1, type: 3}
   land: {fileID: 8300000, guid: c1675ee17e7244ab1a720908908788ac, type: 3}
   inspect: {fileID: 0}
