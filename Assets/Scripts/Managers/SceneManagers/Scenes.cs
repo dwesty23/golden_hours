@@ -12,6 +12,7 @@ public class Scenes : MonoBehaviour
     public bool puzzle1Finished;
     public bool puzzle2Finished;
     public bool puzzle3Finished;
+    public bool puzzle4Finished;
 
     public bool loadFromSavedData;
 
@@ -100,6 +101,9 @@ public class Scenes : MonoBehaviour
                 break;
             case 3:
                 puzzle3Finished = true;
+                break;
+            case 4:
+                puzzle4Finished = true;
                 break;
         }
 
