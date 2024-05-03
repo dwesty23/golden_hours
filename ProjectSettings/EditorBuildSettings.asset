@@ -96,6 +96,12 @@ EditorBuildSettings:
     path: Assets/Scenes/credits_cutscene.unity
     guid: 92cb83f9c39934ef4b45025015dc55d5
   - enabled: 1
-    path: Assets/Scenes/BedEndScene.unity
+    path: Assets/Scenes/BadEndScene.unity
     guid: de70bb950bb0b4f91aa9a50c834a114d
+  - enabled: 1
+    path: Assets/Scenes/memory3_overlay.unity
+    guid: f4456e78964f64ee193c22afd6e3e3ca
+  - enabled: 1
+    path: Assets/Scenes/memory3.unity
+    guid: 86b110e9f442c4632bd95a6f5da727b1
   m_configObjects: {}

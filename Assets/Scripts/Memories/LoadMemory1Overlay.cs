@@ -8,6 +8,7 @@ public class Memory1Overlay : MonoBehaviour
     public Conversation[] conversations;
     private int currentSprite = 0;
     private Coroutine spriteCoroutine;
+    public GameObject speakerBox;
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class Memory1Overlay : MonoBehaviour
 
     private IEnumerator ShowSprite(int index)
     {
+        speakerBox.SetActive(false);
         // Deactivate all sprites
         foreach (GameObject sprite in sprites)
         {
@@ -66,6 +68,7 @@ public class Memory1Overlay : MonoBehaviour
             yield return null;
         }
         DialogueManagerOverlay.StartConversation(conversations[index]);
+        speakerBox.SetActive(true);
         // Activate the sprite at the specified index
         if (index < 0 || index >= sprites.Length)
         {

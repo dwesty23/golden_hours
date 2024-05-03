@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Doctor
   m_EditorClassIdentifier: 
   speakerName: Doctor
-  speakerSprite: {fileID: 21300000, guid: 1954ad2c93fcc4f1ba4ce8f9ad372d82, type: 3}
+  speakerSprite: {fileID: 21300000, guid: a3f91344d4d68413ba27bfb3a9287efb, type: 3}
   speakerFont: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}

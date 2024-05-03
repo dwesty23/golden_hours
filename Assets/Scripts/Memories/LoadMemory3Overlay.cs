@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class SpriteDisplayController3 : MonoBehaviour
+public class Memory3Overlay : MonoBehaviour
 {
     public GameObject[] sprites;
     public Conversation[] conversations;
@@ -68,7 +68,7 @@ public class SpriteDisplayController3 : MonoBehaviour
             spriteRenderer.color = color;
             yield return null;
         }
-        DialogueManagerM.StartConversation(conversations[index]);
+        DialogueManagerOverlay.StartConversation(conversations[index]);
         speakerBox.SetActive(true);
         // Activate the sprite at the specified index
         if (index < 0 || index >= sprites.Length)
@@ -95,9 +95,12 @@ public class SpriteDisplayController3 : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.SetInt("Memory3Collected", 1);
-            PlayerPrefs.Save();
-            StartCoroutine(Scenes.Instance.LoadMap(true));
+            Debug.Log("Unloading memory3_overlay");
+            foreach (GameObject go in SceneManager.GetActiveScene().GetRootGameObjects())
+            {
+                go.SetActive(true);
+            }
+            SceneManager.UnloadSceneAsync("memory3_overlay");
         }
     }
 
@@ -115,7 +118,7 @@ public class SpriteDisplayController3 : MonoBehaviour
     private IEnumerator ShowNextSpriteAfterConversation()
     {
         // Wait until the dialogue is not active
-        while (!DialogueManagerM.IsConversationFinished())
+        while (!DialogueManagerOverlay.IsConversationFinished())
         {
             yield return null;
         }
