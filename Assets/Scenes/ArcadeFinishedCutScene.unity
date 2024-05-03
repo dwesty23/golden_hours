@@ -1973,6 +1973,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   outlineMaterial: {fileID: 2100000, guid: aae990fd25fb849e4ac3c47eb085d2de, type: 2}
+  arcade1convo: {fileID: 11400000, guid: 141a26a207155414eaa8a5eec7363bcd, type: 2}
+  arcade2convo: {fileID: 11400000, guid: 0d0290bcc72144e36a66b48710434b85, type: 2}
 --- !u!1 &1262438435
 GameObject:
   m_ObjectHideFlags: 0

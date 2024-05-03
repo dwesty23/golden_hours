@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035a34823bc7142888f798a8f65f69fc, type: 3}
+  m_Name: ArcadeManager
+  m_EditorClassIdentifier: 
+  allLines:
+  - speaker: {fileID: 11400000, guid: ddcd9ee3c9004464b87ea380b7eef416, type: 2}
+    dialogue: "Sorry kid, we\u2019re closed."
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: What happened?
+  - speaker: {fileID: 11400000, guid: ddcd9ee3c9004464b87ea380b7eef416, type: 2}
+    dialogue: "Can\u2019t you see? Power\u2019s out, been out since last night and
+      that damn fuse box is actin\u2019 all strange! Every minute the power\u2019s
+      down, I\u2019m losin\u2019 money."
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: "If the power\u2019s out, where is that music coming from?"
+  - speaker: {fileID: 11400000, guid: ddcd9ee3c9004464b87ea380b7eef416, type: 2}
+    dialogue: Huh? What music?
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: "\u2026 Nevermind. You said it went out last night right? Did you happen
+      to see a little girl, around 11 years old with green hair, freckles, and glasses
+      come in before it went out?"
+  - speaker: {fileID: 11400000, guid: ddcd9ee3c9004464b87ea380b7eef416, type: 2}
+    dialogue: Ugh, that little grunt is the reason the power went out in the first
+      place!
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: You saw my sister?! Do you know where she went after?
+  - speaker: {fileID: 11400000, guid: ddcd9ee3c9004464b87ea380b7eef416, type: 2}
+    dialogue: "Why would I know that? Look feel free to look around, but I got an
+      arcade to fix\u2026 my wife\u2019s gonna kill me if this place goes under."
