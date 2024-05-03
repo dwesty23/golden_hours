@@ -970,9 +970,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundSource: {fileID: 658920247}
   sfxSource: {fileID: 763928792}
-  background: {fileID: 0}
+  background: {fileID: 8300000, guid: b4ba38be0167e4b84a4bba017598e600, type: 3}
   jump: {fileID: 8300000, guid: c0407909a8c6e4891af319ab94a2aae1, type: 3}
   land: {fileID: 8300000, guid: c1675ee17e7244ab1a720908908788ac, type: 3}
+  inspect: {fileID: 0}
+  puzzle1Complete: {fileID: 0}
+  glassSlide: {fileID: 0}
+  tileSlide: {fileID: 0}
   melody1: {fileID: 0}
   puzzle2Complete: {fileID: 8300000, guid: fc792b64c9a674987b68f6fc85919699, type: 3}
   switchSounds:
@@ -982,9 +986,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0567d1abb008542c8a1f3d812f8c9b4e, type: 3}
   - {fileID: 8300000, guid: 44bbb0e6fb16e43779ca35115fb2ef03, type: 3}
   - {fileID: 8300000, guid: 576f7bc4b0d7148209c686cd8929df0f, type: 3}
-  puzzle1Complete: {fileID: 0}
-  glassSlide: {fileID: 0}
-  tileSlide: {fileID: 0}
 --- !u!4 &1140784048
 Transform:
   m_ObjectHideFlags: 0
