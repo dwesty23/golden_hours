@@ -6,6 +6,7 @@ public class PuzzleTest : MonoBehaviour
     public bool puzzle1;
     public bool puzzle2;
     public bool puzzle3;
+    public bool puzzle4;
 
     // Update is called once per frame
     void Update()
@@ -21,6 +22,10 @@ public class PuzzleTest : MonoBehaviour
         if(puzzle3)
         {
             Scenes.Instance.CompletePuzzle(3);
+        }
+        if(puzzle4)
+        {
+            Scenes.Instance.CompletePuzzle(4);
         }
     }
 }
