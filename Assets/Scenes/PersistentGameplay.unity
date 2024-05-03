@@ -1728,7 +1728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ppv: {fileID: 1515813876}
-  cycleDuration: 1000
+  cycleDuration: 60
   lightsToggleThreshold: 0.75
 --- !u!1 &1555359479
 GameObject:

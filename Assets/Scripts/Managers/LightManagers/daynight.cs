@@ -10,9 +10,9 @@ public class DayNightScript : MonoBehaviour
     void Update()
     {
         // Calculate the current time within one cycle
-        // float timeWithinCycle = Mathf.Repeat(Time.time, cycleDuration) / cycleDuration;
-        float totalTime = GlobalTimer.Instance.totalTime;
-        float timeWithinCycle = Mathf.Repeat(GlobalTimer.Instance.GetTimePassed(), totalTime) / totalTime;
+        float timeWithinCycle = Mathf.Repeat(Time.time, cycleDuration) / cycleDuration;
+        // float totalTime = GlobalTimer.Instance.totalTime;
+        // float timeWithinCycle = Mathf.Repeat(GlobalTimer.Instance.GetTimePassed(), totalTime) / totalTime;
         // float timeWithinDay = Mathf.Repeat(globalTimer.timePassed, globalTimer.totalTime / 3) / (globalTimer.totalTime / 3);
 
         // Map the time within the cycle to the ppv.weight parameter
