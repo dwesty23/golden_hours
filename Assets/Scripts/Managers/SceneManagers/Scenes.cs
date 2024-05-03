@@ -14,6 +14,8 @@ public class Scenes : MonoBehaviour
     public bool puzzle3Finished;
     public bool puzzle4Finished;
 
+    public bool finalCheck;
+
     public bool loadFromSavedData;
 
     // private bool initialSaveDone = false;
@@ -104,6 +106,9 @@ public class Scenes : MonoBehaviour
                 break;
             case 4:
                 puzzle4Finished = true;
+                break;
+            case 5:
+                finalCheck = true;
                 break;
         }
 

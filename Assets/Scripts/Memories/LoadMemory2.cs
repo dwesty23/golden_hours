@@ -107,6 +107,7 @@ public class SpriteDisplayController2 : MonoBehaviour
 
         PlayerPrefs.SetInt("Memory2Collected", 1);
         PlayerPrefs.SetInt("PostArcadeTrigger", 0);
+        PlayerPrefs.SetInt("GeorgeInteract", 0);
         PlayerPrefs.Save();
         StartCoroutine(Scenes.Instance.LoadMap(true));
     }

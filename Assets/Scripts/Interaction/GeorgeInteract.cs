@@ -12,8 +12,9 @@ public class GeorgeInteract : Interactable
     public override void Interact()
     {
         Debug.Log("Interacting with George");
-        if (PlayerPrefs.GetInt("DialogueOn") == 1) return;
+        if (PlayerPrefs.GetInt("DialogueOn") == 1 || PlayerPrefs.GetInt("GeorgeInteract") == 1) return;
         PlayerPrefs.SetInt("DialogueOn", 1);
+        PlayerPrefs.SetInt("GeorgeInteract", 1);
         TriggerDialogue();
     }
 

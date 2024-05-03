@@ -96,7 +96,9 @@ public class SpriteDisplayController3 : MonoBehaviour
         else
         {
             PlayerPrefs.SetInt("Memory3Collected", 1);
+            PlayerPrefs.SetInt("PostMem3Trigger", 0);
             PlayerPrefs.Save();
+            Scenes.Instance.CompletePuzzle(5);
             StartCoroutine(Scenes.Instance.LoadMap(true));
         }
     }

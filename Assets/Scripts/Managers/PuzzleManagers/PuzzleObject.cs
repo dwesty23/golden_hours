@@ -39,6 +39,9 @@ public class PuzzleObject : MonoBehaviour
             case 4:
                 puzzle = Scenes.Instance.puzzle4Finished;
                 break;
+            case 5:
+                puzzle = Scenes.Instance.finalCheck;
+                break;
             default:
                 puzzle = false;
                 break;

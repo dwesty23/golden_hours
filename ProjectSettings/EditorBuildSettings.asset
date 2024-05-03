@@ -116,4 +116,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MayaOverlay.unity
     guid: b2f85ab7ae3904db49052dea32fab29a
+  - enabled: 1
+    path: Assets/Scenes/GoodEndScene.unity
+    guid: 15ea47d5a2e5f4f60a8b5f1c6fae1314
   m_configObjects: {}
