@@ -120,7 +120,7 @@ public class DialogueManagerM : MonoBehaviour
         dialogue.text = "";
         foreach (char c in text)
         {
-            if (currentFont.name == "Font Diner Boss SDF" || currentFont.name == "Font Mayas Mom v2 SDF" || currentFont.name == "Font Maya SDF" || currentFont.name == "Font Cop SDF" || currentFont.name == "Font Kid Customer SDF")
+            if (currentFont.name == "Font Diner Boss SDF" || currentFont.name == "Font Mayas Mom v2 SDF" || currentFont.name == "Font Maya SDF" || currentFont.name == "Font Cop SDF" || currentFont.name == "Font Kid Customer SDF" || currentFont.name == "Font Arcade Manager Bold SDF")
             {
                 UsingUpperCase = true;
                 UsingLowerCase = false;
