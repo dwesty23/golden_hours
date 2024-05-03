@@ -61,7 +61,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(MoveSophie());
     }
 
-    IEnumerator MoveSophie()
+    private IEnumerator MoveSophie()
     {
         sophieMovement.currentlyInteracting = true;  // Set the currentlyInteracting flag to true to stop Sophie from moving by player input
         sophieMovement.FlipCharacter();  // Ensure Sophie is facing right

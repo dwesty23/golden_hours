@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035a34823bc7142888f798a8f65f69fc, type: 3}
+  m_Name: GoodEnding3
+  m_EditorClassIdentifier: 
+  allLines:
+  - speaker: {fileID: 11400000, guid: 0175d9f3620be430aa4356109ab1b89a, type: 2}
+    dialogue: Hello? Can I help you?
+  - speaker: {fileID: 11400000, guid: dc6f2a96e92e94c089a3dda26b7a3ac3, type: 2}
+    dialogue: "Mom\u2026"
+  - speaker: {fileID: 11400000, guid: e13e702a59aa44a26a7cc0e852aa6201, type: 2}
+    dialogue: "We\u2019ve gotten a report that you may know the whereabouts of Amber
+      Moore. A young girl, 11-years-old, long curly hair, glasses, freckles, does
+      she ring a bell?"
+  - speaker: {fileID: 11400000, guid: 0175d9f3620be430aa4356109ab1b89a, type: 2}
+    dialogue: "I don\u2019t know anything about this, I\u2019m sorry. Good bye. "
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: Mom. Can you hear me?
+  - speaker: {fileID: 11400000, guid: 0175d9f3620be430aa4356109ab1b89a, type: 2}
+    dialogue: "Who\u2019s speaking?"
+  - speaker: {fileID: 11400000, guid: e13e702a59aa44a26a7cc0e852aa6201, type: 2}
+    dialogue: Huh?
+  - speaker: {fileID: 11400000, guid: dc6f2a96e92e94c089a3dda26b7a3ac3, type: 2}
+    dialogue: "It\u2019s me mom, it\u2019s Maya. I\u2019m here, I found you.."
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "Maya\u2026? "
