@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035a34823bc7142888f798a8f65f69fc, type: 3}
+  m_Name: FinalMem1
+  m_EditorClassIdentifier: 
+  allLines:
+  - speaker: {fileID: 11400000, guid: 65c73d47c9a084bde8a1403cd628de77, type: 2}
+    dialogue: "I\u2019m sorry, she\u2019s just not responding to any of the treatments
+      anymore."
+  - speaker: {fileID: 11400000, guid: 0175d9f3620be430aa4356109ab1b89a, type: 2}
+    dialogue: "Please there\u2019s got to be something else. Anything else!"
+  - speaker: {fileID: 11400000, guid: f4c8bef37df42497b9953357d19af954, type: 2}
+    dialogue: "Mom\u2026?"
+  - speaker: {fileID: 11400000, guid: 65c73d47c9a084bde8a1403cd628de77, type: 2}
+    dialogue: "I\u2019m sorry. I really am."
+  - speaker: {fileID: 11400000, guid: 0175d9f3620be430aa4356109ab1b89a, type: 2}
+    dialogue: "Oh Maya, you\u2019re awake. How are you feeling?"
+  - speaker: {fileID: 11400000, guid: f4c8bef37df42497b9953357d19af954, type: 2}
+    dialogue: "I\u2019m dying, aren\u2019t I?"
+  - speaker: {fileID: 11400000, guid: 0175d9f3620be430aa4356109ab1b89a, type: 2}
+    dialogue: "\u2026"
+  - speaker: {fileID: 11400000, guid: f4c8bef37df42497b9953357d19af954, type: 2}
+    dialogue: "It\u2019s ok mom, you said we would always be together, so we will."
+  - speaker: {fileID: 11400000, guid: 0175d9f3620be430aa4356109ab1b89a, type: 2}
+    dialogue: "Yes dear. We will always be together because no matter where you might
+      go, I\u2019ll always find you."
+  - speaker: {fileID: 11400000, guid: f4c8bef37df42497b9953357d19af954, type: 2}
+    dialogue: "And I\u2019ll look for you too. I love you, mom."

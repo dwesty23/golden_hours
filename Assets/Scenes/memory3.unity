@@ -930,7 +930,10 @@ MonoBehaviour:
   - {fileID: 1390378231}
   - {fileID: 1812583}
   - {fileID: 1322131082}
-  conversations: []
+  conversations:
+  - {fileID: 11400000, guid: 7aa5e470686aa49dc83af136de61f1a9, type: 2}
+  - {fileID: 11400000, guid: 1f57b376cd653428c8afa08aaf14491e, type: 2}
+  - {fileID: 11400000, guid: 5640d078a13674cde88682618039673c, type: 2}
   audioManager: {fileID: 1140784047}
 --- !u!1 &1140784046
 GameObject:
