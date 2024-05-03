@@ -14,17 +14,18 @@ public class AudioManaging : MonoBehaviour
     
     [Header("----------Puzzle 1 Audio Clips----------")]
 
-    public AudioClip melody1;
+    public AudioClip puzzle1Complete;
+    public AudioClip glassSlide;
+    public AudioClip tileSlide;
 
     [Header("----------Puzzle 2 Audio Clips----------")]
+    public AudioClip melody1;
 
     public AudioClip puzzle2Complete;
 
     public AudioClip[] switchSounds;
 
-    public AudioClip puzzle1Complete;
-    public AudioClip glassSlide;
-    public AudioClip tileSlide;
+    
 
 
     private void Start(){
