@@ -42,7 +42,7 @@ public class MayaInteract : Interactable
 
         // Load the scene
         PlayerPrefs.SetInt("DinerTrigger", 0);
-
+        PlayerPrefs.SetInt("PostArcadeTrigger", 1);
         StartCoroutine(Scenes.Instance.LoadMap());
     }
 

@@ -106,6 +106,7 @@ public class SpriteDisplayController2 : MonoBehaviour
         yield return new WaitForSeconds(15f);
 
         PlayerPrefs.SetInt("Memory2Collected", 1);
+        PlayerPrefs.SetInt("PostArcadeTrigger", 0);
         PlayerPrefs.Save();
         StartCoroutine(Scenes.Instance.LoadMap(true));
     }
