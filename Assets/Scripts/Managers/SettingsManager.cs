@@ -1,40 +1,56 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class SettingsManager : MonoBehaviour
 {
     public AudioMixer audioMixer; // Assign your Audio Mixer here
-    public Slider volumeSlider; // Assign your volume slider here
+    public Slider masterVolumeSlider; // Assign your master volume slider here
+    public Slider sfxVolumeSlider; // Assign your FX volume slider here
+    public Slider bgVolumeSlider; // Assign your Background volume slider here
 
     private void Start()
     {
-        // Load the saved volume level at the start or default to full volume
-        float savedVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
-        volumeSlider.value = savedVolume; // Set the slider to the saved volume
-        UpdateMixerVolume(savedVolume); // Apply the saved volume to the mixer
+        // Load saved volume levels at the start or default to full volume
+        masterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1f);
+        sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        bgVolumeSlider.value = PlayerPrefs.GetFloat("BGVolume", 1f);
+
+        UpdateMixerVolume("MasterVolume", masterVolumeSlider.value);
+        UpdateMixerVolume("SFXVolume", sfxVolumeSlider.value);
+        UpdateMixerVolume("BGVolume", bgVolumeSlider.value);
     }
 
-    public void OnVolumeSliderChanged()
+    public void OnMasterVolumeChanged()
     {
-        ApplyVolume();  // Apply volume when the slider value changes
+        UpdateMixerVolume("MasterVolume", masterVolumeSlider.value);
+        PlayerPrefs.SetFloat("MasterVolume", masterVolumeSlider.value);
     }
 
-    void ApplyVolume()
+    public void OnSFXVolumeChanged()
     {
-        float volume = Mathf.Log10(volumeSlider.value) * 20; // Convert slider value to decibels
-        UpdateMixerVolume(volumeSlider.value); // Apply the new volume to the mixer and save
-        PlayerPrefs.SetFloat("MasterVolume", volumeSlider.value); // Save the new volume level
+        UpdateMixerVolume("SFXVolume", sfxVolumeSlider.value);
+        PlayerPrefs.SetFloat("SFXVolume", sfxVolumeSlider.value);
     }
 
-    private void UpdateMixerVolume(float sliderValue)
+    public void OnBGVolumeChanged()
     {
-        float volume = Mathf.Log10(sliderValue) * 20;
-        audioMixer.SetFloat("MasterVolume", volume); // Set the volume in the AudioMixer
+        UpdateMixerVolume("BGVolume", bgVolumeSlider.value);
+        PlayerPrefs.SetFloat("BGVolume", bgVolumeSlider.value);
+    }
+
+    private void UpdateMixerVolume(string parameterName, float sliderValue)
+    {
+        // Ensure sliderValue never hits exactly 0 to avoid -infinity dB
+        float minVolume = 0.0001f;
+        float volume = Mathf.Max(sliderValue, minVolume);
+
+        // Convert linear slider value to dB, clamped between -80 dB and 0 dB
+        float dB = 60 * Mathf.Log10(volume);
+        Debug.Log(parameterName + " volume: " + dB + " dB");
+        dB = Mathf.Clamp(dB, -80f, 0f);
+
+        audioMixer.SetFloat(parameterName, dB);
     }
 }
-
 
