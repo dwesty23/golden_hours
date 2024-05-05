@@ -1406,7 +1406,7 @@ MonoBehaviour:
   _levelSceneMainMenu:
     _sceneAsset: {fileID: 102900000, guid: 5321e289aecb44156ac29f2697b36acd, type: 3}
     _sceneName: Menu
-  _mainMenu: {fileID: 0}
+  _mainMenu: {fileID: 1709204775}
   _mainMenuSprites: []
 --- !u!4 &819606425
 Transform:

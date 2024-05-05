@@ -18,7 +18,10 @@ public class MainMenuManager : MonoBehaviour
 
     public void Start()
     {
-        StartCoroutine(AnimateMainMenu());
+        if (SceneManager.GetActiveScene().name == "Menu")
+        {
+            StartCoroutine(AnimateMainMenu());
+        }
     }
 
     public IEnumerator AnimateMainMenu()
@@ -64,10 +67,16 @@ public class MainMenuManager : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            MainMenu();
-        }
+        #if UNITY_WEBGL
+            if (Input.GetKeyDown(KeyCode.Q)) // Use 'Q' as the escape key in WebGL
+            {
+                MainMenu();
+            }
+        #else
+            if (Input.GetKeyDown(KeyCode.Escape)) // Use 'Escape' as the escape key in non-WebGL
+            {
+                MainMenu();
+            }
+        #endif
     }
-
 }

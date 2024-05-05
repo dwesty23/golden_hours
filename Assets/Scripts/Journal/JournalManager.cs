@@ -113,9 +113,16 @@ public class JournalManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.UnloadSceneAsync(_SceneJournal);
-        }
+        #if UNITY_WEBGL
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                SceneManager.UnloadSceneAsync(_SceneJournal);
+            }
+        #else
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.UnloadSceneAsync(_SceneJournal);
+            }
+        #endif
     }
 }
