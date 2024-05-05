@@ -32,6 +32,7 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+        characterImage.enabled = false; // Hide the character image initially
         journalIcon.SetActive(false); // Hide the journal icon initially
         textBubble.SetActive(false); // Hide the text bubble initially
         // Enqueue the dialogues
@@ -86,6 +87,7 @@ public class DialogueManager : MonoBehaviour
 
         textBubble.SetActive(true); // Show the text bubble
         animationOver = true;  // Update the animationOver flag
+        characterImage.enabled = true;  // Show the character image
         Invoke("DisplayNextDialogue", 0.2f);  // Proceed to the next dialogue after a short delay
         //DisplayNextDialogue();  // Proceed to the next dialogue
     }

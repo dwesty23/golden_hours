@@ -69,7 +69,10 @@ public class Memory2Overlay : MonoBehaviour
             yield return null;
         }
         DialogueManagerOverlay.StartConversation(conversations[index]);
-        speakerBox.SetActive(true);
+        if (currentSprite != 4)
+        {
+            speakerBox.SetActive(true);
+        }
         // Activate the sprite at the specified index
         if (index < 0 || index >= sprites.Length)
         {
@@ -102,6 +105,7 @@ public class Memory2Overlay : MonoBehaviour
 
     private IEnumerator PlaySoundAndProceed()
     {
+        speakerBox.SetActive(false);
         audioManager.PlaySFX(audioManager.puzzle2Complete);
         yield return new WaitForSeconds(15f);
 

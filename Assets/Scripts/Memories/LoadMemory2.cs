@@ -69,7 +69,10 @@ public class SpriteDisplayController2 : MonoBehaviour
             yield return null;
         }
         DialogueManagerM.StartConversation(conversations[index]);
-        speakerBox.SetActive(true);
+        if (currentSprite != 4)
+        {
+            speakerBox.SetActive(true);
+        }
         // Activate the sprite at the specified index
         if (index < 0 || index >= sprites.Length)
         {
@@ -102,6 +105,7 @@ public class SpriteDisplayController2 : MonoBehaviour
 
     private IEnumerator PlaySoundAndProceed()
     {
+        speakerBox.SetActive(false);
         audioManager.PlaySFX(audioManager.puzzle2Complete);
         yield return new WaitForSeconds(15f);
 

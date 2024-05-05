@@ -405,12 +405,12 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: 40111de70662044f8825b1721aafa663, type: 3}
   land: {fileID: 8300000, guid: 81f3e21afe47c4d95b6088787c88b5b1, type: 3}
   inspect: {fileID: 8300000, guid: 35773c29ace5a444b99db314a6aed917, type: 3}
-  melody1: {fileID: 0}
-  puzzle2Complete: {fileID: 0}
-  switchSounds: []
   puzzle1Complete: {fileID: 0}
   glassSlide: {fileID: 0}
   tileSlide: {fileID: 0}
+  melody1: {fileID: 0}
+  puzzle2Complete: {fileID: 0}
+  switchSounds: []
 --- !u!4 &112544100
 Transform:
   m_ObjectHideFlags: 0

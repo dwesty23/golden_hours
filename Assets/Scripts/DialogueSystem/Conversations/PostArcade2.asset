@@ -26,9 +26,13 @@ MonoBehaviour:
     dialogue: "Oh\u2026 I\u2019m sorry."
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
     dialogue: "It\u2019s ok, our parents died when Amber was just a baby, and my
-      aunt wasn\u2019t really fit to raise two kids. Once I turned 18, I took Amber
-      and left. It\u2019s been just us for the last 5 years."
+      aunt wasn\u2019t really fit to raise two kids."
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: "Once I turned 18, I took Amber and left. It\u2019s been just us for
+      the last 5 years."
   - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
     dialogue: "Hey, I know we\u2019re on a tight schedule, but it\u2019s been a while
-      since either of us have had fun. Why don\u2019t we try playing one game? It
-      might help me remember something too."
+      since either of us have had fun."
+  - speaker: {fileID: 11400000, guid: 33318854818a14d0195b7a452cb3cca1, type: 2}
+    dialogue: "Why don\u2019t we try playing one game? It might help me remember
+      something too."

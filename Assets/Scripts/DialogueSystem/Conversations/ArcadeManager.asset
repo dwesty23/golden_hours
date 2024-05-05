@@ -26,9 +26,10 @@ MonoBehaviour:
   - speaker: {fileID: 11400000, guid: ddcd9ee3c9004464b87ea380b7eef416, type: 2}
     dialogue: Huh? What music?
   - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
-    dialogue: "\u2026 Nevermind. You said it went out last night right? Did you happen
-      to see a little girl, around 11 years old with green hair, freckles, and glasses
-      come in before it went out?"
+    dialogue: "\u2026 Nevermind. You said it went out last night right?"
+  - speaker: {fileID: 11400000, guid: bddb9fbf70ffd4f38be6bb6e66e80ddd, type: 2}
+    dialogue: Did you happen to see a little girl, around 11 years old with green
+      hair, freckles, and glasses come in before it went out?
   - speaker: {fileID: 11400000, guid: ddcd9ee3c9004464b87ea380b7eef416, type: 2}
     dialogue: Ugh, that little grunt is the reason the power went out in the first
       place!
